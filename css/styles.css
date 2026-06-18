@@ -199,9 +199,9 @@ body {
     inset: 0;
     background: linear-gradient(
         160deg,
-        rgba(6,17,30,0.6) 0%,
-        rgba(6,17,30,0.1) 40%,
-        rgba(6,17,30,0.75) 100%
+        rgba(6,17,30,0.75) 0%,
+        rgba(6,17,30,0.25) 40%,
+        rgba(6,17,30,0.85) 100%
     );
     z-index: 1;
 }
