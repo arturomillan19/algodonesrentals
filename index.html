@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algodones Rentals — Pesca en Sea-Doo · San Carlos, Sonora</title>
+    <meta name="description" content="Tours de pesca en Sea-Doo en Playa Algodones, San Carlos, Sonora. Amanecer o atardecer en el Mar de Cortés. Comida incluida." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-logo">
+        <span class="nav-logo-main">Algodones</span>
+        <span class="nav-logo-sub">Sea-Doo Fishing · San Carlos</span>
+    </div>
+    <div class="nav-right">
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#reservar" class="nav-cta" onclick="openModal(); return false;" data-i18n="nav.cta">Reservar</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-media">
+        <div class="hero-ph" id="heroPh">
+            <div class="horizon"></div>
+            <div class="hero-ph-waves">
+                <svg viewBox="0 0 1200 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,70 C150,20 350,120 600,70 C850,20 1050,120 1200,70 L1200,140 L0,140 Z" fill="rgba(10,171,184,0.18)"/>
+                    <path d="M0,90 C200,40 400,140 600,90 C800,40 1000,140 1200,90 L1200,140 L0,140 Z" fill="rgba(10,171,184,0.10)"/>
+                </svg>
+            </div>
+        </div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Openingvideo1.MOV" type="video/quicktime" />
+            <source src="Openingvideo1.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-eyebrow" data-i18n="hero.eyebrow">Playa Algodones · San Carlos, Sonora</div>
+        <h1 class="hero-title" data-i18n="hero.title">Pesca<br><em>en Sea-Doo.</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Salida al amanecer o al atardecer en el Mar de Cortés. Equipo incluido, comida incluida — solo trae las ganas.</p>
+        <div class="hero-actions">
+            <a href="#reservar" class="btn-primary" onclick="openModal(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="hero.cta">Reservar ahora</span>
+            </a>
+            <a href="#paquetes" class="btn-secondary">
+                <span data-i18n="hero.secondary">Ver paquetes</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-price-pill">
+        <div class="pill-label" data-i18n="hero.pill.label">Desde</div>
+        <div class="pill-price" data-i18n="hero.pill.price">$80</div>
+        <div class="pill-detail" data-i18n="hero.pill.detail">USD · por persona</div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="stat-val">3–5 hrs</div><div class="stat-lbl" data-i18n="stats.0.lbl">por tour</div></div>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><div class="stat-val">2–4</div><div class="stat-lbl" data-i18n="stats.1.lbl">personas por salida</div></div>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="stat-val">Todo</div><div class="stat-lbl" data-i18n="stats.2.lbl">equipo incluido</div></div>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="stat-val">Mar de Cortés</div><div class="stat-lbl" data-i18n="stats.3.lbl">San Carlos, Sonora</div></div>
+    </div>
+</div>
+
+<!-- VIDEO GALLERY -->
+<section class="video-gallery">
+    <div class="gallery-header section-inner reveal">
+        <div class="eyebrow" data-i18n="gallery.eyebrow">En el agua</div>
+        <h2 class="h2" data-i18n="gallery.title">Así se vive<br><em>cada salida</em></h2>
+    </div>
+    <div class="video-container reveal">
+        <div class="video-item">
+            <video autoplay muted loop playsinline><source src="Salida.MOV" type="video/quicktime"/><source src="Salida.mp4" type="video/mp4"/></video>
+            <div class="caption" data-i18n="gallery.cap.0">Salida al amanecer</div>
+        </div>
+        <div class="video-item">
+            <video autoplay muted loop playsinline><source src="Pesca.MOV" type="video/quicktime"/><source src="Pesca.mp4" type="video/mp4"/></video>
+            <div class="caption" data-i18n="gallery.cap.1">Zona de pesca</div>
+        </div>
+        <div class="video-item">
+            <video autoplay muted loop playsinline><source src="Comida.MOV" type="video/quicktime"/><source src="Comida.mp4" type="video/mp4"/></video>
+            <div class="caption" data-i18n="gallery.cap.2">Comida en el mar</div>
+        </div>
+        <div class="video-item">
+            <video autoplay muted loop playsinline><source src="Regreso.MOV" type="video/quicktime"/><source src="Regreso.mp4" type="video/mp4"/></video>
+            <div class="caption" data-i18n="gallery.cap.3">Regreso al atardecer</div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section">
+    <div class="section-inner reveal">
+        <div class="eyebrow" data-i18n="exp.eyebrow">La experiencia</div>
+        <h2 class="h2" data-i18n="exp.title">Mar de Cortés,<br><em>en Sea-Doo</em></h2>
+        <p class="body-text" data-i18n="exp.body">Salimos antes del amanecer o al atardecer — cuando el mar está en calma y los peces están activos. No necesitas experiencia previa.</p>
+    </div>
+    <div class="exp-grid reveal">
+        <div class="exp-photo"><div class="exp-photo-fallback">🌊</div><img src="foto1.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.0">Aguas del Mar de Cortés</div></div>
+        <div class="exp-photo"><div class="exp-photo-fallback">🎣</div><img src="foto2.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.1">Pesca activa</div></div>
+        <div class="exp-photo"><div class="exp-photo-fallback">🌅</div><img src="foto3.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.2">Atardecer sonorense</div></div>
+        <div class="exp-photo"><div class="exp-photo-fallback">🐟</div><img src="foto4.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.3">La captura del día</div></div>
+        <div class="exp-photo"><div class="exp-photo-fallback">🍽️</div><img src="foto5.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.4">Comida incluida</div></div>
+    </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section included-section">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="inc.eyebrow">Todo incluido</div>
+            <h2 class="h2" data-i18n="inc.title">Lo que viene<br><em>con tu tour</em></h2>
+        </div>
+        <div class="included-grid reveal">
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <div class="inc-name" data-i18n="inc.0.name">Sea-Doo GTI</div>
+                <div class="inc-desc" data-i18n="inc.0.desc">Moto acuática de última generación, mantenida al día y lista para salir.</div>
+            </div>
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+                <div class="inc-name" data-i18n="inc.1.name">Equipo de pesca</div>
+                <div class="inc-desc" data-i18n="inc.1.desc">Cañas, carretes, anzuelos y carnada. Tú no traes nada — nosotros llevamos todo.</div>
+            </div>
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="inc-name" data-i18n="inc.2.name">Chaleco salvavidas</div>
+                <div class="inc-desc" data-i18n="inc.2.desc">Certificado y ajustable. La seguridad en el agua es parte de la experiencia.</div>
+            </div>
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+                <div class="inc-name" data-i18n="inc.3.name">Comida y bebidas</div>
+                <div class="inc-desc" data-i18n="inc.3.desc">Platillos sonorenses preparados a bordo. Agua, refrescos y cerveza.</div>
+            </div>
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                <div class="inc-name" data-i18n="inc.4.name">Guía experto</div>
+                <div class="inc-desc" data-i18n="inc.4.desc">Local del Mar de Cortés. Conoce las zonas, corrientes y los mejores bancos.</div>
+            </div>
+            <div class="inc-card">
+                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="inc-name" data-i18n="inc.5.name">Transporte local</div>
+                <div class="inc-desc" data-i18n="inc.5.desc">Te recogemos en tu hotel en San Carlos. Sin vuelta de taxi al muelle.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SEA-DOO STRIP -->
+<div class="seadoo-section">
+    <span class="seadoo-section-text" data-i18n="seadoo.pre">Operamos exclusivamente con</span>
+    <div>
+        <div class="seadoo-wordmark">SEA-DOO</div>
+        <div class="seadoo-sub">BRP · Official Partner</div>
+    </div>
+    <span class="seadoo-section-text" data-i18n="seadoo.post">equipos de última generación</span>
+</div>
+
+<!-- PACKAGES -->
+<section class="section packages-section" id="paquetes">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="pkg.eyebrow">Paquetes</div>
+            <h2 class="h2" data-i18n="pkg.title">Elige tu<br><em>aventura</em></h2>
+            <p class="body-text" data-i18n="pkg.body">Tres opciones diseñadas para grupos distintos. Todos incluyen equipo, comida, guía y traslado.</p>
+        </div>
+        <div class="packages-grid reveal">
+
+            <!-- Pareja -->
+            <div class="pkg-card">
+                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                <div class="pkg-name" data-i18n="pkg.0.name">Pareja</div>
+                <div class="pkg-for" data-i18n="pkg.0.for">Pesca VIP. Solo ustedes dos en el mar.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row0.lbl">2 personas</span><span><strong>$160</strong> <span class="pkg-price-sub">USD</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row1.lbl">por persona</span><span><strong>$80</strong> <span class="pkg-price-sub">USD</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.0.inc.0">Sea-Doo exclusivo para los dos</li>
+                    <li data-i18n="pkg.0.inc.1">Equipo de pesca completo</li>
+                    <li data-i18n="pkg.0.inc.2">Comida y bebidas en el mar</li>
+                    <li data-i18n="pkg.0.inc.3">Guía personal · 3–4 hrs</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.0.extra">Opción de <strong>amanecer o atardecer</strong></div>
+                <a href="#reservar" class="pkg-cta" onclick="openModal('pareja'); return false;" data-i18n="pkg.0.cta">Reservar este paquete</a>
+            </div>
+
+            <!-- Familia -->
+            <div class="pkg-card featured">
+                <div class="pkg-badge" data-i18n="pkg.1.badge">Mas popular</div>
+                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <div class="pkg-name" data-i18n="pkg.1.name">Familia</div>
+                <div class="pkg-for" data-i18n="pkg.1.for">Para que los niños sientan el mar de verdad.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row0.lbl">2 adultos + 2 niños</span><span><strong>$280</strong> <span class="pkg-price-sub">USD</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row1.lbl">precio familia</span><span><strong>$70</strong> <span class="pkg-price-sub" data-i18n="pkg.1.row1.sub">USD / persona</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.1.inc.0">2 Sea-Doos para toda la familia</li>
+                    <li data-i18n="pkg.1.inc.1">Equipo adaptado para niños</li>
+                    <li data-i18n="pkg.1.inc.2">Comida familiar completa</li>
+                    <li data-i18n="pkg.1.inc.3">Guía + asistente · 4–5 hrs</li>
+                    <li data-i18n="pkg.1.inc.4">Fotos incluidas</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.1.extra"><strong>Recomendado</strong> para niños mayores de 6 años</div>
+                <a href="#reservar" class="pkg-cta" onclick="openModal('familia'); return false;" data-i18n="pkg.1.cta">Reservar este paquete</a>
+            </div>
+
+            <!-- Amigos -->
+            <div class="pkg-card">
+                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <div class="pkg-name" data-i18n="pkg.2.name">Amigos</div>
+                <div class="pkg-for" data-i18n="pkg.2.for">Reto de pesca. El que más pesca no paga su cerveza.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row0.lbl">3–4 personas</span><span><strong>$300</strong> <span class="pkg-price-sub">USD</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row1.lbl">por persona</span><span><strong>$75</strong> <span class="pkg-price-sub">USD</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.2.inc.0">2 Sea-Doos · 2 por moto</li>
+                    <li data-i18n="pkg.2.inc.1">Equipo de pesca completo</li>
+                    <li data-i18n="pkg.2.inc.2">Carnada premium + equipo extra</li>
+                    <li data-i18n="pkg.2.inc.3">Comida, bebidas y cervezas</li>
+                    <li data-i18n="pkg.2.inc.4">5 hrs de salida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.2.extra">Precio por <strong>4 personas</strong> — grupos más grandes consultar</div>
+                <a href="#reservar" class="pkg-cta" onclick="openModal('amigos'); return false;" data-i18n="pkg.2.cta">Reservar este paquete</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOD -->
+<section class="section food-section">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="food.eyebrow">La cocina</div>
+            <h2 class="h2" data-i18n="food.title">Comida de<br><em>verdad, en el mar</em></h2>
+            <p class="body-text" data-i18n="food.body">No traemos loncheras. Preparamos platillos sonorenses completos a bordo — pescado fresco del día, caldo, arroz, tortillas.</p>
+        </div>
+        <div class="food-intro reveal">
+            <div class="food-hero-img">
+                <div class="food-hero-ph">🍽️</div>
+                <img src="comida-hero.jpg" alt="Platillo a bordo" onerror="this.style.display='none'">
+            </div>
+            <div>
+                <p class="body-text" style="max-width:420px; margin-bottom:28px;" data-i18n="food.story">El menú cambia según lo que piquen. Si atrapa pargo, comes pargo. Si pica cabrilla, se sirve cabrilla. El chef es el mar.</p>
+                <div class="eyebrow" style="margin-bottom:0;" data-i18n="food.included">Incluido en todos los paquetes</div>
+            </div>
+        </div>
+        <div class="food-plates-grid reveal">
+            <div class="food-plate">
+                <div class="fp-visual fp-bg-1"><img src="ceviche.jpg" alt="Ceviche" onerror="this.style.display='none'"></div>
+                <div class="fp-info">
+                    <div class="fp-name" data-i18n="food.plate.0.name">Ceviche</div>
+                    <div class="fp-desc" data-i18n="food.plate.0.desc">Limón, cilantro, chile serrano</div>
+                    <div class="fp-tag" data-i18n="food.plate.0.tag">Pescado fresco</div>
+                </div>
+            </div>
+            <div class="food-plate">
+                <div class="fp-visual fp-bg-2"><img src="tacos.jpg" alt="Tacos" onerror="this.style.display='none'"></div>
+                <div class="fp-info">
+                    <div class="fp-name" data-i18n="food.plate.1.name">Tacos de Pescado</div>
+                    <div class="fp-desc" data-i18n="food.plate.1.desc">Tortilla de maíz, pico de gallo</div>
+                    <div class="fp-tag" data-i18n="food.plate.1.tag">Sonorense</div>
+                </div>
+            </div>
+            <div class="food-plate">
+                <div class="fp-visual fp-bg-3"><img src="caldo.jpg" alt="Caldo" onerror="this.style.display='none'"></div>
+                <div class="fp-info">
+                    <div class="fp-name" data-i18n="food.plate.2.name">Caldo de Pescado</div>
+                    <div class="fp-desc" data-i18n="food.plate.2.desc">Con verduras de temporada</div>
+                    <div class="fp-tag" data-i18n="food.plate.2.tag">Tradicional</div>
+                </div>
+            </div>
+            <div class="food-plate">
+                <div class="fp-visual fp-bg-4"><img src="mariscos.jpg" alt="Mariscos" onerror="this.style.display='none'"></div>
+                <div class="fp-info">
+                    <div class="fp-name" data-i18n="food.plate.3.name">Mariscos</div>
+                    <div class="fp-desc" data-i18n="food.plate.3.desc">Camarón, almeja, jaiba</div>
+                    <div class="fp-tag" data-i18n="food.plate.3.tag">Del día</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testi-section">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="testi.eyebrow">Lo que dicen</div>
+            <h2 class="h2" data-i18n="testi.title">De regreso<br><em>con más ganas</em></h2>
+        </div>
+        <div class="testi-grid reveal">
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote" data-i18n="testi.0.quote">"Nunca había pescado en mi vida y terminé agarrando tres pargos. El guía tiene una paciencia increíble y la comida fue lo mejor del viaje."</p>
+                <div class="testi-author">Marco A.</div>
+                <div class="testi-loc" data-i18n="testi.0.loc">Hermosillo, Sonora</div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote" data-i18n="testi.1.quote">"Lo hicimos en familia con nuestros hijos de 8 y 11 años. Los niños no querían regresar. El atardecer en el mar fue algo que nunca vamos a olvidar."</p>
+                <div class="testi-author">Claudia R.</div>
+                <div class="testi-loc" data-i18n="testi.1.loc">Phoenix, Arizona</div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-quote" data-i18n="testi.2.quote">"Éramos cuatro amigos y lo repetimos al día siguiente. El Mar de Cortés en Sea-Doo es algo que no tiene precio. Reserven con anticipación."</p>
+                <div class="testi-author">Rodrigo M.</div>
+                <div class="testi-loc" data-i18n="testi.2.loc">Tucson, Arizona</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking-section" id="reservar">
+    <div class="booking-card reveal">
+        <div class="eyebrow" style="justify-content:center; margin-bottom:12px;" data-i18n="booking.eyebrow">Reserva tu lugar</div>
+        <div class="booking-price">$80</div>
+        <div class="booking-per" data-i18n="booking.per">USD por persona · todo incluido</div>
+        <div class="booking-actions">
+            <a href="#" class="btn-wa" onclick="openModal(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="booking.cta">Reservar por WhatsApp</span>
+            </a>
+            <div class="booking-divider"></div>
+            <a href="https://www.instagram.com/algodonestours" target="_blank" rel="noopener" class="btn-ig">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                @algodonestours
+            </a>
+        </div>
+        <p class="booking-note" data-i18n="booking.note">Respuesta en menos de <strong>2 horas</strong> · Horarios disponibles 7 días a la semana · <strong>Sin pago por adelantado</strong></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div>
+        <div class="foot-brand">Algodones Rentals</div>
+        <div class="foot-loc">Playa Algodones · San Carlos, Sonora · México</div>
+    </div>
+    <div class="foot-right">
+        <span data-i18n="footer.tagline">Tours de pesca en Sea-Doo en el Mar de Cortés</span><br>
+        +52 622 176 3312 · @algodonestours
+    </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&#x2715;</button>
+
+        <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals</div>
+        <h2 class="modal-title" data-i18n="modal.title">Reserva tu<br><em>tour</em></h2>
+        <p class="modal-sub" data-i18n="modal.sub">Te enviamos confirmación por WhatsApp en menos de 2 horas.</p>
+
+        <form onsubmit="submitBooking(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="f-nombre" data-i18n="modal.nombre">Nombre</label>
+                    <input class="form-input" type="text" id="f-nombre" name="nombre" required
+                           data-i18n-placeholder="modal.nombre" placeholder="Nombre" autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="f-personas" data-i18n="modal.personas">Personas</label>
+                    <select class="form-select" id="f-personas" name="personas" required>
+                        <option value="">—</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5+">5+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="f-paquete" data-i18n="modal.paquete">Paquete</label>
+                <select class="form-select" id="f-paquete" name="paquete" required>
+                    <option value="" data-i18n-val="modal.paquete.placeholder">Elige un paquete</option>
+                    <option value="Pesca VIP en Pareja" data-i18n-val="modal.paquete.0">Pareja — Pesca VIP ($160 USD)</option>
+                    <option value="Aventura en Familia" data-i18n-val="modal.paquete.1">Familia — Aventura en el Mar ($280 USD)</option>
+                    <option value="Reto de Pesca con Amigos" data-i18n-val="modal.paquete.2">Amigos — Reto de Pesca ($300 USD)</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="f-fecha" data-i18n="modal.fecha">Fecha</label>
+                    <input class="form-input" type="date" id="f-fecha" name="fecha" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="f-hora" data-i18n="modal.hora">Horario</label>
+                    <select class="form-select" id="f-hora" name="hora" required>
+                        <option value="">—</option>
+                        <option value="Amanecer" data-i18n-val="modal.hora.0">Amanecer</option>
+                        <option value="Atardecer" data-i18n-val="modal.hora.1">Atardecer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" data-i18n="modal.exp">Experiencia en pesca</label>
+                <div class="exp-toggle">
+                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Ninguna" data-i18n="modal.exp.0">Ninguna</button>
+                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Poca" data-i18n="modal.exp.1">Poca</button>
+                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Intermedia" data-i18n="modal.exp.2">Intermedia</button>
+                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Avanzada" data-i18n="modal.exp.3">Avanzada</button>
+                </div>
+                <input type="hidden" id="f-experiencia" name="experiencia" value="" />
+            </div>
+
+            <div class="modal-divider"></div>
+
+            <button type="submit" class="modal-submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="modal.submit">Enviar por WhatsApp</span>
+            </button>
+            <p class="modal-legal" data-i18n="modal.legal">Sin pago por adelantado · Confirmación en 2 hrs</p>
+        </form>
+    </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
