@@ -40,7 +40,7 @@
             </div>
         </div>
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/Openingvideo1.MOV" type="video/quicktime" />
+            <source src="assets/Openingvideo1.MOV" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
     </div>
@@ -89,6 +89,7 @@
 </div>
 
 <!-- VIDEO GALLERY -->
+<!-- VIDEO GALLERY -->
 <section class="video-gallery">
     <div class="gallery-header section-inner reveal">
         <div class="eyebrow" data-i18n="gallery.eyebrow">En el agua</div>
@@ -96,19 +97,23 @@
     </div>
     <div class="video-container reveal">
         <div class="video-item">
-            <video autoplay muted loop playsinline><source src="js/assets/Salida.MOV" type="video/quicktime"/><source src="js/assets/Salida.mp4" type="video/mp4"/></video>
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Picada.MOV" type="video/mp4"></video>
             <div class="caption" data-i18n="gallery.cap.0">Salida al amanecer</div>
         </div>
         <div class="video-item">
-            <video autoplay muted loop playsinline><source src="js/assets/Pesca.MOV" type="video/quicktime"/><source src="js/assets/Pesca.mp4" type="video/mp4"/></video>
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Salida.MOV" type="video/mp4"></video>
+            <div class="caption" data-i18n="gallery.cap.0">Salida al amanecer</div>
+        </div>
+        <div class="video-item">
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Velocidad1.MOV" type="video/mp4"></video>
             <div class="caption" data-i18n="gallery.cap.1">Zona de pesca</div>
         </div>
         <div class="video-item">
-            <video autoplay muted loop playsinline><source src="js/assets/Comida.MOV" type="video/quicktime"/><source src="js/assets/Comida.mp4" type="video/mp4"/></video>
-            <div class="caption" data-i18n="gallery.cap.2">Comida en el mar</div>
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/salidamaikpaks.MOV" type="video/mp4"></video>
+            <div class="caption" data-i18n="gallery.cap.2">Aventura en el mar</div>
         </div>
         <div class="video-item">
-            <video autoplay muted loop playsinline><source src="js/assets/Regreso.MOV" type="video/quicktime"/><source src="js/assets/Regreso.mp4" type="video/mp4"/></video>
+            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Aventura.MOV" type="video/mp4"></video>
             <div class="caption" data-i18n="gallery.cap.3">Regreso al atardecer</div>
         </div>
     </div>
@@ -122,11 +127,12 @@
         <p class="body-text" data-i18n="exp.body">Salimos antes del amanecer o al atardecer — cuando el mar está en calma y los peces están activos. No necesitas experiencia previa.</p>
     </div>
     <div class="exp-grid reveal">
-        <div class="exp-photo"><div class="exp-photo-fallback">🌊</div><img src="js/assets/Mardecortes.MOV" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.0">Aguas del Mar de Cortés</div></div>
-        <div class="exp-photo"><div class="exp-photo-fallback">🎣</div><img src="js/assets/Pargo1.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.1">Pesca activa</div></div>
-        <div class="exp-photo"><div class="exp-photo-fallback">🌅</div><img src="js/assets/Paisaje.jpg" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.2">Atardecer sonorense</div></div>
-        <div class="exp-photo"><div class="exp-photo-fallback">🐟</div><img src="js/assets/Cabrilla.JPG" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.3">La captura del día</div></div>
-        <div class="exp-photo"><div class="exp-photo-fallback">🍽️</div><img src="js/assets/Food6.JPG" alt="" onerror="this.style.display='none'"><div class="exp-photo-label" data-i18n="exp.photo.4">Comida incluida</div></div>
+        <div class="exp-photo"><video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:1;"><source src="assets/Openingvideo1.MOV" type="video/mp4"></video><div class="exp-photo-label">Aguas del Mar de Cortés</div></div>
+        <div class="exp-photo"><img src="js/assets/Pargo1.jpg" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">Pesca activa</div></div>
+
+        <div class="exp-photo"><video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:1;"><source src="assets/Mardecortes.MOV" type="video/mp4"></video><div class="exp-photo-label">Atardecer Sonorense</div></div>
+        <div class="exp-photo"><img src="js/assets/Cabrilla.JPG" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">La captura del día</div></div>
+        <div class="exp-photo"><img src="js/assets/Food1.JPG" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">Comida incluida</div></div>
     </div>
 </section>
 
@@ -345,8 +351,8 @@
 <section class="booking-section" id="reservar">
     <div class="booking-card reveal">
         <div class="eyebrow" style="justify-content:center; margin-bottom:12px;" data-i18n="booking.eyebrow">Reserva tu lugar</div>
-        <div class="booking-price">$80</div>
-        <div class="booking-per" data-i18n="booking.per">USD por persona · todo incluido</div>
+        <div class="booking-price" data-i18n="booking.price">$2,500</div>
+        <div class="booking-per" data-i18n="booking.per">MXN por persona · todo incluido</div>
         <div class="booking-actions">
             <a href="#" class="btn-wa" onclick="openModal(); return false;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>

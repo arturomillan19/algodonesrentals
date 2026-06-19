@@ -6,7 +6,7 @@ const TRANSLATIONS = {
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
         "hero.title": "Pesca<br><em>en Sea-Doo.</em>",
-        "hero.sub": "Salida al amanecer o al atardecer en el Mar de Cortés. Equipo incluido, comida incluida — solo trae las ganas.",
+        "hero.sub": "Salida al amanecer o al atardecer en el Mar de Cortés. Equipo incluido, solo trae las ganas.",
         "hero.cta": "Reservar ahora",
         "hero.secondary": "Ver paquetes",
         "hero.pill.label": "Desde",
@@ -82,7 +82,7 @@ const TRANSLATIONS = {
         "pkg.1.inc.0": "2 Sea-Doos para toda la familia",
         "pkg.1.inc.1": "Equipo adaptado para niños",
         "pkg.1.inc.2": "Comida familiar completa",
-        "pkg.1.inc.3": "Guía + asistente · 4–5 hrs",
+        "pkg.1.inc.3": "Guía + asistente · 3-4 hrs",
         "pkg.1.inc.4": "Fotos incluidas",
         "pkg.1.extra": "<strong>Recomendado</strong> para niños mayores de 6 años",
         "pkg.1.cta": "Reservar este paquete",
@@ -130,7 +130,8 @@ const TRANSLATIONS = {
 
         // BOOKING
         "booking.eyebrow": "Reserva tu lugar",
-        "booking.per": "USD por persona · todo incluido",
+        "booking.price": "$2,500",
+        "booking.per": "MXN por persona · todo incluido",
         "booking.cta": "Reservar por WhatsApp",
         "booking.note": "Respuesta en menos de <strong>2 horas</strong> · Horarios disponibles 7 días a la semana · <strong>Sin pago por adelantado</strong>",
 
@@ -254,7 +255,7 @@ const TRANSLATIONS = {
         "pkg.1.inc.0": "2 Sea-Doos for the whole family",
         "pkg.1.inc.1": "Gear adapted for kids",
         "pkg.1.inc.2": "Full family meal",
-        "pkg.1.inc.3": "Guide + assistant · 4–5 hrs",
+        "pkg.1.inc.3": "Guide + assistant · 3-4 hrs",
         "pkg.1.inc.4": "Photos included",
         "pkg.1.extra": "<strong>Recommended</strong> for kids 6 years and up",
         "pkg.1.cta": "Book this package",
@@ -302,6 +303,7 @@ const TRANSLATIONS = {
 
         // BOOKING
         "booking.eyebrow": "Reserve your spot",
+        "booking.price": "$80",
         "booking.per": "USD per person · all inclusive",
         "booking.cta": "Book via WhatsApp",
         "booking.note": "Reply within <strong>2 hours</strong> · Available 7 days a week · <strong>No upfront payment</strong>",
