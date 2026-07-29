@@ -36,19 +36,15 @@ function setLang(lang) {
 }
 
 // ── BOOKING MODAL
-function openModal(paquete) {
+function openModal(modelo) {
     const modal = document.getElementById('bookingModal');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    if (paquete) {
-        const map = {
-            pareja:  t('modal.paquete.0').replace(/^.*—\s*/, '').replace(/\s*\(.*/, '') ? 'Pesca VIP en Pareja'      : 'Pesca VIP en Pareja',
-            familia: 'Aventura en Familia',
-            amigos:  'Reto de Pesca con Amigos',
-        };
-        const sel = document.getElementById('f-paquete');
-        if (sel && map[paquete]) sel.value = map[paquete];
+    if (modelo) {
+        const map = { chico: 'Chico', mediano: 'Mediano', grande: 'Grande' };
+        const sel = document.getElementById('f-modelo');
+        if (sel && map[modelo]) sel.value = map[modelo];
     }
 
     setTimeout(() => document.getElementById('f-nombre')?.focus(), 350);
@@ -59,20 +55,24 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-function selectExp(btn) {
+function selectDur(btn) {
     document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
-    document.getElementById('f-experiencia').value = btn.dataset.val;
+    document.getElementById('f-duracion').value = btn.dataset.val;
 }
 
 function submitBooking(e) {
     e.preventDefault();
     const nombre   = document.getElementById('f-nombre').value.trim();
-    const paquete  = document.getElementById('f-paquete').value;
+    const modelo   = document.getElementById('f-modelo').value;
+    const duracion = document.getElementById('f-duracion').value;
     const fecha    = document.getElementById('f-fecha').value;
-    const hora     = document.getElementById('f-hora').value;
     const personas = document.getElementById('f-personas').value;
-    const exp      = document.getElementById('f-experiencia').value;
+
+    if (!duracion) {
+        alert(currentLang === 'en' ? 'Please choose a duration.' : 'Elige una duración.');
+        return;
+    }
 
     let fechaFmt = fecha;
     if (fecha) {
@@ -83,15 +83,56 @@ function submitBooking(e) {
     const msg =
         `${t('wa.greeting')}\n\n` +
         `${t('wa.nombre')}: ${nombre}\n` +
-        `${t('wa.paquete')}: ${paquete}\n` +
+        `${t('wa.modelo')}: ${modelo}\n` +
+        `${t('wa.duracion')}: ${duracion}\n` +
         `${t('wa.fecha')}: ${fechaFmt}\n` +
-        `${t('wa.hora')}: ${hora}\n` +
-        `${t('wa.personas')}: ${personas}\n` +
-        `${t('wa.exp')}: ${exp}\n\n` +
+        `${t('wa.personas')}: ${personas}\n\n` +
         `${t('wa.closing')}`;
 
     window.open(`https://wa.me/526221763312?text=${encodeURIComponent(msg)}`, '_blank');
     closeModal();
+}
+
+// ── EXPERIENCE CAROUSEL
+let carIndex = 0;
+const carTrack  = document.getElementById('carTrack');
+const carSlides = carTrack ? Array.from(carTrack.children) : [];
+
+function carRender() {
+    if (!carTrack) return;
+    carTrack.style.transform = `translateX(-${carIndex * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === carIndex));
+    // only play the visible video
+    carSlides.forEach((slide, i) => {
+        const v = slide.querySelector('video');
+        if (!v) return;
+        if (i === carIndex) { v.play().catch(() => {}); }
+        else { v.pause(); }
+    });
+}
+
+function carGo(i) {
+    if (!carSlides.length) return;
+    carIndex = (i + carSlides.length) % carSlides.length;
+    carRender();
+}
+
+function carMove(dir) { carGo(carIndex + dir); }
+
+function carInit() {
+    if (!carTrack || !carSlides.length) return;
+    const dots = document.getElementById('carDots');
+    if (dots) {
+        carSlides.forEach((_, i) => {
+            const b = document.createElement('button');
+            b.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            b.setAttribute('aria-label', `Ir al video ${i + 1}`);
+            b.onclick = () => carGo(i);
+            dots.appendChild(b);
+        });
+    }
+    carRender();
 }
 
 // ── HIDE HERO PLACEHOLDER WHEN VIDEO LOADS
@@ -130,4 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // apply default language
     setLang('es');
+
+    // experience carousel
+    carInit();
 });

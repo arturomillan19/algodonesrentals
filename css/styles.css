@@ -428,43 +428,91 @@ body {
 }
 .section-header { margin-bottom: 56px; }
 
-/* ─── VIDEO GALLERY ───────────────────────────────────────────────────────── */
-.video-gallery {
-    padding: var(--section-v) var(--gutter);
-    background: var(--ink);
-}
-.gallery-header {
-    max-width: var(--max-w);
-    margin: 0 auto;
-}
-.video-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    width: 100%;
-    margin-top: 44px;
-}
-.video-item {
-    background: var(--deep);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border);
+/* ─── EXPERIENCE CAROUSEL ─────────────────────────────────────────────────── */
+.carousel-section { background: var(--ink); }
+
+.carousel {
     position: relative;
+    margin-top: 52px;
 }
-.video-item video {
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: var(--deep);
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.carousel-slide {
+    position: relative;
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--navy);
+}
+.carousel-slide video {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
-.caption {
-    padding: 10px 14px;
+.carousel-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    padding: 40px 28px 22px;
+    background: linear-gradient(0deg, rgba(6,17,30,0.9) 0%, transparent 100%);
     font-family: var(--font-sub);
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    border-top: 1px solid var(--border);
+    color: rgba(255,255,255,0.75);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    background: rgba(6, 17, 30, 0.7);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+.carousel-btn:hover { background: var(--coral); border-color: var(--coral); }
+.carousel-btn svg { width: 22px; height: 22px; }
+.carousel-btn.prev { left: 16px; }
+.carousel-btn.next { right: 16px; }
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+.carousel-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s, width 0.25s;
+}
+.carousel-dot.active {
+    background: var(--teal);
+    width: 26px;
+    border-radius: 100px;
 }
 
 /* ─── EXPERIENCE PHOTO GRID ───────────────────────────────────────────────── */
@@ -678,6 +726,33 @@ body {
     padding: 4px 12px;
     border-radius: 100px;
     margin-bottom: 16px;
+}
+
+/* photo banner at top of each model card */
+.pkg-photo {
+    margin: -32px -28px 22px;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    background: var(--navy);
+}
+.pkg-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.pkg-card:hover .pkg-photo img { transform: scale(1.05); }
+.pkg-photo .pkg-badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    z-index: 2;
+    margin: 0;
+    background: rgba(6, 17, 30, 0.72);
+    backdrop-filter: blur(8px);
+    border-color: rgba(201, 148, 58, 0.5);
 }
 
 /* pkg icon — SVG line icon, no emoji */
@@ -896,6 +971,117 @@ body {
     border: 1px solid rgba(201, 148, 58, 0.25);
     padding: 3px 9px;
     border-radius: 100px;
+}
+
+/* ─── PAYMENT + RULES ─────────────────────────────────────────────────────── */
+.pay-section { background: var(--ink); }
+
+.pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 52px;
+    align-items: stretch;
+}
+.pay-card {
+    background: rgba(6, 17, 30, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s;
+}
+.pay-card:hover { border-color: var(--border-strong); }
+
+.pay-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+.pay-card-head .inc-icon-svg { margin-bottom: 0; flex-shrink: 0; }
+.pay-card-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--white);
+}
+
+.pay-rows { margin-bottom: 22px; }
+.pay-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+.pay-row:last-child { border-bottom: none; }
+.pay-lbl {
+    font-family: var(--font-sub);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+}
+.pay-val {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    text-align: right;
+    letter-spacing: 0.02em;
+}
+
+.pay-note {
+    font-family: var(--font-sub);
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(244, 248, 250, 0.5);
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    margin-top: auto;
+}
+
+.rule-list {
+    list-style: none;
+    counter-reset: rule;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.rule-list li {
+    counter-increment: rule;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(244, 248, 250, 0.6);
+}
+.rule-list li::before {
+    content: counter(rule);
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(10, 171, 184, 0.12);
+    border: 1px solid var(--border-strong);
+    color: var(--teal);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
 }
 
 /* ─── TESTIMONIALS ────────────────────────────────────────────────────────── */
@@ -1280,6 +1466,7 @@ footer {
     .hero-price-pill { display: none; }
     .included-grid { grid-template-columns: 1fr 1fr; }
     .packages-grid { grid-template-columns: 1fr; }
+    .pay-grid { grid-template-columns: 1fr; }
     .food-intro { grid-template-columns: 1fr; gap: 40px; }
     .food-plates-grid { grid-template-columns: repeat(2, 1fr); }
     .testi-grid { grid-template-columns: 1fr; }
