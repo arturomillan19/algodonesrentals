@@ -973,6 +973,65 @@ body {
     border-radius: 100px;
 }
 
+/* ─── BANANA RIDE ─────────────────────────────────────────────────────────── */
+.banana-section {
+    background: var(--deep);
+    padding: var(--section-v) var(--gutter);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.banana-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+.banana-media {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 3;
+    background: var(--navy);
+}
+.banana-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.banana-media:hover img { transform: scale(1.04); }
+
+.banana-info .h2 { margin-bottom: 18px; }
+.banana-info .body-text { margin-bottom: 24px; }
+
+.banana-facts {
+    list-style: none;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.banana-facts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--font-sub);
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(244, 248, 250, 0.65);
+}
+.banana-facts li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 7px; height: 7px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+}
+.banana-facts strong { color: var(--white); font-weight: 600; }
+
 /* ─── PAYMENT + RULES ─────────────────────────────────────────────────────── */
 .pay-section { background: var(--ink); }
 
@@ -1467,6 +1526,7 @@ footer {
     .included-grid { grid-template-columns: 1fr 1fr; }
     .packages-grid { grid-template-columns: 1fr; }
     .pay-grid { grid-template-columns: 1fr; }
+    .banana-grid { grid-template-columns: 1fr; gap: 36px; }
     .food-intro { grid-template-columns: 1fr; gap: 40px; }
     .food-plates-grid { grid-template-columns: repeat(2, 1fr); }
     .testi-grid { grid-template-columns: 1fr; }

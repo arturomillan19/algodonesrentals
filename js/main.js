@@ -93,6 +93,12 @@ function submitBooking(e) {
     closeModal();
 }
 
+// ── BANANA RIDE → WhatsApp
+function bookBanana() {
+    const msg = t('wa.banana');
+    window.open(`https://wa.me/526221763312?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
 // ── EXPERIENCE CAROUSEL
 let carIndex = 0;
 const carTrack  = document.getElementById('carTrack');

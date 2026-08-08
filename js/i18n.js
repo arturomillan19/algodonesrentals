@@ -112,6 +112,17 @@ const TRANSLATIONS = {
         "rules.5": "El cliente es responsable por daños al equipo por mal uso. Se solicita depósito en garantía.",
         "rules.6": "El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.",
         "rules.7": "Menores de edad solo a bordo acompañados por un adulto responsable.",
+        "rules.8": "Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.",
+
+        // BANANA RIDE
+        "banana.eyebrow": "Otro servicio",
+        "banana.title": "Paseo en<br><em>banana</em>",
+        "banana.body": "Un recorrido divertido por la bahía, ideal para ir en grupo. Diversión asegurada con chaleco y personal atento.",
+        "banana.f0": "<strong>$100 MXN</strong> por persona",
+        "banana.f1": "Recorrido por la bahía · 10–15 min",
+        "banana.f2": "Mínimo 5 · máximo 7 personas",
+        "banana.f3": "Hasta 8 si son de complexión chica o niños",
+        "banana.cta": "Reservar paseo",
 
         // TESTIMONIALS
         "testi.eyebrow": "Lo que dicen",
@@ -159,6 +170,7 @@ const TRANSLATIONS = {
         "wa.fecha": "Fecha",
         "wa.personas": "Personas",
         "wa.closing": "Quedo pendiente para hacer la transferencia y enviar mi comprobante.",
+        "wa.banana": "Hola, quiero reservar un paseo en banana en Algodones Rentals ($100 MXN por persona). ¿Qué horarios tienen disponibles?",
     },
 
     en: {
@@ -274,6 +286,17 @@ const TRANSLATIONS = {
         "rules.5": "The renter is responsible for damage from misuse. A security deposit is required.",
         "rules.6": "Time starts when the unit is handed over. Please respect your booked time.",
         "rules.7": "Minors on board only when accompanied by a responsible adult.",
+        "rules.8": "If the unit flips over twice, the service is automatically cancelled: water gets into the engine and the risk of destroying it entirely is very high.",
+
+        // BANANA RIDE
+        "banana.eyebrow": "Another service",
+        "banana.title": "Banana<br><em>boat ride</em>",
+        "banana.body": "A fun ride around the bay, perfect for groups. Guaranteed fun with a life jacket and attentive staff.",
+        "banana.f0": "<strong>$100 MXN</strong> per person",
+        "banana.f1": "Ride around the bay · 10–15 min",
+        "banana.f2": "Minimum 5 · maximum 7 people",
+        "banana.f3": "Up to 8 if light build or only kids",
+        "banana.cta": "Book the ride",
 
         // TESTIMONIALS
         "testi.eyebrow": "What they say",
@@ -321,5 +344,6 @@ const TRANSLATIONS = {
         "wa.fecha": "Date",
         "wa.personas": "People",
         "wa.closing": "I'll make the transfer and send my receipt.",
+        "wa.banana": "Hi, I'd like to book a banana boat ride at Algodones Rentals ($100 MXN per person). What times do you have available?",
     }
 };
