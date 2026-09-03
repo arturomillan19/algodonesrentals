@@ -1,59 +1,30 @@
 const TRANSLATIONS = {
     es: {
         // NAV
-        "nav.cta": "Reservar",
+        "nav.cta": "Ver servicios",
 
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
-        "hero.title": "Renta de<br><em>Jetski.</em>",
-        "hero.sub": "Adrenalina en el Mar de Cortés. Tres modelos, por hora o media hora. Chaleco e inducción incluidos — solo trae las ganas.",
-        "hero.cta": "Reservar ahora",
-        "hero.secondary": "Ver modelos",
-        "hero.pill.label": "Desde",
-        "hero.pill.price": "$1,000",
-        "hero.pill.detail": "MXN · media hora",
+        "hero.title": "Tu día en<br><em>la playa.</em>",
+        "hero.sub": "Escaneaste desde tu mesa 👋 Aquí están nuestros servicios y precios. Ven al remolque —estamos al centro de la playa— o escríbenos por WhatsApp.",
+        "hero.cta": "Ver servicios y precios",
+        "hero.secondary": "Escríbenos por WhatsApp",
+        "hero.locator": "📍 Estamos al centro de la Playa Algodones",
 
-        // STATS
-        "stats.0.lbl": "modelos de jetski",
-        "stats.1.lbl": "personas por unidad",
-        "stats.2.lbl": "por hora o media hora",
-        "stats.3.lbl": "San Carlos, Sonora",
+        // SERVICE MENU
+        "menu.eyebrow": "Nuestros servicios",
+        "menu.title": "El menú<br><em>de la playa</em>",
+        "menu.jetski.name": "Jetskis",
+        "menu.jetski.price": "desde $1,000 · ½ hora",
+        "menu.banana.name": "Paseo en banana",
+        "menu.banana.price": "$100 · por persona",
+        "menu.sombra.name": "Renta de sombras",
+        "menu.sombra.price": "$400 · el día",
+        "menu.funda.name": "Fundas contra el agua",
+        "menu.funda.price": "$100 · cada una",
 
-        // VIDEO GALLERY
-        "gallery.eyebrow": "En el agua",
-        "gallery.title": "Así se siente<br><em>cada recorrido</em>",
-        "gallery.cap.0": "Salida a mar abierto",
-        "gallery.cap.1": "Pura velocidad",
-        "gallery.cap.2": "Adrenalina en el agua",
-        "gallery.cap.3": "Mar de Cortés",
-
-        // EXPERIENCE
-        "exp.eyebrow": "La experiencia",
-        "exp.title": "Mar de Cortés,<br><em>a toda velocidad</em>",
-        "exp.body": "Aguas azules, playa tranquila y el jetski listo para salir. No necesitas experiencia previa: te damos una inducción rápida y sales a disfrutar.",
-
-        // INCLUDED
-        "inc.eyebrow": "Incluido en tu renta",
-        "inc.title": "Todo listo<br><em>para salir</em>",
-        "inc.0.name": "Jetski Sea-Doo",
-        "inc.0.desc": "Moto acuática mantenida al día y lista para el agua. Tres modelos para cada tipo de rider.",
-        "inc.1.name": "Chaleco salvavidas",
-        "inc.1.desc": "Certificado y ajustable. Obligatorio durante todo el recorrido — la seguridad va primero.",
-        "inc.2.name": "Inducción de manejo",
-        "inc.2.desc": "Antes de salir te explicamos cómo operar la unidad y las reglas de la zona. Fácil y rápido.",
-        "inc.3.name": "Gasolina incluida",
-        "inc.3.desc": "La unidad sale con combustible para tu tiempo contratado. Sin cargos escondidos.",
-        "inc.4.name": "Zona supervisada",
-        "inc.4.desc": "Área delimitada por boyas y personal atento desde la playa mientras estás en el agua.",
-        "inc.5.name": "Playa Algodones",
-        "inc.5.desc": "Salimos desde una de las playas más hermosas del Mar de Cortés, en San Carlos.",
-
-        // SEA-DOO STRIP
-        "seadoo.pre": "Operamos exclusivamente con",
-        "seadoo.post": "equipos de última generación",
-
-        // FLEET (modelos)
-        "pkg.eyebrow": "Los modelos",
+        // JETSKIS
+        "pkg.eyebrow": "Renta de jetski",
         "pkg.title": "Elige tu<br><em>jetski</em>",
         "pkg.body": "Tres modelos según cuántos van y qué complexión. Precios en pesos, por hora o media hora. El tiempo corre desde que se entrega la unidad.",
 
@@ -91,10 +62,74 @@ const TRANSLATIONS = {
         "pkg.2.extra": "El más <strong>cómodo y potente</strong> para dos adultos",
         "pkg.2.cta": "Reservar este modelo",
 
-        // PAYMENT + RULES
-        "pay.eyebrow": "Pago y reglas",
+        // JETSKI INCLUDES STRIP
+        "jet.chip.0": "✓ Chaleco salvavidas",
+        "jet.chip.1": "✓ Inducción de manejo",
+        "jet.chip.2": "✓ Gasolina incluida",
+        "jet.chip.3": "✓ Zona supervisada",
+
+        // RESERVATION STEPS
+        "steps.eyebrow": "Cómo reservar",
+        "steps.title": "Reserva en <em>4 pasos</em>",
+        "steps.0": "Escríbenos por WhatsApp con el modelo y el horario que quieres.",
+        "steps.1": "Confirmamos la disponibilidad de los jetskis con el encargado.",
+        "steps.2": "Pagas en el remolque (tarjeta o efectivo) o a distancia por transferencia (envías tu comprobante para apartar).",
+        "steps.3": "Al recibir la unidad dejas una identificación y firmas un contrato (te haces responsable por daños).",
+
+        // RULES
+        "rules.title": "Reglas e instrucciones",
+        "rules.0": "Identificación oficial vigente para rentar; se deja durante el tiempo de renta. Edad mínima 18 años para manejar.",
+        "rules.1": "Uso obligatorio del chaleco salvavidas durante todo el recorrido.",
+        "rules.2": "Prohibido operar bajo efectos de alcohol o cualquier sustancia.",
+        "rules.3": "Respeta la zona delimitada por boyas y guarda distancia de bañistas y embarcaciones.",
+        "rules.4": "Recibes una inducción de manejo antes de salir. Velocidad moderada al entrar y salir de la orilla.",
+        "rules.5": "Se firma un contrato en el que el cliente se hace responsable por cualquier daño al vehículo.",
+        "rules.6": "El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.",
+        "rules.7": "Menores de edad solo a bordo acompañados por un adulto responsable.",
+        "rules.8": "Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.",
+
+        // EXPERIENCE CAROUSEL
+        "gallery.eyebrow": "En el agua",
+        "gallery.title": "Así se siente<br><em>cada recorrido</em>",
+        "gallery.cap.0": "Salida a mar abierto",
+        "gallery.cap.1": "Pura velocidad",
+        "gallery.cap.2": "Adrenalina en el agua",
+        "gallery.cap.3": "Mar de Cortés",
+
+        // SEA-DOO STRIP
+        "seadoo.pre": "Operamos exclusivamente con",
+        "seadoo.post": "equipos de última generación",
+
+        // BANANA RIDE
+        "banana.eyebrow": "Paseo en banana",
+        "banana.title": "Paseo en<br><em>banana</em>",
+        "banana.body": "Un recorrido divertido por la bahía, ideal para ir en grupo. Diversión asegurada con chaleco y personal atento.",
+        "banana.f0": "<strong>$100 MXN</strong> por persona",
+        "banana.f1": "Recorrido por la bahía · 10–15 min",
+        "banana.f2": "Grupos de 5 a 7 personas",
+        "banana.f3": "¿Menos de 5? Cubren $500 (5 lugares) y salen igual, o los sumamos a otro viaje por WhatsApp.",
+        "banana.cta": "Reservar paseo",
+
+        // SOMBRAS
+        "sombra.eyebrow": "Renta de sombras",
+        "sombra.title": "Renta de<br><em>sombras</em>",
+        "sombra.body": "Renta una sombra y disfruta la playa cómodo todo el día. Pregunta en el remolque o resérvala por WhatsApp.",
+        "sombra.price": "$400",
+        "sombra.per": "MXN · todo el día o tu estadía",
+        "sombra.cta": "Rentar sombra",
+
+        // FUNDAS
+        "funda.eyebrow": "Fundas contra el agua",
+        "funda.title": "Fundas<br><em>contra el agua</em>",
+        "funda.body": "Protege tu celular en el agua. Pásate al remolque o pídela por WhatsApp y te la llevamos a tu lugar.",
+        "funda.price": "$100",
+        "funda.per": "MXN · cada una",
+        "funda.cta": "Pedir funda",
+
+        // PAYMENT
+        "pay.eyebrow": "Pago a distancia",
         "pay.title": "Pago por<br><em>transferencia</em>",
-        "pay.body": "Aparta tu horario con transferencia. Aquí están los datos para el pago y las reglas para el manejo de los jetskis.",
+        "pay.body": "¿Reservas a distancia? Primero confirmamos disponibilidad por WhatsApp y luego apartas con transferencia. En el remolque también aceptamos tarjeta y efectivo.",
         "pay.card.title": "Datos de transferencia",
         "pay.lbl.banco": "Banco",
         "pay.lbl.titular": "Titular",
@@ -102,27 +137,18 @@ const TRANSLATIONS = {
         "pay.lbl.cuenta": "Tarjeta / Cuenta",
         "pay.lbl.concepto": "Concepto",
         "pay.val.concepto": "Tu nombre + fecha",
-        "pay.note": "Envía tu comprobante por WhatsApp para confirmar. El horario se aparta hasta recibir el comprobante de la transferencia.",
-        "rules.title": "Reglas e instrucciones",
-        "rules.0": "Identificación oficial vigente para rentar. Edad mínima 18 años para manejar.",
-        "rules.1": "Uso obligatorio del chaleco salvavidas durante todo el recorrido.",
-        "rules.2": "Prohibido operar bajo efectos de alcohol o cualquier sustancia.",
-        "rules.3": "Respeta la zona delimitada por boyas y guarda distancia de bañistas y embarcaciones.",
-        "rules.4": "Recibes una inducción de manejo antes de salir. Velocidad moderada al entrar y salir de la orilla.",
-        "rules.5": "El cliente es responsable por daños al equipo por mal uso. Se solicita depósito en garantía.",
-        "rules.6": "El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.",
-        "rules.7": "Menores de edad solo a bordo acompañados por un adulto responsable.",
-        "rules.8": "Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.",
+        "pay.note": "Confirma disponibilidad antes de transferir. Envía tu comprobante por WhatsApp para apartar tu horario.",
 
-        // BANANA RIDE
-        "banana.eyebrow": "Otro servicio",
-        "banana.title": "Paseo en<br><em>banana</em>",
-        "banana.body": "Un recorrido divertido por la bahía, ideal para ir en grupo. Diversión asegurada con chaleco y personal atento.",
-        "banana.f0": "<strong>$100 MXN</strong> por persona",
-        "banana.f1": "Recorrido por la bahía · 10–15 min",
-        "banana.f2": "Mínimo 5 · máximo 7 personas",
-        "banana.f3": "Hasta 8 si son de complexión chica o niños",
-        "banana.cta": "Reservar paseo",
+        // REMOLQUE
+        "rem.eyebrow": "Cómo llegar",
+        "rem.title": "Estamos al<br><em>centro de la playa</em>",
+        "rem.body": "Búscanos en nuestro remolque, justo al centro de la Playa Algodones. Ahí rentas, pagas y recoges todo.",
+        "rem.bath": "🚻 Los baños están en el área de estacionamiento.",
+        "rem.cta": "Ver Playa Algodones en el mapa",
+
+        // BEACH CARE
+        "care.title": "Cuida la playa",
+        "care.body": "Ayúdanos a mantener Playa Algodones limpia: llévate tu basura al salir. Gracias por cuidar el Mar de Cortés.",
 
         // TESTIMONIALS
         "testi.eyebrow": "Lo que dicen",
@@ -134,20 +160,18 @@ const TRANSLATIONS = {
         "testi.2.quote": "\"El proceso fue rápido: transferencia, mando mi comprobante y listo. Personal muy atento y todo en regla. 100% recomendado.\"",
         "testi.2.loc": "Tucson, Arizona",
 
-        // BOOKING
-        "booking.eyebrow": "Reserva tu horario",
-        "booking.price": "$1,000",
-        "booking.per": "MXN desde · media hora en el jetski chico",
-        "booking.cta": "Reservar por WhatsApp",
-        "booking.note": "Respuesta en menos de <strong>2 horas</strong> · Horarios disponibles 7 días a la semana · Apartas con <strong>transferencia</strong>",
-
         // FOOTER
-        "footer.tagline": "Renta de jetski en el Mar de Cortés",
+        "footer.tagline": "Jetskis, banana, sombras y fundas en Playa Algodones",
+        "footer.future": "¿Tienes un negocio en la playa? Pronto podrás anunciarte aquí.",
+
+        // STICKY BAR
+        "bar.wa": "WhatsApp",
+        "bar.map": "Cómo llegar",
 
         // MODAL
         "modal.eyebrow": "Algodones Rentals",
         "modal.title": "Reserva tu<br><em>jetski</em>",
-        "modal.sub": "Te enviamos confirmación por WhatsApp en menos de 2 horas.",
+        "modal.sub": "Te confirmamos disponibilidad por WhatsApp. Al recibir la unidad dejas ID y firmas contrato.",
         "modal.nombre": "Nombre",
         "modal.personas": "Personas",
         "modal.modelo": "Modelo",
@@ -160,74 +184,48 @@ const TRANSLATIONS = {
         "modal.dur.1": "Media hora",
         "modal.fecha": "Fecha",
         "modal.submit": "Enviar por WhatsApp",
-        "modal.legal": "Apartas con transferencia · Confirmación en 2 hrs",
+        "modal.legal": "Confirmamos disponibilidad · Pago en remolque o transferencia · ID + contrato al recibir",
 
-        // WHATSAPP MESSAGE
+        // WHATSAPP MESSAGES
         "wa.greeting": "Hola, quiero reservar un jetski en Algodones Rentals.",
         "wa.nombre": "Nombre",
         "wa.modelo": "Modelo",
         "wa.duracion": "Duración",
         "wa.fecha": "Fecha",
         "wa.personas": "Personas",
-        "wa.closing": "Quedo pendiente para hacer la transferencia y enviar mi comprobante.",
-        "wa.banana": "Hola, quiero reservar un paseo en banana en Algodones Rentals ($100 MXN por persona). ¿Qué horarios tienen disponibles?",
+        "wa.closing": "Quedo pendiente para que confirmen disponibilidad y me digan el pago (remolque o transferencia).",
+        "wa.general": "Hola, vi su página en la playa de Algodones y quiero información sobre sus servicios.",
+        "wa.sombra": "Hola, quiero rentar una sombra en Algodones Rentals ($400 el día). ¿Tienen disponibilidad?",
+        "wa.funda": "Hola, quiero una funda contra el agua ($100). ¿Me la llevan a mi lugar o paso al remolque?",
+        "wa.banana": "Hola, quiero reservar el paseo en banana ($100 por persona, grupos de 5 a 7). Somos ___ personas. ¿Qué horarios tienen?",
     },
 
     en: {
         // NAV
-        "nav.cta": "Book Now",
+        "nav.cta": "See services",
 
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
-        "hero.title": "Jetski<br><em>Rentals.</em>",
-        "hero.sub": "Adrenaline on the Sea of Cortez. Three models, by the hour or half hour. Life jacket and induction included — just show up ready.",
-        "hero.cta": "Book now",
-        "hero.secondary": "See models",
-        "hero.pill.label": "From",
-        "hero.pill.price": "$1,000",
-        "hero.pill.detail": "MXN · half hour",
+        "hero.title": "Your day at<br><em>the beach.</em>",
+        "hero.sub": "You scanned from your table 👋 Here are our services and prices. Come to the trailer —we're at the center of the beach— or message us on WhatsApp.",
+        "hero.cta": "See services & prices",
+        "hero.secondary": "Message us on WhatsApp",
+        "hero.locator": "📍 We're at the center of Playa Algodones",
 
-        // STATS
-        "stats.0.lbl": "jetski models",
-        "stats.1.lbl": "people per unit",
-        "stats.2.lbl": "by hour or half hour",
-        "stats.3.lbl": "San Carlos, Sonora",
+        // SERVICE MENU
+        "menu.eyebrow": "Our services",
+        "menu.title": "The beach<br><em>menu</em>",
+        "menu.jetski.name": "Jetskis",
+        "menu.jetski.price": "from $1,000 · ½ hour",
+        "menu.banana.name": "Banana boat ride",
+        "menu.banana.price": "$100 · per person",
+        "menu.sombra.name": "Shade rental",
+        "menu.sombra.price": "$400 · per day",
+        "menu.funda.name": "Waterproof phone pouches",
+        "menu.funda.price": "$100 · each",
 
-        // VIDEO GALLERY
-        "gallery.eyebrow": "On the water",
-        "gallery.title": "What every<br><em>ride feels like</em>",
-        "gallery.cap.0": "Out to open water",
-        "gallery.cap.1": "Pure speed",
-        "gallery.cap.2": "Adrenaline on the water",
-        "gallery.cap.3": "Sea of Cortez",
-
-        // EXPERIENCE
-        "exp.eyebrow": "The experience",
-        "exp.title": "Sea of Cortez,<br><em>at full throttle</em>",
-        "exp.body": "Blue water, a calm beach and the jetski ready to go. No prior experience needed — we give you a quick induction and off you go.",
-
-        // INCLUDED
-        "inc.eyebrow": "Included in your rental",
-        "inc.title": "Everything set<br><em>to hit the water</em>",
-        "inc.0.name": "Sea-Doo Jetski",
-        "inc.0.desc": "Fully maintained personal watercraft, ready for the water. Three models for every kind of rider.",
-        "inc.1.name": "Life jacket",
-        "inc.1.desc": "Certified and adjustable. Required for the whole ride — safety comes first.",
-        "inc.2.name": "Riding induction",
-        "inc.2.desc": "Before you head out we show you how to operate the unit and the zone rules. Quick and easy.",
-        "inc.3.name": "Fuel included",
-        "inc.3.desc": "The unit goes out fueled for your booked time. No hidden charges.",
-        "inc.4.name": "Supervised zone",
-        "inc.4.desc": "Area marked by buoys and staff watching from the beach while you're on the water.",
-        "inc.5.name": "Playa Algodones",
-        "inc.5.desc": "We launch from one of the most beautiful beaches on the Sea of Cortez, in San Carlos.",
-
-        // SEA-DOO STRIP
-        "seadoo.pre": "We operate exclusively on",
-        "seadoo.post": "latest generation watercraft",
-
-        // FLEET (models)
-        "pkg.eyebrow": "The models",
+        // JETSKIS
+        "pkg.eyebrow": "Jetski rental",
         "pkg.title": "Choose your<br><em>jetski</em>",
         "pkg.body": "Three models depending on how many ride and their build. Prices in pesos, by the hour or half hour. Time starts when the unit is handed over.",
 
@@ -265,10 +263,74 @@ const TRANSLATIONS = {
         "pkg.2.extra": "The most <strong>comfortable and powerful</strong> for two adults",
         "pkg.2.cta": "Book this model",
 
-        // PAYMENT + RULES
-        "pay.eyebrow": "Payment & rules",
+        // JETSKI INCLUDES STRIP
+        "jet.chip.0": "✓ Life jacket",
+        "jet.chip.1": "✓ Riding induction",
+        "jet.chip.2": "✓ Fuel included",
+        "jet.chip.3": "✓ Supervised zone",
+
+        // RESERVATION STEPS
+        "steps.eyebrow": "How to book",
+        "steps.title": "Book in <em>4 steps</em>",
+        "steps.0": "Message us on WhatsApp with the model and time you want.",
+        "steps.1": "We confirm jetski availability with the manager.",
+        "steps.2": "Pay at the trailer (card or cash) or remotely by bank transfer (send your receipt to hold it).",
+        "steps.3": "When you get the unit you leave an ID and sign a contract (you're responsible for any damage).",
+
+        // RULES
+        "rules.title": "Rules & instructions",
+        "rules.0": "Valid government ID required to rent; left with us during the rental. Minimum age 18 to drive.",
+        "rules.1": "Life jacket is mandatory throughout the entire ride.",
+        "rules.2": "Operating under the influence of alcohol or any substance is prohibited.",
+        "rules.3": "Respect the buoy-marked zone and keep your distance from swimmers and boats.",
+        "rules.4": "You get a riding induction before heading out. Slow speed entering and leaving the shore.",
+        "rules.5": "You sign a contract making you responsible for any damage to the vehicle.",
+        "rules.6": "Time starts when the unit is handed over. Please respect your booked time.",
+        "rules.7": "Minors on board only when accompanied by a responsible adult.",
+        "rules.8": "If the unit flips over twice, the service is automatically cancelled: water gets into the engine and the risk of destroying it entirely is very high.",
+
+        // EXPERIENCE CAROUSEL
+        "gallery.eyebrow": "On the water",
+        "gallery.title": "What every<br><em>ride feels like</em>",
+        "gallery.cap.0": "Out to open water",
+        "gallery.cap.1": "Pure speed",
+        "gallery.cap.2": "Adrenaline on the water",
+        "gallery.cap.3": "Sea of Cortez",
+
+        // SEA-DOO STRIP
+        "seadoo.pre": "We operate exclusively on",
+        "seadoo.post": "latest generation watercraft",
+
+        // BANANA RIDE
+        "banana.eyebrow": "Banana boat ride",
+        "banana.title": "Banana<br><em>boat ride</em>",
+        "banana.body": "A fun ride around the bay, perfect for groups. Guaranteed fun with a life jacket and attentive staff.",
+        "banana.f0": "<strong>$100 MXN</strong> per person",
+        "banana.f1": "Ride around the bay · 10–15 min",
+        "banana.f2": "Groups of 5 to 7 people",
+        "banana.f3": "Fewer than 5? Cover $500 (5 spots) and still go, or we add you to another trip via WhatsApp.",
+        "banana.cta": "Book the ride",
+
+        // SOMBRAS
+        "sombra.eyebrow": "Shade rental",
+        "sombra.title": "Shade<br><em>rental</em>",
+        "sombra.body": "Rent a shade and enjoy the beach comfortably all day. Ask at the trailer or book it on WhatsApp.",
+        "sombra.price": "$400",
+        "sombra.per": "MXN · all day or your whole stay",
+        "sombra.cta": "Rent shade",
+
+        // FUNDAS
+        "funda.eyebrow": "Waterproof pouches",
+        "funda.title": "Waterproof<br><em>phone pouches</em>",
+        "funda.body": "Protect your phone in the water. Stop by the trailer or ask on WhatsApp and we'll bring it to your spot.",
+        "funda.price": "$100",
+        "funda.per": "MXN · each",
+        "funda.cta": "Get a pouch",
+
+        // PAYMENT
+        "pay.eyebrow": "Remote payment",
         "pay.title": "Pay by<br><em>bank transfer</em>",
-        "pay.body": "Hold your time slot with a transfer. Here are the payment details and the rules for handling the jetskis.",
+        "pay.body": "Booking remotely? We confirm availability on WhatsApp first, then you hold it with a transfer. At the trailer we also take card and cash.",
         "pay.card.title": "Transfer details",
         "pay.lbl.banco": "Bank",
         "pay.lbl.titular": "Account holder",
@@ -276,27 +338,18 @@ const TRANSLATIONS = {
         "pay.lbl.cuenta": "Card / Account",
         "pay.lbl.concepto": "Reference",
         "pay.val.concepto": "Your name + date",
-        "pay.note": "Send your receipt via WhatsApp to confirm. The slot is held until we receive the transfer receipt.",
-        "rules.title": "Rules & instructions",
-        "rules.0": "Valid government ID required to rent. Minimum age 18 to drive.",
-        "rules.1": "Life jacket is mandatory throughout the entire ride.",
-        "rules.2": "Operating under the influence of alcohol or any substance is prohibited.",
-        "rules.3": "Respect the buoy-marked zone and keep your distance from swimmers and boats.",
-        "rules.4": "You get a riding induction before heading out. Slow speed entering and leaving the shore.",
-        "rules.5": "The renter is responsible for damage from misuse. A security deposit is required.",
-        "rules.6": "Time starts when the unit is handed over. Please respect your booked time.",
-        "rules.7": "Minors on board only when accompanied by a responsible adult.",
-        "rules.8": "If the unit flips over twice, the service is automatically cancelled: water gets into the engine and the risk of destroying it entirely is very high.",
+        "pay.note": "Confirm availability before transferring. Send your receipt via WhatsApp to hold your slot.",
 
-        // BANANA RIDE
-        "banana.eyebrow": "Another service",
-        "banana.title": "Banana<br><em>boat ride</em>",
-        "banana.body": "A fun ride around the bay, perfect for groups. Guaranteed fun with a life jacket and attentive staff.",
-        "banana.f0": "<strong>$100 MXN</strong> per person",
-        "banana.f1": "Ride around the bay · 10–15 min",
-        "banana.f2": "Minimum 5 · maximum 7 people",
-        "banana.f3": "Up to 8 if light build or only kids",
-        "banana.cta": "Book the ride",
+        // REMOLQUE
+        "rem.eyebrow": "Find us",
+        "rem.title": "We're at the<br><em>center of the beach</em>",
+        "rem.body": "Look for our trailer, right in the center of Playa Algodones. That's where you rent, pay and pick everything up.",
+        "rem.bath": "🚻 Restrooms are in the parking area.",
+        "rem.cta": "See Playa Algodones on the map",
+
+        // BEACH CARE
+        "care.title": "Care for the beach",
+        "care.body": "Help us keep Playa Algodones clean: take your trash with you when you leave. Thanks for caring for the Sea of Cortez.",
 
         // TESTIMONIALS
         "testi.eyebrow": "What they say",
@@ -308,20 +361,18 @@ const TRANSLATIONS = {
         "testi.2.quote": "\"The process was fast: transfer, send my receipt and done. Very attentive staff and everything by the book. 100% recommended.\"",
         "testi.2.loc": "Tucson, Arizona",
 
-        // BOOKING
-        "booking.eyebrow": "Reserve your slot",
-        "booking.price": "$1,000",
-        "booking.per": "MXN from · half hour on the small jetski",
-        "booking.cta": "Book via WhatsApp",
-        "booking.note": "Reply within <strong>2 hours</strong> · Available 7 days a week · Hold your slot with a <strong>transfer</strong>",
-
         // FOOTER
-        "footer.tagline": "Jetski rentals on the Sea of Cortez",
+        "footer.tagline": "Jetskis, banana, shade and pouches at Playa Algodones",
+        "footer.future": "Have a business on the beach? Soon you'll be able to advertise here.",
+
+        // STICKY BAR
+        "bar.wa": "WhatsApp",
+        "bar.map": "Find us",
 
         // MODAL
         "modal.eyebrow": "Algodones Rentals",
         "modal.title": "Book your<br><em>jetski</em>",
-        "modal.sub": "We'll confirm via WhatsApp within 2 hours.",
+        "modal.sub": "We'll confirm availability on WhatsApp. When you get the unit you leave an ID and sign a contract.",
         "modal.nombre": "Name",
         "modal.personas": "People",
         "modal.modelo": "Model",
@@ -334,16 +385,19 @@ const TRANSLATIONS = {
         "modal.dur.1": "Half hour",
         "modal.fecha": "Date",
         "modal.submit": "Send via WhatsApp",
-        "modal.legal": "Hold with a transfer · Confirmation within 2 hrs",
+        "modal.legal": "We confirm availability · Pay at trailer or by transfer · ID + contract on pickup",
 
-        // WHATSAPP MESSAGE
+        // WHATSAPP MESSAGES
         "wa.greeting": "Hi, I'd like to reserve a jetski at Algodones Rentals.",
         "wa.nombre": "Name",
         "wa.modelo": "Model",
         "wa.duracion": "Duration",
         "wa.fecha": "Date",
         "wa.personas": "People",
-        "wa.closing": "I'll make the transfer and send my receipt.",
-        "wa.banana": "Hi, I'd like to book a banana boat ride at Algodones Rentals ($100 MXN per person). What times do you have available?",
+        "wa.closing": "Please confirm availability and let me know the payment (trailer or transfer).",
+        "wa.general": "Hi, I saw your page at Algodones beach and I'd like info about your services.",
+        "wa.sombra": "Hi, I'd like to rent a shade at Algodones Rentals ($400 per day). Do you have availability?",
+        "wa.funda": "Hi, I'd like a waterproof phone pouch ($100). Can you bring it to my spot or should I come to the trailer?",
+        "wa.banana": "Hi, I'd like to book the banana boat ride ($100 per person, groups of 5 to 7). We are ___ people. What times do you have?",
     }
 };

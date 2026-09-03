@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algodones Rentals — Renta de Jetski · San Carlos, Sonora</title>
-    <meta name="description" content="Renta de jetski en Playa Algodones, San Carlos, Sonora. Tres modelos, por hora o media hora. Chaleco e inducción incluidos. Mar de Cortés." />
+    <title>Algodones Rentals — Jetskis, banana y sombras · Playa Algodones</title>
+    <meta name="description" content="Renta de jetski, paseo en banana, renta de sombras y fundas contra el agua en Playa Algodones, San Carlos, Sonora. Reserva por WhatsApp o ven al remolque al centro de la playa." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -16,14 +16,14 @@
 <nav class="nav">
     <div class="nav-logo">
         <span class="nav-logo-main">Algodones</span>
-        <span class="nav-logo-sub">Renta de Jetski · San Carlos</span>
+        <span class="nav-logo-sub">Playa Algodones · San Carlos</span>
     </div>
     <div class="nav-right">
         <div class="lang-toggle">
             <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
             <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         </div>
-        <a href="#reservar" class="nav-cta" onclick="openModal(); return false;" data-i18n="nav.cta">Reservar</a>
+        <a href="#menu" class="nav-cta" data-i18n="nav.cta">Ver servicios</a>
     </div>
 </nav>
 
@@ -47,46 +47,167 @@
 
     <div class="hero-content">
         <div class="hero-eyebrow" data-i18n="hero.eyebrow">Playa Algodones · San Carlos, Sonora</div>
-        <h1 class="hero-title" data-i18n="hero.title">Renta de<br><em>Jetski.</em></h1>
-        <p class="hero-sub" data-i18n="hero.sub">Adrenalina en el Mar de Cortés. Tres modelos, por hora o media hora. Chaleco e inducción incluidos — solo trae las ganas.</p>
+        <h1 class="hero-title" data-i18n="hero.title">Tu día en<br><em>la playa.</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Escaneaste desde tu mesa 👋 Aquí están nuestros servicios y precios. Ven al remolque —estamos al centro de la playa— o escríbenos por WhatsApp.</p>
         <div class="hero-actions">
-            <a href="#reservar" class="btn-primary" onclick="openModal(); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <span data-i18n="hero.cta">Reservar ahora</span>
+            <a href="#menu" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span data-i18n="hero.cta">Ver servicios y precios</span>
             </a>
-            <a href="#modelos" class="btn-secondary">
-                <span data-i18n="hero.secondary">Ver modelos</span>
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            <a href="#" class="btn-secondary" onclick="bookGeneral(); return false;">
+                <span data-i18n="hero.secondary">Escríbenos por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
             </a>
         </div>
-    </div>
-
-    <div class="hero-price-pill">
-        <div class="pill-label" data-i18n="hero.pill.label">Desde</div>
-        <div class="pill-price" data-i18n="hero.pill.price">$1,000</div>
-        <div class="pill-detail" data-i18n="hero.pill.detail">MXN · media hora</div>
+        <div class="hero-locator" data-i18n="hero.locator">📍 Estamos al centro de la Playa Algodones</div>
     </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div><div class="stat-val">3</div><div class="stat-lbl" data-i18n="stats.0.lbl">modelos de jetski</div></div>
+<!-- SERVICE MENU -->
+<section class="section menu-section" id="menu">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="menu.eyebrow">Nuestros servicios</div>
+            <h2 class="h2" data-i18n="menu.title">El menú<br><em>de la playa</em></h2>
+        </div>
+        <div class="service-menu reveal">
+            <a href="#jetskis" class="service-card">
+                <div class="service-emoji">🛥️</div>
+                <div class="service-name" data-i18n="menu.jetski.name">Jetskis</div>
+                <div class="service-price" data-i18n="menu.jetski.price">desde $1,000 · ½ hora</div>
+            </a>
+            <a href="#banana" class="service-card">
+                <div class="service-emoji">🍌</div>
+                <div class="service-name" data-i18n="menu.banana.name">Paseo en banana</div>
+                <div class="service-price" data-i18n="menu.banana.price">$100 · por persona</div>
+            </a>
+            <a href="#sombras" class="service-card">
+                <div class="service-emoji">⛱️</div>
+                <div class="service-name" data-i18n="menu.sombra.name">Renta de sombras</div>
+                <div class="service-price" data-i18n="menu.sombra.price">$400 · el día</div>
+            </a>
+            <a href="#fundas" class="service-card">
+                <div class="service-emoji">📱</div>
+                <div class="service-name" data-i18n="menu.funda.name">Fundas contra el agua</div>
+                <div class="service-price" data-i18n="menu.funda.price">$100 · cada una</div>
+            </a>
+        </div>
     </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><div class="stat-val">1–2</div><div class="stat-lbl" data-i18n="stats.1.lbl">personas por unidad</div></div>
+</section>
+
+<!-- JETSKIS -->
+<section class="section packages-section" id="jetskis">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="pkg.eyebrow">Renta de jetski</div>
+            <h2 class="h2" data-i18n="pkg.title">Elige tu<br><em>jetski</em></h2>
+            <p class="body-text" data-i18n="pkg.body">Tres modelos según cuántos van y qué complexión. Precios en pesos, por hora o media hora. El tiempo corre desde que se entrega la unidad.</p>
+        </div>
+        <div class="packages-grid reveal">
+
+            <!-- Chico -->
+            <div class="pkg-card">
+                <div class="pkg-photo"><img src="assets/modelo-chico.jpg" alt="Jetski Chico"></div>
+                <div class="pkg-name" data-i18n="pkg.0.name">Chico</div>
+                <div class="pkg-for" data-i18n="pkg.0.for">Ideal para una persona, o dos de complexión muy ligera.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row0.lbl">1 hora</span><span><strong>$1,700</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row1.lbl">Media hora</span><span><strong>$1,000</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.0.inc.0">1 plaza · ideal para 1 persona</li>
+                    <li data-i18n="pkg.0.inc.1">Ágil y fácil de manejar</li>
+                    <li data-i18n="pkg.0.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.0.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.0.extra">La opción más <strong>económica</strong> para estrenarte en el agua</div>
+                <a href="#" class="pkg-cta" onclick="openModal('chico'); return false;" data-i18n="pkg.0.cta">Reservar este modelo</a>
+            </div>
+
+            <!-- Mediano -->
+            <div class="pkg-card">
+                <div class="pkg-photo"><img src="assets/modelo-mediano.jpg" alt="Jetski Mediano"></div>
+                <div class="pkg-name" data-i18n="pkg.1.name">Mediano</div>
+                <div class="pkg-for" data-i18n="pkg.1.for">Para dos personas de complexión ligera que quieren ir juntas.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row0.lbl">1 hora</span><span><strong>$1,900</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row1.lbl">Media hora</span><span><strong>$1,300</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.1.inc.0">2 plazas · complexión ligera</li>
+                    <li data-i18n="pkg.1.inc.1">Estable y con buena potencia</li>
+                    <li data-i18n="pkg.1.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.1.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.1.extra">El <strong>equilibrio</strong> entre espacio y precio</div>
+                <a href="#" class="pkg-cta" onclick="openModal('mediano'); return false;" data-i18n="pkg.1.cta">Reservar este modelo</a>
+            </div>
+
+            <!-- Grande -->
+            <div class="pkg-card featured">
+                <div class="pkg-photo"><span class="pkg-badge" data-i18n="pkg.2.badge">El más pedido</span><img src="assets/modelo-grande.jpg" alt="Jetski Grande"></div>
+                <div class="pkg-name" data-i18n="pkg.2.name">Grande</div>
+                <div class="pkg-for" data-i18n="pkg.2.for">Biplaza para dos adultos de complexión grande. El más potente.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row0.lbl">1 hora</span><span><strong>$2,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row1.lbl">Media hora</span><span><strong>$1,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.2.inc.0">2 plazas · dos adultos</li>
+                    <li data-i18n="pkg.2.inc.1">La mayor potencia de la flota</li>
+                    <li data-i18n="pkg.2.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.2.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.2.extra">El más <strong>cómodo y potente</strong> para dos adultos</div>
+                <a href="#" class="pkg-cta" onclick="openModal('grande'); return false;" data-i18n="pkg.2.cta">Reservar este modelo</a>
+            </div>
+
+        </div>
+
+        <!-- includes strip -->
+        <div class="jet-chips reveal">
+            <span class="jet-chip" data-i18n="jet.chip.0">✓ Chaleco salvavidas</span>
+            <span class="jet-chip" data-i18n="jet.chip.1">✓ Inducción de manejo</span>
+            <span class="jet-chip" data-i18n="jet.chip.2">✓ Gasolina incluida</span>
+            <span class="jet-chip" data-i18n="jet.chip.3">✓ Zona supervisada</span>
+        </div>
+
+        <!-- reservation steps -->
+        <div class="steps-block reveal">
+            <div class="steps-head">
+                <div class="eyebrow" data-i18n="steps.eyebrow">Cómo reservar</div>
+                <h3 class="steps-title" data-i18n="steps.title">Reserva en <em>4 pasos</em></h3>
+            </div>
+            <ol class="step-list">
+                <li data-i18n="steps.0">Escríbenos por WhatsApp con el modelo y el horario que quieres.</li>
+                <li data-i18n="steps.1">Confirmamos la disponibilidad de los jetskis con el encargado.</li>
+                <li data-i18n="steps.2">Pagas en el remolque (tarjeta o efectivo) o a distancia por transferencia (envías tu comprobante para apartar).</li>
+                <li data-i18n="steps.3">Al recibir la unidad dejas una identificación y firmas un contrato (te haces responsable por daños).</li>
+            </ol>
+        </div>
+
+        <!-- rules -->
+        <div class="rules-block reveal">
+            <div class="pay-card">
+                <div class="pay-card-head">
+                    <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+                    <div class="pay-card-title" data-i18n="rules.title">Reglas e instrucciones</div>
+                </div>
+                <ul class="rule-list">
+                    <li data-i18n="rules.0">Identificación oficial vigente para rentar; se deja durante el tiempo de renta. Edad mínima 18 años para manejar.</li>
+                    <li data-i18n="rules.1">Uso obligatorio del chaleco salvavidas durante todo el recorrido.</li>
+                    <li data-i18n="rules.2">Prohibido operar bajo efectos de alcohol o cualquier sustancia.</li>
+                    <li data-i18n="rules.3">Respeta la zona delimitada por boyas y guarda distancia de bañistas y embarcaciones.</li>
+                    <li data-i18n="rules.4">Recibes una inducción de manejo antes de salir. Velocidad moderada al entrar y salir de la orilla.</li>
+                    <li data-i18n="rules.5">Se firma un contrato en el que el cliente se hace responsable por cualquier daño al vehículo.</li>
+                    <li data-i18n="rules.6">El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.</li>
+                    <li data-i18n="rules.7">Menores de edad solo a bordo acompañados por un adulto responsable.</li>
+                    <li data-i18n="rules.8">Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div><div class="stat-val">Renta</div><div class="stat-lbl" data-i18n="stats.2.lbl">por hora o media hora</div></div>
-    </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><div class="stat-val">Mar de Cortés</div><div class="stat-lbl" data-i18n="stats.3.lbl">San Carlos, Sonora</div></div>
-    </div>
-</div>
+</section>
 
 <!-- EXPERIENCE CAROUSEL -->
 <section class="section carousel-section" id="experiencia">
@@ -127,48 +248,6 @@
     </div>
 </section>
 
-<!-- INCLUDED -->
-<section class="section included-section">
-    <div class="section-inner">
-        <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="inc.eyebrow">Incluido en tu renta</div>
-            <h2 class="h2" data-i18n="inc.title">Todo listo<br><em>para salir</em></h2>
-        </div>
-        <div class="included-grid reveal">
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                <div class="inc-name" data-i18n="inc.0.name">Jetski Sea-Doo</div>
-                <div class="inc-desc" data-i18n="inc.0.desc">Moto acuática mantenida al día y lista para el agua. Tres modelos para cada tipo de rider.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <div class="inc-name" data-i18n="inc.1.name">Chaleco salvavidas</div>
-                <div class="inc-desc" data-i18n="inc.1.desc">Certificado y ajustable. Obligatorio durante todo el recorrido — la seguridad va primero.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
-                <div class="inc-name" data-i18n="inc.2.name">Inducción de manejo</div>
-                <div class="inc-desc" data-i18n="inc.2.desc">Antes de salir te explicamos cómo operar la unidad y las reglas de la zona. Fácil y rápido.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-                <div class="inc-name" data-i18n="inc.3.name">Gasolina incluida</div>
-                <div class="inc-desc" data-i18n="inc.3.desc">La unidad sale con combustible para tu tiempo contratado. Sin cargos escondidos.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                <div class="inc-name" data-i18n="inc.4.name">Zona supervisada</div>
-                <div class="inc-desc" data-i18n="inc.4.desc">Área delimitada por boyas y personal atento desde la playa mientras estás en el agua.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2"/></svg></div>
-                <div class="inc-name" data-i18n="inc.5.name">Playa Algodones</div>
-                <div class="inc-desc" data-i18n="inc.5.desc">Salimos desde una de las playas más hermosas del Mar de Cortés, en San Carlos.</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- SEA-DOO STRIP -->
 <div class="seadoo-section">
     <span class="seadoo-section-text" data-i18n="seadoo.pre">Operamos exclusivamente con</span>
@@ -179,77 +258,6 @@
     <span class="seadoo-section-text" data-i18n="seadoo.post">equipos de última generación</span>
 </div>
 
-<!-- FLEET / MODELS -->
-<section class="section packages-section" id="modelos">
-    <div class="section-inner">
-        <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="pkg.eyebrow">Los modelos</div>
-            <h2 class="h2" data-i18n="pkg.title">Elige tu<br><em>jetski</em></h2>
-            <p class="body-text" data-i18n="pkg.body">Tres modelos según cuántos van y qué complexión. Precios en pesos, por hora o media hora. El tiempo corre desde que se entrega la unidad.</p>
-        </div>
-        <div class="packages-grid reveal">
-
-            <!-- Chico -->
-            <div class="pkg-card">
-                <div class="pkg-photo"><img src="assets/modelo-chico.jpg" alt="Jetski Chico"></div>
-                <div class="pkg-name" data-i18n="pkg.0.name">Chico</div>
-                <div class="pkg-for" data-i18n="pkg.0.for">Ideal para una persona, o dos de complexión muy ligera.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.0.row0.lbl">1 hora</span><span><strong>$1,700</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.0.row1.lbl">Media hora</span><span><strong>$1,000</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.0.inc.0">1 plaza · ideal para 1 persona</li>
-                    <li data-i18n="pkg.0.inc.1">Ágil y fácil de manejar</li>
-                    <li data-i18n="pkg.0.inc.2">Chaleco e inducción incluidos</li>
-                    <li data-i18n="pkg.0.inc.3">Gasolina incluida</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.0.extra">La opción más <strong>económica</strong> para estrenarte en el agua</div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('chico'); return false;" data-i18n="pkg.0.cta">Reservar este modelo</a>
-            </div>
-
-            <!-- Mediano -->
-            <div class="pkg-card">
-                <div class="pkg-photo"><img src="assets/modelo-mediano.jpg" alt="Jetski Mediano"></div>
-                <div class="pkg-name" data-i18n="pkg.1.name">Mediano</div>
-                <div class="pkg-for" data-i18n="pkg.1.for">Para dos personas de complexión ligera que quieren ir juntas.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.1.row0.lbl">1 hora</span><span><strong>$1,900</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.1.row1.lbl">Media hora</span><span><strong>$1,300</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.1.inc.0">2 plazas · complexión ligera</li>
-                    <li data-i18n="pkg.1.inc.1">Estable y con buena potencia</li>
-                    <li data-i18n="pkg.1.inc.2">Chaleco e inducción incluidos</li>
-                    <li data-i18n="pkg.1.inc.3">Gasolina incluida</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.1.extra">El <strong>equilibrio</strong> entre espacio y precio</div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('mediano'); return false;" data-i18n="pkg.1.cta">Reservar este modelo</a>
-            </div>
-
-            <!-- Grande -->
-            <div class="pkg-card featured">
-                <div class="pkg-photo"><span class="pkg-badge" data-i18n="pkg.2.badge">El más pedido</span><img src="assets/modelo-grande.jpg" alt="Jetski Grande"></div>
-                <div class="pkg-name" data-i18n="pkg.2.name">Grande</div>
-                <div class="pkg-for" data-i18n="pkg.2.for">Biplaza para dos adultos de complexión grande. El más potente.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.2.row0.lbl">1 hora</span><span><strong>$2,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.2.row1.lbl">Media hora</span><span><strong>$1,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
-                </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.2.inc.0">2 plazas · dos adultos</li>
-                    <li data-i18n="pkg.2.inc.1">La mayor potencia de la flota</li>
-                    <li data-i18n="pkg.2.inc.2">Chaleco e inducción incluidos</li>
-                    <li data-i18n="pkg.2.inc.3">Gasolina incluida</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.2.extra">El más <strong>cómodo y potente</strong> para dos adultos</div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('grande'); return false;" data-i18n="pkg.2.cta">Reservar este modelo</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
 <!-- BANANA RIDE -->
 <section class="banana-section" id="banana">
     <div class="section-inner banana-grid reveal">
@@ -257,14 +265,14 @@
             <img src="assets/paseo-banana.jpg" alt="Paseo en banana por la bahía">
         </div>
         <div class="banana-info">
-            <div class="eyebrow" data-i18n="banana.eyebrow">Otro servicio</div>
+            <div class="eyebrow" data-i18n="banana.eyebrow">Paseo en banana</div>
             <h2 class="h2" data-i18n="banana.title">Paseo en<br><em>banana</em></h2>
             <p class="body-text" data-i18n="banana.body">Un recorrido divertido por la bahía, ideal para ir en grupo. Diversión asegurada con chaleco y personal atento.</p>
             <ul class="banana-facts">
                 <li data-i18n="banana.f0"><strong>$100 MXN</strong> por persona</li>
                 <li data-i18n="banana.f1">Recorrido por la bahía · 10–15 min</li>
-                <li data-i18n="banana.f2">Mínimo 5 · máximo 7 personas</li>
-                <li data-i18n="banana.f3">Hasta 8 si son de complexión chica o niños</li>
+                <li data-i18n="banana.f2">Grupos de 5 a 7 personas</li>
+                <li data-i18n="banana.f3">¿Menos de 5? Cubren $500 (5 lugares) y salen igual, o los sumamos a otro viaje por WhatsApp.</li>
             </ul>
             <a href="#" class="btn-primary" onclick="bookBanana(); return false;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
@@ -274,17 +282,49 @@
     </div>
 </section>
 
-<!-- PAYMENT + RULES -->
+<!-- SOMBRAS -->
+<section class="section offer-section" id="sombras">
+    <div class="section-inner offer reveal">
+        <div class="offer-icon">⛱️</div>
+        <div class="offer-body">
+            <div class="eyebrow" data-i18n="sombra.eyebrow">Renta de sombras</div>
+            <h2 class="h2" data-i18n="sombra.title">Renta de<br><em>sombras</em></h2>
+            <p class="body-text" data-i18n="sombra.body">Renta una sombra y disfruta la playa cómodo todo el día. Pregunta en el remolque o resérvala por WhatsApp.</p>
+            <div class="offer-price"><strong data-i18n="sombra.price">$400</strong> <span data-i18n="sombra.per">MXN · todo el día o tu estadía</span></div>
+            <a href="#" class="btn-primary" onclick="bookSombra(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="sombra.cta">Rentar sombra</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FUNDAS -->
+<section class="section offer-section offer-alt" id="fundas">
+    <div class="section-inner offer reveal">
+        <div class="offer-icon">📱</div>
+        <div class="offer-body">
+            <div class="eyebrow" data-i18n="funda.eyebrow">Fundas contra el agua</div>
+            <h2 class="h2" data-i18n="funda.title">Fundas<br><em>contra el agua</em></h2>
+            <p class="body-text" data-i18n="funda.body">Protege tu celular en el agua. Pásate al remolque o pídela por WhatsApp y te la llevamos a tu lugar.</p>
+            <div class="offer-price"><strong data-i18n="funda.price">$100</strong> <span data-i18n="funda.per">MXN · cada una</span></div>
+            <a href="#" class="btn-primary" onclick="bookFunda(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="funda.cta">Pedir funda</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PAYMENT (transfer) -->
 <section class="section pay-section" id="pago">
     <div class="section-inner">
         <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="pay.eyebrow">Pago y reglas</div>
+            <div class="eyebrow" data-i18n="pay.eyebrow">Pago a distancia</div>
             <h2 class="h2" data-i18n="pay.title">Pago por<br><em>transferencia</em></h2>
-            <p class="body-text" data-i18n="pay.body">Aparta tu horario con transferencia. Aquí están los datos para el pago y las reglas para el manejo de los jetskis.</p>
+            <p class="body-text" data-i18n="pay.body">¿Reservas a distancia? Primero confirmamos disponibilidad por WhatsApp y luego apartas con transferencia. En el remolque también aceptamos tarjeta y efectivo.</p>
         </div>
-        <div class="pay-grid reveal">
-
-            <!-- Transfer details -->
+        <div class="pay-single reveal">
             <div class="pay-card">
                 <div class="pay-card-head">
                     <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
@@ -297,31 +337,36 @@
                     <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.cuenta">Tarjeta / Cuenta</span><span class="pay-val">[ NÚMERO ]</span></div>
                     <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.concepto">Concepto</span><span class="pay-val" data-i18n="pay.val.concepto">Tu nombre + fecha</span></div>
                 </div>
-                <p class="pay-note" data-i18n="pay.note">Envía tu comprobante por WhatsApp para confirmar. El horario se aparta hasta recibir el comprobante de la transferencia.</p>
+                <p class="pay-note" data-i18n="pay.note">Confirma disponibilidad antes de transferir. Envía tu comprobante por WhatsApp para apartar tu horario.</p>
             </div>
-
-            <!-- Rules -->
-            <div class="pay-card">
-                <div class="pay-card-head">
-                    <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-                    <div class="pay-card-title" data-i18n="rules.title">Reglas e instrucciones</div>
-                </div>
-                <ul class="rule-list">
-                    <li data-i18n="rules.0">Identificación oficial vigente para rentar. Edad mínima 18 años para manejar.</li>
-                    <li data-i18n="rules.1">Uso obligatorio del chaleco salvavidas durante todo el recorrido.</li>
-                    <li data-i18n="rules.2">Prohibido operar bajo efectos de alcohol o cualquier sustancia.</li>
-                    <li data-i18n="rules.3">Respeta la zona delimitada por boyas y guarda distancia de bañistas y embarcaciones.</li>
-                    <li data-i18n="rules.4">Recibes una inducción de manejo antes de salir. Velocidad moderada al entrar y salir de la orilla.</li>
-                    <li data-i18n="rules.5">El cliente es responsable por daños al equipo por mal uso. Se solicita depósito en garantía.</li>
-                    <li data-i18n="rules.6">El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.</li>
-                    <li data-i18n="rules.7">Menores de edad solo a bordo acompañados por un adulto responsable.</li>
-                    <li data-i18n="rules.8">Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.</li>
-                </ul>
-            </div>
-
         </div>
     </div>
 </section>
+
+<!-- REMOLQUE / HOW TO FIND US -->
+<section class="section remolque-section" id="remolque">
+    <div class="section-inner reveal remolque-inner">
+        <div class="eyebrow" data-i18n="rem.eyebrow">Cómo llegar</div>
+        <h2 class="h2" data-i18n="rem.title">Estamos al<br><em>centro de la playa</em></h2>
+        <p class="body-text" data-i18n="rem.body">Búscanos en nuestro remolque, justo al centro de la Playa Algodones. Ahí rentas, pagas y recoges todo.</p>
+        <div class="rem-bath" data-i18n="rem.bath">🚻 Los baños están en el área de estacionamiento.</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Playa+Algodones+San+Carlos+Sonora" target="_blank" rel="noopener" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="rem.cta">Ver Playa Algodones en el mapa</span>
+        </a>
+    </div>
+</section>
+
+<!-- BEACH CARE -->
+<div class="beach-care">
+    <div class="beach-care-inner reveal">
+        <div class="care-icon">🌊</div>
+        <div>
+            <div class="care-title" data-i18n="care.title">Cuida la playa</div>
+            <div class="care-body" data-i18n="care.body">Ayúdanos a mantener Playa Algodones limpia: llévate tu basura al salir. Gracias por cuidar el Mar de Cortés.</div>
+        </div>
+    </div>
+</div>
 
 <!-- TESTIMONIALS -->
 <section class="section testi-section">
@@ -353,38 +398,30 @@
     </div>
 </section>
 
-<!-- BOOKING CTA -->
-<section class="booking-section" id="reservar">
-    <div class="booking-card reveal">
-        <div class="eyebrow" style="justify-content:center; margin-bottom:12px;" data-i18n="booking.eyebrow">Reserva tu horario</div>
-        <div class="booking-price" data-i18n="booking.price">$1,000</div>
-        <div class="booking-per" data-i18n="booking.per">MXN desde · media hora en el jetski chico</div>
-        <div class="booking-actions">
-            <a href="#" class="btn-wa" onclick="openModal(); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <span data-i18n="booking.cta">Reservar por WhatsApp</span>
-            </a>
-            <div class="booking-divider"></div>
-            <a href="https://www.instagram.com/algodonesrentals" target="_blank" rel="noopener" class="btn-ig">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-                @algodonesrentals
-            </a>
-        </div>
-        <p class="booking-note" data-i18n="booking.note">Respuesta en menos de <strong>2 horas</strong> · Horarios disponibles 7 días a la semana · Apartas con <strong>transferencia</strong></p>
-    </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
     <div>
         <div class="foot-brand">Algodones Rentals</div>
         <div class="foot-loc">Playa Algodones · San Carlos, Sonora · México</div>
+        <div class="foot-future" data-i18n="footer.future">¿Tienes un negocio en la playa? Pronto podrás anunciarte aquí.</div>
     </div>
     <div class="foot-right">
-        <span data-i18n="footer.tagline">Renta de jetski en el Mar de Cortés</span><br>
+        <span data-i18n="footer.tagline">Jetskis, banana, sombras y fundas en Playa Algodones</span><br>
         +52 622 176 3312 · @algodonesrentals
     </div>
 </footer>
+
+<!-- STICKY ACTION BAR (mobile) -->
+<div class="sticky-actionbar">
+    <a href="#" class="sab-btn sab-wa" onclick="bookGeneral(); return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="bar.wa">WhatsApp</span>
+    </a>
+    <a href="#remolque" class="sab-btn sab-map">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-i18n="bar.map">Cómo llegar</span>
+    </a>
+</div>
 
 <!-- MODAL -->
 <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
@@ -393,7 +430,7 @@
 
         <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals</div>
         <h2 class="modal-title" data-i18n="modal.title">Reserva tu<br><em>jetski</em></h2>
-        <p class="modal-sub" data-i18n="modal.sub">Te enviamos confirmación por WhatsApp en menos de 2 horas.</p>
+        <p class="modal-sub" data-i18n="modal.sub">Te confirmamos disponibilidad por WhatsApp. Al recibir la unidad dejas ID y firmas contrato.</p>
 
         <form onsubmit="submitBooking(event)">
             <div class="form-row">
@@ -443,7 +480,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                 <span data-i18n="modal.submit">Enviar por WhatsApp</span>
             </button>
-            <p class="modal-legal" data-i18n="modal.legal">Apartas con transferencia · Confirmación en 2 hrs</p>
+            <p class="modal-legal" data-i18n="modal.legal">Confirmamos disponibilidad · Pago en remolque o transferencia · ID + contrato al recibir</p>
         </form>
     </div>
 </div>

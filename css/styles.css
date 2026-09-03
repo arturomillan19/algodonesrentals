@@ -1501,6 +1501,280 @@ footer {
     line-height: 1.6;
 }
 
+/* ─── HERO LOCATOR CHIP ───────────────────────────────────────────────────── */
+.hero-locator {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 26px;
+    padding: 9px 16px;
+    border-radius: 100px;
+    background: rgba(6, 17, 30, 0.55);
+    border: 1px solid var(--border-strong);
+    backdrop-filter: blur(10px);
+    font-family: var(--font-sub);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.02em;
+}
+
+/* ─── SERVICE MENU ────────────────────────────────────────────────────────── */
+.menu-section { background: var(--deep); }
+.service-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 44px;
+}
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px 20px;
+    background: rgba(6, 17, 30, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-decoration: none;
+    transition: transform 0.25s, border-color 0.25s, background 0.25s;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    background: rgba(10, 171, 184, 0.06);
+}
+.service-emoji { font-size: 2.1rem; line-height: 1; margin-bottom: 6px; }
+.service-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    line-height: 1.05;
+}
+.service-price {
+    font-family: var(--font-sub);
+    font-size: 0.82rem;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+}
+
+/* ─── JETSKI INCLUDES CHIPS ───────────────────────────────────────────────── */
+.jet-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 32px;
+}
+.jet-chip {
+    font-family: var(--font-sub);
+    font-size: 0.78rem;
+    color: rgba(244, 248, 250, 0.7);
+    background: rgba(10, 171, 184, 0.08);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+}
+
+/* ─── RESERVATION STEPS ───────────────────────────────────────────────────── */
+.steps-block { margin-top: 56px; }
+.steps-head { margin-bottom: 28px; }
+.steps-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1;
+}
+.steps-title em { font-style: normal; color: var(--teal); }
+
+.step-list {
+    list-style: none;
+    counter-reset: step;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.step-list li {
+    counter-increment: step;
+    position: relative;
+    padding: 22px 22px 22px 60px;
+    background: rgba(6, 17, 30, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    font-family: var(--font-sub);
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(244, 248, 250, 0.7);
+}
+.step-list li::before {
+    content: counter(step);
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── RULES BLOCK (inside jetskis) ────────────────────────────────────────── */
+.rules-block { margin-top: 20px; max-width: 760px; }
+
+/* ─── OFFER SECTIONS (sombras / fundas) ───────────────────────────────────── */
+.offer-section { background: var(--ink); }
+.offer-section.offer-alt { background: var(--deep); }
+.offer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.offer-icon {
+    flex-shrink: 0;
+    width: 120px; height: 120px;
+    border-radius: 28px;
+    background: rgba(10, 171, 184, 0.08);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.4rem;
+}
+.offer-body { flex: 1; }
+.offer-body .h2 { margin-bottom: 14px; }
+.offer-body .body-text { margin-bottom: 18px; }
+.offer-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.offer-price strong {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+.offer-price span {
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.02em;
+}
+
+/* single centered pay card */
+.pay-single { max-width: 620px; margin: 52px auto 0; }
+
+/* ─── REMOLQUE / FIND US ──────────────────────────────────────────────────── */
+.remolque-section {
+    background: var(--ink);
+    border-top: 1px solid var(--border);
+}
+.remolque-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+.remolque-inner .eyebrow { justify-content: center; }
+.remolque-inner .body-text { margin: 0 auto; }
+.rem-bath {
+    display: inline-block;
+    margin: 22px 0 28px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: rgba(10, 171, 184, 0.08);
+    border: 1px solid var(--border);
+    font-family: var(--font-sub);
+    font-size: 0.85rem;
+    color: rgba(244, 248, 250, 0.75);
+}
+
+/* ─── BEACH CARE ──────────────────────────────────────────────────────────── */
+.beach-care {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px var(--gutter);
+}
+.beach-care-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.care-icon {
+    flex-shrink: 0;
+    font-size: 2.2rem;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: rgba(10, 171, 184, 0.1);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.care-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+.care-body {
+    font-family: var(--font-sub);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(244, 248, 250, 0.55);
+}
+
+/* ─── FOOTER FUTURE TEASER ────────────────────────────────────────────────── */
+.foot-future {
+    font-family: var(--font-sub);
+    font-size: 0.68rem;
+    color: rgba(10, 171, 184, 0.55);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+}
+
+/* ─── STICKY ACTION BAR (mobile) ──────────────────────────────────────────── */
+.sticky-actionbar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 300;
+    display: none;
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(4, 10, 18, 0.92);
+    backdrop-filter: blur(18px);
+    border-top: 1px solid var(--border-strong);
+}
+.sab-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 12px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.sab-btn svg { width: 20px; height: 20px; }
+.sab-wa { background: var(--coral); color: #fff; }
+.sab-map { background: rgba(255, 255, 255, 0.06); color: var(--white); border: 1px solid var(--border-strong); }
+
 /* ─── SCROLL REVEAL ───────────────────────────────────────────────────────── */
 .reveal {
     opacity: 0;
@@ -1510,6 +1784,11 @@ footer {
 .reveal.visible { opacity: 1; transform: none; }
 
 /* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+/* wide screens: service menu in a single row */
+@media (min-width: 760px) {
+    .service-menu { grid-template-columns: repeat(4, 1fr); }
+}
+
 @media (max-width: 1024px) {
     .video-container { grid-template-columns: repeat(2, 1fr); }
     .exp-grid {
@@ -1536,6 +1815,16 @@ footer {
     .foot-right { text-align: center; }
     .exp-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
     .exp-photo { height: 260px; }
+
+    /* menu-hub components */
+    .step-list { grid-template-columns: 1fr; }
+    .offer { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .offer-icon { width: 88px; height: 88px; font-size: 2.6rem; border-radius: 22px; }
+    .beach-care-inner { flex-direction: row; text-align: left; }
+
+    /* sticky action bar shows on mobile/tablet */
+    .sticky-actionbar { display: flex; }
+    body { padding-bottom: 76px; }
 }
 
 @media (max-width: 600px) {
@@ -1546,4 +1835,5 @@ footer {
     .modal { padding: 32px 20px 28px; }
     .form-row { grid-template-columns: 1fr; }
     .exp-toggle { flex-direction: column; }
+    .service-name { font-size: 1.02rem; }
 }

@@ -93,11 +93,15 @@ function submitBooking(e) {
     closeModal();
 }
 
-// ── BANANA RIDE → WhatsApp
-function bookBanana() {
-    const msg = t('wa.banana');
-    window.open(`https://wa.me/526221763312?text=${encodeURIComponent(msg)}`, '_blank');
+// ── WHATSAPP SHORTCUTS (banana, sombras, fundas, general)
+const WA_NUMBER = '526221763312';
+function waOpen(key) {
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t(key))}`, '_blank');
 }
+function bookGeneral() { waOpen('wa.general'); }
+function bookBanana()  { waOpen('wa.banana'); }
+function bookSombra()  { waOpen('wa.sombra'); }
+function bookFunda()   { waOpen('wa.funda'); }
 
 // ── EXPERIENCE CAROUSEL
 let carIndex = 0;
