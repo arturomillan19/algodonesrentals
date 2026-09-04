@@ -199,6 +199,9 @@ const TRANSLATIONS = {
         "veh.remove": "Quitar",
         "veh.empty": "Agrega tu primer vehículo 👇",
         "veh.tbd": "por confirmar",
+        "bulk.label": "Mismo horario para todos",
+        "bulk.apply": "Aplicar a todos",
+        "bulk.hint": "O ajusta cada vehículo por separado abajo.",
 
         // WHATSAPP MESSAGES
         "wa.greeting": "Hola, quiero reservar jetskis en Algodones Rentals.",
@@ -418,6 +421,9 @@ const TRANSLATIONS = {
         "veh.remove": "Remove",
         "veh.empty": "Add your first vehicle 👇",
         "veh.tbd": "to confirm",
+        "bulk.label": "Same time for all",
+        "bulk.apply": "Apply to all",
+        "bulk.hint": "Or adjust each vehicle separately below.",
 
         // WHATSAPP MESSAGES
         "wa.greeting": "Hi, I'd like to reserve jetskis at Algodones Rentals.",

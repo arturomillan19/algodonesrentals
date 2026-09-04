@@ -1845,6 +1845,54 @@ footer {
 }
 
 /* ─── RESERVATION CART — vehicle builder (modal) ──────────────────────────── */
+/* "same time for all" shortcut (gold accent so it stands out) */
+.veh-bulk {
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: rgba(201,148,58,0.09);
+    border: 1px dashed rgba(201,148,58,0.45);
+}
+.veh-bulk-lbl {
+    display: block;
+    font-family: var(--font-sub);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+.veh-bulk-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.veh-bulk-fields .form-select,
+.veh-bulk-fields .form-input { padding: 10px 12px; font-size: 0.82rem; }
+.veh-bulk-apply {
+    grid-column: 1 / -1;
+    padding: 11px 16px;
+    border-radius: 10px;
+    border: none;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+}
+.veh-bulk-apply:hover { background: #d8a44a; transform: translateY(-1px); }
+.veh-bulk-hint {
+    display: block;
+    margin-top: 9px;
+    font-family: var(--font-sub);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+}
+
 .veh-list { display: flex; flex-direction: column; gap: 12px; }
 .veh-empty {
     padding: 20px;

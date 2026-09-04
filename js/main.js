@@ -124,6 +124,15 @@ function removeVehicle(id) {
     renderCart();
 }
 
+// apply one shared duration + time to every vehicle (keeps per-vehicle editing available)
+function applyToAll() {
+    if (vehicles.length === 0) return;
+    const dur  = document.getElementById('bulk-dur').value;
+    const hora = document.getElementById('bulk-hora').value;
+    vehicles.forEach(v => { v.dur = dur; if (hora) v.hora = hora; });
+    renderCart();
+}
+
 function setVeh(id, field, value) {
     const v = vehicles.find(x => x.id === id);
     if (!v) return;

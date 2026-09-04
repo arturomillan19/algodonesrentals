@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=5" />
+    <link rel="stylesheet" href="css/styles.css?v=6" />
 </head>
 <body>
 
@@ -461,6 +461,20 @@
 
             <div class="form-group">
                 <label class="form-label" data-i18n="cart.choose">Tus vehículos</label>
+
+                <div class="veh-bulk">
+                    <span class="veh-bulk-lbl">⏱️ <span data-i18n="bulk.label">Mismo horario para todos</span></span>
+                    <div class="veh-bulk-fields">
+                        <select id="bulk-dur" class="form-select">
+                            <option value="media" data-i18n-val="modal.dur.1">Media hora</option>
+                            <option value="hora" data-i18n-val="modal.dur.0">1 hora</option>
+                        </select>
+                        <input type="time" id="bulk-hora" class="form-input" />
+                        <button type="button" class="veh-bulk-apply" onclick="applyToAll()" data-i18n="bulk.apply">Aplicar a todos</button>
+                    </div>
+                    <span class="veh-bulk-hint" data-i18n="bulk.hint">O ajusta cada vehículo por separado abajo.</span>
+                </div>
+
                 <div class="veh-list" id="vehList"></div>
                 <button type="button" class="veh-add" onclick="addVehicle()">
                     <span class="veh-add-plus">+</span>
@@ -497,7 +511,7 @@
     </div>
 </div>
 
-<script src="js/i18n.js?v=5"></script>
-<script src="js/main.js?v=5"></script>
+<script src="js/i18n.js?v=6"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>
