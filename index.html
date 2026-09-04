@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=8" />
+    <link rel="stylesheet" href="css/styles.css?v=9" />
 </head>
 <body>
 
@@ -282,7 +282,7 @@
 <section class="banana-section" id="banana">
     <div class="section-inner banana-grid reveal">
         <div class="banana-media">
-            <img src="assets/paseo-banana.jpg" alt="Paseo en banana por la bahía">
+            <video autoplay muted loop playsinline><source src="assets/banana.mp4?v=9" type="video/mp4"></video>
         </div>
         <div class="banana-info">
             <div class="eyebrow" data-i18n="banana.eyebrow">Paseo en banana</div>
@@ -299,6 +299,12 @@
                 <span data-i18n="banana.cta">Reservar paseo</span>
             </a>
         </div>
+    </div>
+    <div class="section-inner banana-gallery reveal">
+        <img src="assets/banana-1.jpg?v=9" alt="Paseo en banana en la bahía" loading="lazy">
+        <img src="assets/banana-2.jpg?v=9" alt="Paseo en banana al atardecer" loading="lazy">
+        <img src="assets/banana-3.jpg?v=9" alt="Paseo en banana en familia" loading="lazy">
+        <img src="assets/banana-4.jpg?v=9" alt="Paseo en banana en el Mar de Cortés" loading="lazy">
     </div>
 </section>
 
@@ -389,6 +395,11 @@
             <li data-i18n="rem.ben.2">Rampas de madera con acceso para silla de ruedas</li>
         </ul>
 
+        <figure class="rem-photo rem-video">
+            <video autoplay muted loop playsinline><source src="assets/remolque.mp4?v=9" type="video/mp4"></video>
+            <figcaption data-i18n="rem.video.caption">Nuestro lugar en la playa: aquí rentas y pagas en efectivo.</figcaption>
+        </figure>
+
         <div class="rem-address" data-i18n="rem.address">Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México</div>
         <div class="rem-bath" data-i18n="rem.bath">🚻 Los baños están en el área de estacionamiento.</div>
         <a href="https://www.google.com/maps/search/?api=1&query=Playa+Algodones+San+Carlos+Sonora" target="_blank" rel="noopener" class="btn-primary">
@@ -442,7 +453,7 @@
 <!-- FOOTER -->
 <footer>
     <div>
-        <div class="foot-brand">Algodones Rentals</div>
+        <img class="foot-logo" src="assets/logo.jpg?v=9" alt="Algodones Rentals" />
         <div class="foot-loc">Playa Algodones · San Carlos, Sonora · México</div>
         <div class="foot-future" data-i18n="footer.future">¿Tienes un negocio en la playa? Pronto podrás anunciarte aquí.</div>
     </div>
@@ -532,7 +543,7 @@
     </div>
 </div>
 
-<script src="js/i18n.js?v=8"></script>
-<script src="js/main.js?v=8"></script>
+<script src="js/i18n.js?v=9"></script>
+<script src="js/main.js?v=9"></script>
 </body>
 </html>
