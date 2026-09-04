@@ -63,6 +63,12 @@
     </div>
 </section>
 
+<!-- DISCOUNT BANNER -->
+<a href="#jetskis" class="discount-banner" onclick="openModal(); return false;">
+    <span class="db-badge">−10%</span>
+    <span class="db-text" data-i18n="promo.banner">Reserva en línea y llévate <strong>10% de descuento</strong> en todos los servicios</span>
+</a>
+
 <!-- SERVICE MENU -->
 <section class="section menu-section" id="menu">
     <div class="section-inner">
@@ -72,21 +78,25 @@
         </div>
         <div class="service-menu reveal">
             <a href="#jetskis" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
                 <div class="service-emoji">🛥️</div>
                 <div class="service-name" data-i18n="menu.jetski.name">Jetskis</div>
                 <div class="service-price" data-i18n="menu.jetski.price">desde $1,000 · ½ hora</div>
             </a>
             <a href="#banana" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
                 <div class="service-emoji">🍌</div>
                 <div class="service-name" data-i18n="menu.banana.name">Paseo en banana</div>
                 <div class="service-price" data-i18n="menu.banana.price">$100 · por persona</div>
             </a>
             <a href="#sombras" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
                 <div class="service-emoji">⛱️</div>
                 <div class="service-name" data-i18n="menu.sombra.name">Renta de sombras</div>
                 <div class="service-price" data-i18n="menu.sombra.price">$400 · el día</div>
             </a>
             <a href="#fundas" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
                 <div class="service-emoji">📱</div>
                 <div class="service-name" data-i18n="menu.funda.name">Fundas contra el agua</div>
                 <div class="service-price" data-i18n="menu.funda.price">$100 · cada una</div>
@@ -428,50 +438,80 @@
     <div class="modal">
         <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&#x2715;</button>
 
-        <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals</div>
-        <h2 class="modal-title" data-i18n="modal.title">Reserva tu<br><em>jetski</em></h2>
-        <p class="modal-sub" data-i18n="modal.sub">Te confirmamos disponibilidad por WhatsApp. Al recibir la unidad dejas ID y firmas contrato.</p>
+        <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals · 10% en línea</div>
+        <h2 class="modal-title" data-i18n="modal.title">Reserva tus<br><em>jetskis</em></h2>
+        <p class="modal-sub" data-i18n="modal.sub">Elige cuántos y de qué modelo. Confirmamos disponibilidad por WhatsApp; al recibir dejas ID y firmas contrato.</p>
 
         <form onsubmit="submitBooking(event)">
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label" for="f-nombre" data-i18n="modal.nombre">Nombre</label>
-                    <input class="form-input" type="text" id="f-nombre" name="nombre" required
-                           data-i18n-placeholder="modal.nombre" placeholder="Nombre" autocomplete="given-name" />
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="f-personas" data-i18n="modal.personas">Personas</label>
-                    <select class="form-select" id="f-personas" name="personas" required>
-                        <option value="">—</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
+            <div class="form-group">
+                <label class="form-label" for="f-nombre" data-i18n="modal.nombre">Nombre</label>
+                <input class="form-input" type="text" id="f-nombre" name="nombre" required
+                       data-i18n-placeholder="modal.nombre" placeholder="Nombre" autocomplete="given-name" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" data-i18n="modal.duracion">Duración (para todos)</label>
+                <div class="exp-toggle">
+                    <button type="button" class="exp-btn" onclick="selectDur(this)" data-dur="hora" data-i18n="modal.dur.0">1 hora</button>
+                    <button type="button" class="exp-btn selected" onclick="selectDur(this)" data-dur="media" data-i18n="modal.dur.1">Media hora</button>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="f-modelo" data-i18n="modal.modelo">Modelo</label>
-                <select class="form-select" id="f-modelo" name="modelo" required>
-                    <option value="" data-i18n-val="modal.modelo.placeholder">Elige un modelo</option>
-                    <option value="Chico" data-i18n-val="modal.modelo.0">Chico — 1 persona ($1,700 hr / $1,000 ½ hr)</option>
-                    <option value="Mediano" data-i18n-val="modal.modelo.1">Mediano — 2 ligeras ($1,900 hr / $1,300 ½ hr)</option>
-                    <option value="Grande" data-i18n-val="modal.modelo.2">Grande — 2 adultos ($2,500 hr / $1,500 ½ hr)</option>
-                </select>
+                <label class="form-label" data-i18n="cart.choose">Elige tus jetskis</label>
+                <div class="cart-rows">
+                    <div class="cart-row" data-model="chico">
+                        <div class="cart-row-info">
+                            <span class="cart-row-name" data-i18n="pkg.0.name">Chico</span>
+                            <span class="cart-row-meta"><span id="up-chico" class="cart-up">$1,000</span> · <span data-i18n="cart.max1">máx 1</span></span>
+                        </div>
+                        <div class="qty-stepper">
+                            <button type="button" onclick="removeUnit('chico')" aria-label="Quitar">−</button>
+                            <span id="qty-chico">0</span>
+                            <button type="button" onclick="addUnit('chico')" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-row" data-model="mediano">
+                        <div class="cart-row-info">
+                            <span class="cart-row-name" data-i18n="pkg.1.name">Mediano</span>
+                            <span class="cart-row-meta"><span id="up-mediano" class="cart-up">$1,300</span> · <span data-i18n="cart.max3">máx 3</span></span>
+                        </div>
+                        <div class="qty-stepper">
+                            <button type="button" onclick="removeUnit('mediano')" aria-label="Quitar">−</button>
+                            <span id="qty-mediano">0</span>
+                            <button type="button" onclick="addUnit('mediano')" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-row" data-model="grande">
+                        <div class="cart-row-info">
+                            <span class="cart-row-name" data-i18n="pkg.2.name">Grande</span>
+                            <span class="cart-row-meta"><span id="up-grande" class="cart-up">$1,500</span> · <span data-i18n="cart.max1">máx 1</span></span>
+                        </div>
+                        <div class="qty-stepper">
+                            <button type="button" onclick="removeUnit('grande')" aria-label="Quitar">−</button>
+                            <span id="qty-grande">0</span>
+                            <button type="button" onclick="addUnit('grande')" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label" data-i18n="modal.duracion">Duración</label>
-                    <div class="exp-toggle">
-                        <button type="button" class="exp-btn" onclick="selectDur(this)" data-val="1 hora" data-i18n="modal.dur.0">1 hora</button>
-                        <button type="button" class="exp-btn" onclick="selectDur(this)" data-val="Media hora" data-i18n="modal.dur.1">Media hora</button>
-                    </div>
-                    <input type="hidden" id="f-duracion" name="duracion" value="" />
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="f-fecha" data-i18n="modal.fecha">Fecha</label>
-                    <input class="form-input" type="date" id="f-fecha" name="fecha" required />
-                </div>
+            <div class="cart-summary">
+                <div class="cart-line"><span data-i18n="cart.subtotal">Subtotal</span><span id="sum-subtotal">$0</span></div>
+                <div class="cart-line cart-line-disc"><span data-i18n="cart.discount">Descuento en línea (10%)</span><span id="sum-discount">−$0</span></div>
+                <div class="cart-line cart-line-total"><span data-i18n="cart.total">Total estimado</span><span id="sum-total">$0</span></div>
+                <p class="cart-note" data-i18n="cart.note">Precio estimado. Confirmamos disponibilidad y total exacto por WhatsApp.</p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="f-fecha" data-i18n="modal.fecha">Fecha</label>
+                <input class="form-input" type="date" id="f-fecha" name="fecha" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="f-notas" data-i18n="modal.notas">Notas (opcional)</label>
+                <input class="form-input" type="text" id="f-notas" name="notas"
+                       data-i18n-placeholder="modal.notas.ph" placeholder="Ej. tiempos distintos por unidad, dudas…" />
             </div>
 
             <div class="modal-divider"></div>
@@ -480,7 +520,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                 <span data-i18n="modal.submit">Enviar por WhatsApp</span>
             </button>
-            <p class="modal-legal" data-i18n="modal.legal">Confirmamos disponibilidad · Pago en remolque o transferencia · ID + contrato al recibir</p>
+            <p class="modal-legal" data-i18n="modal.legal">10% de descuento en línea · Confirmamos disponibilidad · Pago en remolque o transferencia · ID + contrato al recibir</p>
         </form>
     </div>
 </div>

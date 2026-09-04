@@ -1775,6 +1775,148 @@ footer {
 .sab-wa { background: var(--coral); color: #fff; }
 .sab-map { background: rgba(255, 255, 255, 0.06); color: var(--white); border: 1px solid var(--border-strong); }
 
+/* ─── DISCOUNT BANNER + TAGS ──────────────────────────────────────────────── */
+.discount-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, rgba(224,90,43,0.16), rgba(201,148,58,0.14));
+    border-top: 1px solid rgba(224,90,43,0.35);
+    border-bottom: 1px solid rgba(224,90,43,0.35);
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.25s;
+}
+.discount-banner:hover { background: linear-gradient(90deg, rgba(224,90,43,0.24), rgba(201,148,58,0.2)); }
+.db-badge {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.05rem;
+    color: #fff;
+    background: var(--coral);
+    border-radius: 100px;
+    padding: 4px 14px;
+    letter-spacing: 0.02em;
+}
+.db-text {
+    font-family: var(--font-sub);
+    font-size: 0.92rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+.db-text strong { color: var(--gold); }
+
+.service-card { position: relative; }
+.discount-tag {
+    position: absolute;
+    top: 12px; right: 12px;
+    font-family: var(--font-sub);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--coral);
+    background: rgba(224,90,43,0.12);
+    border: 1px solid rgba(224,90,43,0.4);
+    padding: 3px 8px;
+    border-radius: 100px;
+}
+
+/* ─── RESERVATION CART (modal) ────────────────────────────────────────────── */
+.cart-rows { display: flex; flex-direction: column; gap: 8px; }
+.cart-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(10,171,184,0.18);
+    transition: border-color 0.2s, background 0.2s;
+}
+.cart-row.has-qty { border-color: var(--teal); background: rgba(10,171,184,0.08); }
+.cart-row-info { display: flex; flex-direction: column; gap: 2px; }
+.cart-row-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+}
+.cart-row-meta { font-family: var(--font-sub); font-size: 0.74rem; color: rgba(255,255,255,0.45); }
+.cart-up { color: var(--teal); font-weight: 500; }
+
+.qty-stepper {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    overflow: hidden;
+}
+.qty-stepper button {
+    width: 34px; height: 34px;
+    border: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+}
+.qty-stepper button:hover:not(:disabled) { background: var(--teal); }
+.qty-stepper button:disabled { opacity: 0.3; cursor: not-allowed; }
+.qty-stepper span {
+    min-width: 30px;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.cart-summary {
+    margin: 6px 0 4px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(6,17,30,0.5);
+    border: 1px solid var(--border);
+}
+.cart-line {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-sub);
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    padding: 4px 0;
+}
+.cart-line-disc { color: var(--coral); }
+.cart-line-total {
+    border-top: 1px solid var(--border);
+    margin-top: 6px;
+    padding-top: 10px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+.cart-line-total span:last-child { color: var(--teal); }
+.cart-note {
+    font-family: var(--font-sub);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
 /* ─── SCROLL REVEAL ───────────────────────────────────────────────────────── */
 .reveal {
     opacity: 0;

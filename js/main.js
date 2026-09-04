@@ -35,18 +35,69 @@ function setLang(lang) {
     applyTranslations();
 }
 
+// ── FLEET + CART
+const WA_NUMBER = '526221763312';
+const DISCOUNT = 0.10;
+const FLEET = {
+    chico:   { key: 'pkg.0.name', max: 1, hora: 1700, media: 1000 },
+    mediano: { key: 'pkg.1.name', max: 3, hora: 1900, media: 1300 },
+    grande:  { key: 'pkg.2.name', max: 1, hora: 2500, media: 1500 },
+};
+const cart = { chico: 0, mediano: 0, grande: 0 };
+let currentDuration = 'media'; // 'hora' | 'media'
+
+function money(n) { return '$' + n.toLocaleString('en-US'); }
+function unitPrice(m) { return FLEET[m][currentDuration]; }
+
+function recalcCart() {
+    let subtotal = 0;
+    for (const m in cart) {
+        const up = unitPrice(m);
+        const upEl = document.getElementById('up-' + m);
+        const qEl  = document.getElementById('qty-' + m);
+        if (upEl) upEl.textContent = money(up);
+        if (qEl)  qEl.textContent = cart[m];
+        subtotal += cart[m] * up;
+
+        // reflect max / empty state on the row's stepper buttons
+        const row = document.querySelector(`.cart-row[data-model="${m}"]`);
+        if (row) {
+            const btns = row.querySelectorAll('.qty-stepper button');
+            btns[0].disabled = cart[m] <= 0;
+            btns[1].disabled = cart[m] >= FLEET[m].max;
+            row.classList.toggle('has-qty', cart[m] > 0);
+        }
+    }
+    const discount = Math.round(subtotal * DISCOUNT);
+    const total = subtotal - discount;
+    const sSub = document.getElementById('sum-subtotal');
+    const sDis = document.getElementById('sum-discount');
+    const sTot = document.getElementById('sum-total');
+    if (sSub) sSub.textContent = money(subtotal);
+    if (sDis) sDis.textContent = '−' + money(discount);
+    if (sTot) sTot.textContent = money(total);
+}
+
+function addUnit(m)    { if (cart[m] < FLEET[m].max) { cart[m]++; recalcCart(); } }
+function removeUnit(m) { if (cart[m] > 0)            { cart[m]--; recalcCart(); } }
+
+function selectDur(btn) {
+    document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    currentDuration = btn.dataset.dur;
+    recalcCart();
+}
+
 // ── BOOKING MODAL
 function openModal(modelo) {
     const modal = document.getElementById('bookingModal');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    if (modelo) {
-        const map = { chico: 'Chico', mediano: 'Mediano', grande: 'Grande' };
-        const sel = document.getElementById('f-modelo');
-        if (sel && map[modelo]) sel.value = map[modelo];
+    if (modelo && FLEET[modelo] && cart[modelo] < FLEET[modelo].max) {
+        cart[modelo]++;
     }
-
+    recalcCart();
     setTimeout(() => document.getElementById('f-nombre')?.focus(), 350);
 }
 
@@ -55,22 +106,15 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-function selectDur(btn) {
-    document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    document.getElementById('f-duracion').value = btn.dataset.val;
-}
-
 function submitBooking(e) {
     e.preventDefault();
-    const nombre   = document.getElementById('f-nombre').value.trim();
-    const modelo   = document.getElementById('f-modelo').value;
-    const duracion = document.getElementById('f-duracion').value;
-    const fecha    = document.getElementById('f-fecha').value;
-    const personas = document.getElementById('f-personas').value;
+    const nombre = document.getElementById('f-nombre').value.trim();
+    const fecha  = document.getElementById('f-fecha').value;
+    const notas  = document.getElementById('f-notas').value.trim();
 
-    if (!duracion) {
-        alert(currentLang === 'en' ? 'Please choose a duration.' : 'Elige una duración.');
+    const totalUnits = cart.chico + cart.mediano + cart.grande;
+    if (totalUnits === 0) {
+        alert(currentLang === 'en' ? 'Add at least one jetski.' : 'Agrega al menos un jetski.');
         return;
     }
 
@@ -79,29 +123,51 @@ function submitBooking(e) {
         const [y, m, d] = fecha.split('-');
         fechaFmt = `${d}/${m}/${y}`;
     }
+    const durLabel = currentDuration === 'hora' ? t('modal.dur.0') : t('modal.dur.1');
+
+    let subtotal = 0;
+    const lines = [];
+    for (const m in cart) {
+        if (cart[m] > 0) {
+            const line = cart[m] * unitPrice(m);
+            subtotal += line;
+            lines.push(`- ${t(FLEET[m].key)} x${cart[m]} — ${money(line)}`);
+        }
+    }
+    const discount = Math.round(subtotal * DISCOUNT);
+    const total = subtotal - discount;
 
     const msg =
         `${t('wa.greeting')}\n\n` +
         `${t('wa.nombre')}: ${nombre}\n` +
-        `${t('wa.modelo')}: ${modelo}\n` +
-        `${t('wa.duracion')}: ${duracion}\n` +
         `${t('wa.fecha')}: ${fechaFmt}\n` +
-        `${t('wa.personas')}: ${personas}\n\n` +
+        `${t('wa.duracion')}: ${durLabel}\n\n` +
+        `${t('wa.jetskis')}:\n${lines.join('\n')}\n\n` +
+        `${t('wa.subtotal')}: ${money(subtotal)}\n` +
+        `${t('wa.discount')}: −${money(discount)}\n` +
+        `${t('wa.total')}: ${money(total)}\n` +
+        (notas ? `\n${t('wa.notas')}: ${notas}\n` : '') +
+        `\n${t('wa.online')}\n` +
         `${t('wa.closing')}`;
 
-    window.open(`https://wa.me/526221763312?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
     closeModal();
+
+    // reset cart for the next reservation
+    for (const m in cart) cart[m] = 0;
+    recalcCart();
 }
 
 // ── WHATSAPP SHORTCUTS (banana, sombras, fundas, general)
-const WA_NUMBER = '526221763312';
-function waOpen(key) {
-    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t(key))}`, '_blank');
+function waMsg(key, withDiscount) {
+    let m = t(key);
+    if (withDiscount) m += `\n\n${t('wa.online')}`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`, '_blank');
 }
-function bookGeneral() { waOpen('wa.general'); }
-function bookBanana()  { waOpen('wa.banana'); }
-function bookSombra()  { waOpen('wa.sombra'); }
-function bookFunda()   { waOpen('wa.funda'); }
+function bookGeneral() { waMsg('wa.general', false); }
+function bookBanana()  { waMsg('wa.banana', true); }
+function bookSombra()  { waMsg('wa.sombra', true); }
+function bookFunda()   { waMsg('wa.funda', true); }
 
 // ── EXPERIENCE CAROUSEL
 let carIndex = 0;
@@ -184,4 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // experience carousel
     carInit();
+
+    // cart initial state
+    recalcCart();
 });
