@@ -142,7 +142,14 @@ const TRANSLATIONS = {
         // REMOLQUE
         "rem.eyebrow": "Cómo llegar",
         "rem.title": "Estamos al<br><em>centro de la playa</em>",
-        "rem.body": "Búscanos en nuestro remolque, justo al centro de la Playa Algodones. Ahí rentas, pagas y recoges todo.",
+        "rem.body": "Búscanos en nuestro remolque, al centro de la Playa Algodones. Antes de llegar, entra por la entrada correcta.",
+        "rem.entrance.title": "Entra por la entrada del lado OESTE",
+        "rem.entrance.body": "Hay <strong>dos entradas</strong> a la playa. La nuestra es la del <strong>lado oeste</strong>, la del letrero «Original Algodones · Entrada Principal · Playa». En la otra entrada puede haber personal que intente desviarte; entra por la del oeste para llegar directo a reclamar tu renta con nosotros.",
+        "rem.entrance.caption": "Busca este letrero: es la entrada correcta.",
+        "rem.ben.0": "Más espacio de estacionamiento",
+        "rem.ben.1": "Menos caminata hasta la playa",
+        "rem.ben.2": "Rampas de madera con acceso para silla de ruedas",
+        "rem.address": "Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México",
         "rem.bath": "🚻 Los baños están en el área de estacionamiento.",
         "rem.cta": "Ver Playa Algodones en el mapa",
 
@@ -364,7 +371,14 @@ const TRANSLATIONS = {
         // REMOLQUE
         "rem.eyebrow": "Find us",
         "rem.title": "We're at the<br><em>center of the beach</em>",
-        "rem.body": "Look for our trailer, right in the center of Playa Algodones. That's where you rent, pay and pick everything up.",
+        "rem.body": "Look for our trailer, in the center of Playa Algodones. Before you arrive, come in through the correct entrance.",
+        "rem.entrance.title": "Use the WEST-side entrance",
+        "rem.entrance.body": "There are <strong>two entrances</strong> to the beach. Ours is the <strong>west one</strong>, the one with the «Original Algodones · Entrada Principal · Playa» sign. At the other entrance there may be staff trying to redirect you; use the west one to go straight to claim your rental with us.",
+        "rem.entrance.caption": "Look for this sign: it's the correct entrance.",
+        "rem.ben.0": "More parking space",
+        "rem.ben.1": "Shorter walk to the beach",
+        "rem.ben.2": "Wooden ramps with wheelchair access",
+        "rem.address": "Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México",
         "rem.bath": "🚻 Restrooms are in the parking area.",
         "rem.cta": "See Playa Algodones on the map",
 
