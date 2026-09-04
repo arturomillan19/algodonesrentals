@@ -6,10 +6,10 @@ const TRANSLATIONS = {
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
         "hero.title": "Tu día en<br><em>la playa.</em>",
-        "hero.sub": "Escaneaste desde tu mesa 👋 Aquí están nuestros servicios y precios. Ven al remolque —estamos al centro de la playa— o escríbenos por WhatsApp.",
+        "hero.sub": "Escaneaste desde tu mesa. Aquí están nuestros servicios y precios. Ven al remolque —estamos al centro de la playa— o escríbenos por WhatsApp.",
         "hero.cta": "Ver servicios y precios",
         "hero.secondary": "Escríbenos por WhatsApp",
-        "hero.locator": "📍 Estamos al centro de la Playa Algodones",
+        "hero.locator": "Estamos al centro de la Playa Algodones",
 
         // SERVICE MENU
         "menu.eyebrow": "Nuestros servicios",
@@ -77,7 +77,9 @@ const TRANSLATIONS = {
         "steps.3": "Al recibir la unidad dejas una identificación y firmas un contrato (te haces responsable por daños).",
 
         // RULES
+        "rules.eyebrow": "Seguridad",
         "rules.title": "Reglas e instrucciones",
+        "rules.title2": "Reglas e<br><em>instrucciones</em>",
         "rules.0": "Identificación oficial vigente para rentar; se deja durante el tiempo de renta. Edad mínima 18 años para manejar.",
         "rules.1": "Uso obligatorio del chaleco salvavidas durante todo el recorrido.",
         "rules.2": "Prohibido operar bajo efectos de alcohol o cualquier sustancia.",
@@ -117,7 +119,7 @@ const TRANSLATIONS = {
         // SOMBRAS
         "sombra.eyebrow": "Renta de sombras",
         "sombra.title": "Renta de<br><em>sombras</em>",
-        "sombra.body": "Renta una sombra y disfruta la playa cómodo todo el día. Pregunta en el remolque o resérvala por WhatsApp.",
+        "sombra.body": "Renta una sombra —incluye 4 sillas y una mesa— y disfruta la playa cómodo todo el día. Pregunta en el remolque o resérvala por WhatsApp.",
         "sombra.price": "$400",
         "sombra.per": "MXN · todo el día o tu estadía",
         "sombra.cta": "Rentar sombra",
@@ -146,16 +148,16 @@ const TRANSLATIONS = {
         // REMOLQUE
         "rem.eyebrow": "Cómo llegar",
         "rem.title": "Estamos al<br><em>centro de la playa</em>",
-        "rem.body": "Búscanos en nuestro remolque, al centro de la Playa Algodones. Antes de llegar, entra por la entrada correcta.",
+        "rem.body": "Búscanos al centro de la Playa Algodones. Importante: entra por la entrada correcta, la del lado oeste.",
         "rem.entrance.title": "Entra por la entrada del lado OESTE",
-        "rem.entrance.body": "Hay <strong>dos entradas</strong> a la playa. La nuestra es la del <strong>lado oeste</strong>, la del letrero «Original Algodones · Entrada Principal · Playa». En la otra entrada puede haber personal que intente desviarte; entra por la del oeste para llegar directo a reclamar tu renta con nosotros.",
+        "rem.entrance.body": "Hay <strong>dos entradas</strong>. La nuestra es la del <strong>lado oeste</strong> (letrero «Original Algodones»). En la otra pueden intentar desviarte.",
         "rem.entrance.caption": "Busca este letrero: es la entrada correcta.",
         "rem.video.caption": "Nuestro lugar en la playa: aquí rentas y pagas en efectivo.",
         "rem.ben.0": "Más espacio de estacionamiento",
         "rem.ben.1": "Menos caminata hasta la playa",
         "rem.ben.2": "Rampas de madera con acceso para silla de ruedas",
         "rem.address": "Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México",
-        "rem.bath": "🚻 Los baños están en el área de estacionamiento.",
+        "rem.bath": "Los baños están en el área de estacionamiento.",
         "rem.cta": "Ver Playa Algodones en el mapa",
 
         // BEACH CARE
@@ -209,7 +211,7 @@ const TRANSLATIONS = {
         "veh.dur": "Duración",
         "veh.hora": "Hora deseada",
         "veh.remove": "Quitar",
-        "veh.empty": "Agrega tu primer vehículo 👇",
+        "veh.empty": "Agrega tu primer vehículo.",
         "veh.tbd": "por confirmar",
         "bulk.label": "Mismo horario para todos",
         "bulk.apply": "Aplicar a todos",
@@ -244,10 +246,10 @@ const TRANSLATIONS = {
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
         "hero.title": "Your day at<br><em>the beach.</em>",
-        "hero.sub": "You scanned from your table 👋 Here are our services and prices. Come to the trailer —we're at the center of the beach— or message us on WhatsApp.",
+        "hero.sub": "You scanned from your table. Here are our services and prices. Come to the trailer —we're at the center of the beach— or message us on WhatsApp.",
         "hero.cta": "See services & prices",
         "hero.secondary": "Message us on WhatsApp",
-        "hero.locator": "📍 We're at the center of Playa Algodones",
+        "hero.locator": "We're at the center of Playa Algodones",
 
         // SERVICE MENU
         "menu.eyebrow": "Our services",
@@ -315,7 +317,9 @@ const TRANSLATIONS = {
         "steps.3": "When you get the unit you leave an ID and sign a contract (you're responsible for any damage).",
 
         // RULES
+        "rules.eyebrow": "Safety",
         "rules.title": "Rules & instructions",
+        "rules.title2": "Rules &<br><em>instructions</em>",
         "rules.0": "Valid government ID required to rent; left with us during the rental. Minimum age 18 to drive.",
         "rules.1": "Life jacket is mandatory throughout the entire ride.",
         "rules.2": "Operating under the influence of alcohol or any substance is prohibited.",
@@ -355,7 +359,7 @@ const TRANSLATIONS = {
         // SOMBRAS
         "sombra.eyebrow": "Shade rental",
         "sombra.title": "Shade<br><em>rental</em>",
-        "sombra.body": "Rent a shade and enjoy the beach comfortably all day. Ask at the trailer or book it on WhatsApp.",
+        "sombra.body": "Rent a shade —includes 4 chairs and a table— and enjoy the beach comfortably all day. Ask at the trailer or book it on WhatsApp.",
         "sombra.price": "$400",
         "sombra.per": "MXN · all day or your whole stay",
         "sombra.cta": "Rent shade",
@@ -384,16 +388,16 @@ const TRANSLATIONS = {
         // REMOLQUE
         "rem.eyebrow": "Find us",
         "rem.title": "We're at the<br><em>center of the beach</em>",
-        "rem.body": "Look for our trailer, in the center of Playa Algodones. Before you arrive, come in through the correct entrance.",
+        "rem.body": "Find us at the center of Playa Algodones. Important: come in through the correct entrance, on the west side.",
         "rem.entrance.title": "Use the WEST-side entrance",
-        "rem.entrance.body": "There are <strong>two entrances</strong> to the beach. Ours is the <strong>west one</strong>, the one with the «Original Algodones · Entrada Principal · Playa» sign. At the other entrance there may be staff trying to redirect you; use the west one to go straight to claim your rental with us.",
+        "rem.entrance.body": "There are <strong>two entrances</strong>. Ours is the <strong>west one</strong> (the «Original Algodones» sign). At the other, staff may try to redirect you.",
         "rem.entrance.caption": "Look for this sign: it's the correct entrance.",
         "rem.video.caption": "Our spot on the beach: rent here and pay in cash.",
         "rem.ben.0": "More parking space",
         "rem.ben.1": "Shorter walk to the beach",
         "rem.ben.2": "Wooden ramps with wheelchair access",
         "rem.address": "Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México",
-        "rem.bath": "🚻 Restrooms are in the parking area.",
+        "rem.bath": "Restrooms are in the parking area.",
         "rem.cta": "See Playa Algodones on the map",
 
         // BEACH CARE
@@ -447,7 +451,7 @@ const TRANSLATIONS = {
         "veh.dur": "Duration",
         "veh.hora": "Desired time",
         "veh.remove": "Remove",
-        "veh.empty": "Add your first vehicle 👇",
+        "veh.empty": "Add your first vehicle.",
         "veh.tbd": "to confirm",
         "bulk.label": "Same time for all",
         "bulk.apply": "Apply to all",

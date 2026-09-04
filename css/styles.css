@@ -2202,6 +2202,49 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* ─── ICON SVGs (replacing emojis) ────────────────────────────────────────── */
+.service-ico { color: var(--teal); height: 36px; margin-bottom: 10px; }
+.service-ico svg { width: 36px; height: 36px; }
+.offer-icon svg { width: 56px; height: 56px; color: var(--teal); }
+.hero-locator svg { width: 15px; height: 15px; margin-right: 8px; color: var(--teal); flex-shrink: 0; }
+.rem-alert-icon svg { width: 22px; height: 22px; color: var(--coral); }
+.care-icon svg { width: 28px; height: 28px; color: var(--teal); }
+.veh-bulk-lbl { display: flex; align-items: center; gap: 6px; }
+.veh-bulk-lbl svg { width: 14px; height: 14px; color: var(--gold); flex-shrink: 0; }
+.rem-bath { display: inline-flex; align-items: center; gap: 8px; }
+.rem-bath svg { width: 15px; height: 15px; color: var(--teal); flex-shrink: 0; }
+
+/* ─── STEPS + RULES (standalone sections) ─────────────────────────────────── */
+.steps-section { background: var(--ink); }
+.rules-section { background: var(--deep); }
+.rule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 40px;
+}
+
+/* ─── REMOLQUE — 2 columns + media slider ─────────────────────────────────── */
+.remolque-head { text-align: center; max-width: 680px; margin: 0 auto 44px; }
+.remolque-head .eyebrow { justify-content: center; }
+.remolque-head .body-text { margin: 0 auto; }
+.rem-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 360px) 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: var(--max-w);
+    margin: 0 auto;
+}
+.rem-media { width: 100%; max-width: 360px; margin: 0 auto; }
+.rem-media.carousel { margin-top: 0; }
+.rem-media .carousel-slide { aspect-ratio: 3 / 4; }
+.rem-info { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.rem-info .rem-alert,
+.rem-info .rem-benefits,
+.rem-info .rem-bath,
+.rem-info .rem-address { margin: 0; }
+.rem-info .rem-benefits { max-width: none; }
+
 /* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
 /* wide screens: service menu in a single row */
 @media (min-width: 760px) {
@@ -2226,6 +2269,9 @@ footer {
     .pay-grid { grid-template-columns: 1fr; }
     .banana-grid { grid-template-columns: 1fr; gap: 36px; }
     .banana-gallery { grid-template-columns: repeat(2, 1fr); }
+    .rem-grid { grid-template-columns: 1fr; gap: 32px; }
+    .rem-info { align-items: stretch; }
+    .rule-grid { grid-template-columns: 1fr; }
     footer .foot-logo { margin-left: auto; margin-right: auto; }
     .food-intro { grid-template-columns: 1fr; gap: 40px; }
     .food-plates-grid { grid-template-columns: repeat(2, 1fr); }
