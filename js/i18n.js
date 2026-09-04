@@ -138,10 +138,10 @@ const TRANSLATIONS = {
         "pay.lbl.banco": "Banco",
         "pay.lbl.titular": "Titular",
         "pay.lbl.clabe": "CLABE",
-        "pay.lbl.cuenta": "Tarjeta / Cuenta",
+        "pay.lbl.cuenta": "Tarjeta",
         "pay.lbl.concepto": "Concepto",
         "pay.val.concepto": "Tu nombre + fecha",
-        "pay.note": "Confirma disponibilidad antes de transferir. Envía tu comprobante por WhatsApp para apartar tu horario.",
+        "pay.note": "Confirma disponibilidad antes de transferir. Envía tu comprobante por WhatsApp al 622 176 3312 para apartar tu horario.",
 
         // REMOLQUE
         "rem.eyebrow": "Cómo llegar",
@@ -376,10 +376,10 @@ const TRANSLATIONS = {
         "pay.lbl.banco": "Bank",
         "pay.lbl.titular": "Account holder",
         "pay.lbl.clabe": "CLABE",
-        "pay.lbl.cuenta": "Card / Account",
+        "pay.lbl.cuenta": "Card",
         "pay.lbl.concepto": "Reference",
         "pay.val.concepto": "Your name + date",
-        "pay.note": "Confirm availability before transferring. Send your receipt via WhatsApp to hold your slot.",
+        "pay.note": "Confirm availability before transferring. Send your receipt via WhatsApp to 622 176 3312 to hold your slot.",
 
         // REMOLQUE
         "rem.eyebrow": "Find us",
