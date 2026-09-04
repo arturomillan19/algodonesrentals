@@ -337,6 +337,25 @@ body {
 }
 .btn-secondary:hover { color: var(--white); }
 
+/* solid WhatsApp button (hero) */
+.btn-whats {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 100px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+    transition: all 0.3s;
+}
+.btn-whats:hover { background: #1fbe5b; transform: translateY(-2px); }
+.btn-whats svg { width: 18px; height: 18px; }
+
 /* price pill — bottom right of hero */
 .hero-price-pill {
     position: absolute;
