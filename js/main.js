@@ -33,6 +33,7 @@ function setLang(lang) {
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.documentElement.lang = lang;
     applyTranslations();
+    if (typeof renderBanana === 'function') renderBanana();
 }
 
 // ── FLEET + CART (one line per vehicle: model, duration, time — all independent)
@@ -205,58 +206,87 @@ function submitBooking(e) {
     renderCart();
 }
 
-// ── WHATSAPP SHORTCUTS (banana, sombras, fundas, general)
+// ── WHATSAPP SHORTCUTS (sombras, fundas, general)
 function waMsg(key, withDiscount) {
     let m = t(key);
     if (withDiscount) m += `\n\n${t('wa.online')}`;
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`, '_blank');
 }
 function bookGeneral() { waMsg('wa.general', false); }
-function bookBanana()  { waMsg('wa.banana', true); }
 function bookSombra()  { waMsg('wa.sombra', true); }
 function bookFunda()   { waMsg('wa.funda', true); }
 
-// ── EXPERIENCE CAROUSEL
-let carIndex = 0;
-const carTrack  = document.getElementById('carTrack');
-const carSlides = carTrack ? Array.from(carTrack.children) : [];
-
-function carRender() {
-    if (!carTrack) return;
-    carTrack.style.transform = `translateX(-${carIndex * 100}%)`;
-    document.querySelectorAll('.carousel-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === carIndex));
-    // only play the visible video
-    carSlides.forEach((slide, i) => {
-        const v = slide.querySelector('video');
-        if (!v) return;
-        if (i === carIndex) { v.play().catch(() => {}); }
-        else { v.pause(); }
-    });
+// ── BANANA CART ($100/persona · mínimo $500 = 5 lugares · máx 7)
+const BANANA_PP = 100, BANANA_MIN = 500, BANANA_MAX = 7;
+let bananaPeople = 5;
+function bananaCost(n) { return Math.max(n * BANANA_PP, BANANA_MIN); }
+function renderBanana() {
+    const q = document.getElementById('bc-qty');
+    if (!q) return;
+    q.textContent = bananaPeople;
+    document.getElementById('bc-total').textContent = money(bananaCost(bananaPeople));
+    const note = document.getElementById('bc-note');
+    if (note) note.innerHTML = bananaPeople < 5 ? t('bcart.note.min') : t('bcart.note.ok');
+    const btns = document.querySelectorAll('.bc-stepper button');
+    if (btns.length === 2) {
+        btns[0].disabled = bananaPeople <= 1;
+        btns[1].disabled = bananaPeople >= BANANA_MAX;
+    }
+}
+function bananaQty(d) {
+    bananaPeople = Math.min(BANANA_MAX, Math.max(1, bananaPeople + d));
+    renderBanana();
+}
+function bookBanana() {
+    const n = bananaPeople, cost = bananaCost(n);
+    let msg = `${t('wa.banana.head')}\n` +
+        `${t('wa.personas')}: ${n}\n` +
+        `${t('wa.banana.costlbl')}: ${money(cost)}`;
+    if (n < 5) msg += `\n${t('wa.banana.min')}`;
+    msg += `\n\n${t('wa.online')}`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-function carGo(i) {
-    if (!carSlides.length) return;
-    carIndex = (i + carSlides.length) % carSlides.length;
-    carRender();
-}
+// ── CAROUSELS (generic — supports multiple .carousel blocks: experience + banana gallery)
+function initCarousel(root) {
+    const track = root.querySelector('.carousel-track');
+    if (!track) return;
+    const slides = Array.from(track.children);
+    if (!slides.length) return;
+    const dotsWrap = root.querySelector('.carousel-dots');
+    let idx = 0;
 
-function carMove(dir) { carGo(carIndex + dir); }
-
-function carInit() {
-    if (!carTrack || !carSlides.length) return;
-    const dots = document.getElementById('carDots');
-    if (dots) {
-        carSlides.forEach((_, i) => {
-            const b = document.createElement('button');
-            b.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-            b.setAttribute('aria-label', `Ir al video ${i + 1}`);
-            b.onclick = () => carGo(i);
-            dots.appendChild(b);
+    function render() {
+        track.style.transform = `translateX(-${idx * 100}%)`;
+        if (dotsWrap) Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === idx));
+        slides.forEach((s, i) => {
+            const v = s.querySelector('video');
+            if (v) { i === idx ? v.play().catch(() => {}) : v.pause(); }
         });
     }
-    carRender();
+    function go(i) { idx = (i + slides.length) % slides.length; render(); }
+
+    root.querySelectorAll('.carousel-btn.prev').forEach(b => b.onclick = () => go(idx - 1));
+    root.querySelectorAll('.carousel-btn.next').forEach(b => b.onclick = () => go(idx + 1));
+
+    if (dotsWrap) {
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+            const b = document.createElement('button');
+            b.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            b.setAttribute('aria-label', 'Ir a ' + (i + 1));
+            b.onclick = () => go(i);
+            dotsWrap.appendChild(b);
+        });
+    }
+
+    // image-only galleries auto-advance; video carousels don't (videos autoplay)
+    const hasVideo = slides.some(s => s.querySelector('video'));
+    if (!hasVideo && slides.length > 1) setInterval(() => go(idx + 1), 4500);
+
+    render();
 }
+function initCarousels() { document.querySelectorAll('.carousel').forEach(initCarousel); }
 
 // ── HIDE HERO PLACEHOLDER WHEN VIDEO LOADS
 const heroVideo = document.querySelector('.hero-video');
@@ -295,9 +325,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // apply default language
     setLang('es');
 
-    // experience carousel
-    carInit();
+    // carousels (experience + banana gallery)
+    initCarousels();
 
-    // cart initial state
+    // cart initial states
     renderCart();
+    renderBanana();
 });

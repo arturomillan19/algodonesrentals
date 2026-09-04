@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=11" />
+    <link rel="stylesheet" href="css/styles.css?v=12" />
 </head>
 <body>
 
@@ -257,10 +257,10 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-btn prev" onclick="carMove(-1)" aria-label="Anterior">
+            <button class="carousel-btn prev" aria-label="Anterior">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <button class="carousel-btn next" onclick="carMove(1)" aria-label="Siguiente">
+            <button class="carousel-btn next" aria-label="Siguiente">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
             <div class="carousel-dots" id="carDots"></div>
@@ -292,19 +292,47 @@
                 <li data-i18n="banana.f0"><strong>$100 MXN</strong> por persona</li>
                 <li data-i18n="banana.f1">Recorrido por la bahía · 10–15 min</li>
                 <li data-i18n="banana.f2">Grupos de 5 a 7 personas</li>
-                <li data-i18n="banana.f3">¿Menos de 5? Cubren $500 (5 lugares) y salen igual, o los sumamos a otro viaje por WhatsApp.</li>
             </ul>
-            <a href="#" class="btn-primary" onclick="bookBanana(); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <span data-i18n="banana.cta">Reservar paseo</span>
-            </a>
+
+            <div class="banana-cart">
+                <div class="bc-row">
+                    <span class="bc-label" data-i18n="bcart.people">¿Cuántas personas van?</span>
+                    <div class="bc-stepper">
+                        <button type="button" onclick="bananaQty(-1)" aria-label="Menos">−</button>
+                        <span id="bc-qty">5</span>
+                        <button type="button" onclick="bananaQty(1)" aria-label="Más">+</button>
+                    </div>
+                </div>
+                <div class="bc-total">
+                    <span data-i18n="bcart.total">Costo del viaje</span>
+                    <strong id="bc-total">$500</strong>
+                </div>
+                <p class="bc-note" id="bc-note"></p>
+                <a href="#" class="btn-primary" onclick="bookBanana(); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span data-i18n="banana.cta">Reservar por WhatsApp</span>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="section-inner banana-gallery reveal">
-        <img src="assets/banana-1.jpg?v=9" alt="Paseo en banana en la bahía" loading="lazy">
-        <img src="assets/banana-2.jpg?v=9" alt="Paseo en banana al atardecer" loading="lazy">
-        <img src="assets/banana-3.jpg?v=9" alt="Paseo en banana en familia" loading="lazy">
-        <img src="assets/banana-4.jpg?v=9" alt="Paseo en banana en el Mar de Cortés" loading="lazy">
+    <div class="section-inner banana-gallery-wrap reveal">
+        <div class="carousel banana-carousel">
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                    <div class="carousel-slide"><img src="assets/banana-1.jpg?v=9" alt="Paseo en banana en la bahía" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-2.jpg?v=9" alt="Paseo en banana al atardecer" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-3.jpg?v=9" alt="Paseo en banana en familia" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-4.jpg?v=9" alt="Paseo en banana en el Mar de Cortés" loading="lazy"></div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots"></div>
+        </div>
     </div>
 </section>
 
@@ -543,7 +571,7 @@
     </div>
 </div>
 
-<script src="js/i18n.js?v=11"></script>
-<script src="js/main.js?v=11"></script>
+<script src="js/i18n.js?v=12"></script>
+<script src="js/main.js?v=12"></script>
 </body>
 </html>

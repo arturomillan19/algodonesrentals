@@ -108,7 +108,11 @@ const TRANSLATIONS = {
         "banana.f1": "Recorrido por la bahía · 10–15 min",
         "banana.f2": "Grupos de 5 a 7 personas",
         "banana.f3": "¿Menos de 5? Cubren $500 (5 lugares) y salen igual, o los sumamos a otro viaje por WhatsApp.",
-        "banana.cta": "Reservar paseo",
+        "banana.cta": "Reservar por WhatsApp",
+        "bcart.people": "¿Cuántas personas van?",
+        "bcart.total": "Costo del viaje",
+        "bcart.note.min": "Menos de 5: cubren los lugares faltantes para llegar a $500 y el viaje sale igual (pareja = $250 c/u), o los sumamos a otro viaje por WhatsApp.",
+        "bcart.note.ok": "$100 por persona · ¡grupo listo para salir!",
 
         // SOMBRAS
         "sombra.eyebrow": "Renta de sombras",
@@ -227,6 +231,10 @@ const TRANSLATIONS = {
         "wa.sombra": "Hola, quiero rentar una sombra en Algodones Rentals ($400 el día). ¿Tienen disponibilidad?",
         "wa.funda": "Hola, quiero una funda contra el agua ($100). ¿Me la llevan a mi lugar o paso al remolque?",
         "wa.banana": "Hola, quiero reservar el paseo en banana ($100 por persona, grupos de 5 a 7). Somos ___ personas. ¿Qué horarios tienen?",
+        "wa.personas": "Personas",
+        "wa.banana.head": "Hola, quiero reservar el paseo en banana:",
+        "wa.banana.costlbl": "Costo del viaje",
+        "wa.banana.min": "Somos menos de 5: cubrimos el mínimo de $500 (o si prefieren, súmennos a otro viaje).",
     },
 
     en: {
@@ -338,7 +346,11 @@ const TRANSLATIONS = {
         "banana.f1": "Ride around the bay · 10–15 min",
         "banana.f2": "Groups of 5 to 7 people",
         "banana.f3": "Fewer than 5? Cover $500 (5 spots) and still go, or we add you to another trip via WhatsApp.",
-        "banana.cta": "Book the ride",
+        "banana.cta": "Book via WhatsApp",
+        "bcart.people": "How many people?",
+        "bcart.total": "Trip cost",
+        "bcart.note.min": "Fewer than 5: cover the empty spots to reach $500 and the trip still goes (couple = $250 each), or we add you to another trip via WhatsApp.",
+        "bcart.note.ok": "$100 per person · group ready to go!",
 
         // SOMBRAS
         "sombra.eyebrow": "Shade rental",
@@ -457,5 +469,9 @@ const TRANSLATIONS = {
         "wa.sombra": "Hi, I'd like to rent a shade at Algodones Rentals ($400 per day). Do you have availability?",
         "wa.funda": "Hi, I'd like a waterproof phone pouch ($100). Can you bring it to my spot or should I come to the trailer?",
         "wa.banana": "Hi, I'd like to book the banana boat ride ($100 per person, groups of 5 to 7). We are ___ people. What times do you have?",
+        "wa.personas": "People",
+        "wa.banana.head": "Hi, I'd like to book the banana boat ride:",
+        "wa.banana.costlbl": "Trip cost",
+        "wa.banana.min": "We're fewer than 5: we'll cover the $500 minimum (or add us to another trip).",
     }
 };
