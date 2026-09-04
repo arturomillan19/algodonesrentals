@@ -93,8 +93,8 @@ const TRANSLATIONS = {
         "gallery.title": "Así se siente<br><em>cada recorrido</em>",
         "gallery.cap.0": "Salida a mar abierto",
         "gallery.cap.1": "Pura velocidad",
-        "gallery.cap.2": "Adrenalina en el agua",
-        "gallery.cap.3": "Mar de Cortés",
+        "gallery.cap.2": "Adrenalina al atardecer",
+        "gallery.cap.3": "Atardecer en el Mar de Cortés",
 
         // SEA-DOO STRIP
         "seadoo.pre": "Operamos exclusivamente con",
@@ -323,8 +323,8 @@ const TRANSLATIONS = {
         "gallery.title": "What every<br><em>ride feels like</em>",
         "gallery.cap.0": "Out to open water",
         "gallery.cap.1": "Pure speed",
-        "gallery.cap.2": "Adrenaline on the water",
-        "gallery.cap.3": "Sea of Cortez",
+        "gallery.cap.2": "Adrenaline at sunset",
+        "gallery.cap.3": "Sunset over the Sea of Cortez",
 
         // SEA-DOO STRIP
         "seadoo.pre": "We operate exclusively on",
