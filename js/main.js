@@ -35,7 +35,7 @@ function setLang(lang) {
     applyTranslations();
 }
 
-// ── FLEET + CART
+// ── FLEET + CART (one line per vehicle: model, duration, time — all independent)
 const WA_NUMBER = '526221763312';
 const DISCOUNT = 0.10;
 const FLEET = {
@@ -43,61 +43,104 @@ const FLEET = {
     mediano: { key: 'pkg.1.name', max: 3, hora: 1900, media: 1300 },
     grande:  { key: 'pkg.2.name', max: 1, hora: 2500, media: 1500 },
 };
-const cart = { chico: 0, mediano: 0, grande: 0 };
-let currentDuration = 'media'; // 'hora' | 'media'
+const MODEL_ORDER = ['mediano', 'chico', 'grande'];
+const FLEET_TOTAL = MODEL_ORDER.reduce((n, m) => n + FLEET[m].max, 0); // 5
+
+let vehicles = [];   // [{ id, model, dur:'hora'|'media', hora:'HH:MM' }]
+let vehSeq = 0;
 
 function money(n) { return '$' + n.toLocaleString('en-US'); }
-function unitPrice(m) { return FLEET[m][currentDuration]; }
-
-function recalcCart() {
-    let subtotal = 0;
-    for (const m in cart) {
-        const up = unitPrice(m);
-        const upEl = document.getElementById('up-' + m);
-        const qEl  = document.getElementById('qty-' + m);
-        if (upEl) upEl.textContent = money(up);
-        if (qEl)  qEl.textContent = cart[m];
-        subtotal += cart[m] * up;
-
-        // reflect max / empty state on the row's stepper buttons
-        const row = document.querySelector(`.cart-row[data-model="${m}"]`);
-        if (row) {
-            const btns = row.querySelectorAll('.qty-stepper button');
-            btns[0].disabled = cart[m] <= 0;
-            btns[1].disabled = cart[m] >= FLEET[m].max;
-            row.classList.toggle('has-qty', cart[m] > 0);
-        }
-    }
-    const discount = Math.round(subtotal * DISCOUNT);
-    const total = subtotal - discount;
-    const sSub = document.getElementById('sum-subtotal');
-    const sDis = document.getElementById('sum-discount');
-    const sTot = document.getElementById('sum-total');
-    if (sSub) sSub.textContent = money(subtotal);
-    if (sDis) sDis.textContent = '−' + money(discount);
-    if (sTot) sTot.textContent = money(total);
+function unitPrice(model, dur) { return FLEET[model][dur]; }
+function durLabel(dur) { return dur === 'hora' ? t('modal.dur.0') : t('modal.dur.1'); }
+function countModel(model, exceptId) {
+    return vehicles.filter(v => v.model === model && v.id !== exceptId).length;
+}
+function firstAvailableModel() {
+    return MODEL_ORDER.find(m => countModel(m, null) < FLEET[m].max) || null;
 }
 
-function addUnit(m)    { if (cart[m] < FLEET[m].max) { cart[m]++; recalcCart(); } }
-function removeUnit(m) { if (cart[m] > 0)            { cart[m]--; recalcCart(); } }
+function vehCardHTML(v, idx) {
+    const modelOpts = MODEL_ORDER.map(m => {
+        const disabled = m !== v.model && countModel(m, v.id) >= FLEET[m].max;
+        return `<option value="${m}"${v.model === m ? ' selected' : ''}${disabled ? ' disabled' : ''}>${t(FLEET[m].key)}</option>`;
+    }).join('');
+    const durOpts =
+        `<option value="media"${v.dur === 'media' ? ' selected' : ''}>${t('modal.dur.1')}</option>` +
+        `<option value="hora"${v.dur === 'hora' ? ' selected' : ''}>${t('modal.dur.0')}</option>`;
+    const price = unitPrice(v.model, v.dur);
+    return `
+    <div class="veh-card">
+        <div class="veh-head">
+            <span class="veh-title">${t('veh.label')} ${idx + 1}</span>
+            <button type="button" class="veh-del" onclick="removeVehicle('${v.id}')" aria-label="${t('veh.remove')}">✕</button>
+        </div>
+        <div class="veh-fields">
+            <label class="veh-f veh-f-model">
+                <span>${t('veh.model')}</span>
+                <select class="form-select" onchange="setVeh('${v.id}','model',this.value)">${modelOpts}</select>
+            </label>
+            <label class="veh-f">
+                <span>${t('veh.dur')}</span>
+                <select class="form-select" onchange="setVeh('${v.id}','dur',this.value)">${durOpts}</select>
+            </label>
+            <label class="veh-f">
+                <span>${t('veh.hora')}</span>
+                <input type="time" class="form-input" value="${v.hora || ''}" onchange="setVeh('${v.id}','hora',this.value)" />
+            </label>
+        </div>
+        <div class="veh-price"><span>${t(FLEET[v.model].key)} · ${durLabel(v.dur)}</span><strong>${money(price)}</strong></div>
+    </div>`;
+}
 
-function selectDur(btn) {
-    document.querySelectorAll('.exp-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    currentDuration = btn.dataset.dur;
-    recalcCart();
+function renderCart() {
+    const list = document.getElementById('vehList');
+    if (!list) return;
+
+    list.innerHTML = vehicles.length
+        ? vehicles.map(vehCardHTML).join('')
+        : `<div class="veh-empty">${t('veh.empty')}</div>`;
+
+    let subtotal = 0;
+    vehicles.forEach(v => subtotal += unitPrice(v.model, v.dur));
+    const discount = Math.round(subtotal * DISCOUNT);
+    const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setTxt('sum-subtotal', money(subtotal));
+    setTxt('sum-discount', '−' + money(discount));
+    setTxt('sum-total', money(subtotal - discount));
+
+    const addBtn = document.querySelector('.veh-add');
+    if (addBtn) addBtn.disabled = vehicles.length >= FLEET_TOTAL;
+}
+
+function addVehicle(model) {
+    let m = (model && FLEET[model] && countModel(model, null) < FLEET[model].max) ? model : firstAvailableModel();
+    if (!m) return; // all inventory in the cart
+    vehicles.push({ id: 'v' + (++vehSeq), model: m, dur: 'media', hora: '' });
+    renderCart();
+}
+
+function removeVehicle(id) {
+    vehicles = vehicles.filter(v => v.id !== id);
+    renderCart();
+}
+
+function setVeh(id, field, value) {
+    const v = vehicles.find(x => x.id === id);
+    if (!v) return;
+    if (field === 'model' && countModel(value, id) >= FLEET[value].max) { renderCart(); return; }
+    v[field] = value;
+    renderCart();
 }
 
 // ── BOOKING MODAL
-function openModal(modelo) {
+function openModal(model) {
     const modal = document.getElementById('bookingModal');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    if (modelo && FLEET[modelo] && cart[modelo] < FLEET[modelo].max) {
-        cart[modelo]++;
-    }
-    recalcCart();
+    if (model && FLEET[model]) addVehicle(model);
+    else if (vehicles.length === 0) addVehicle();
+    renderCart();
     setTimeout(() => document.getElementById('f-nombre')?.focus(), 350);
 }
 
@@ -112,9 +155,8 @@ function submitBooking(e) {
     const fecha  = document.getElementById('f-fecha').value;
     const notas  = document.getElementById('f-notas').value.trim();
 
-    const totalUnits = cart.chico + cart.mediano + cart.grande;
-    if (totalUnits === 0) {
-        alert(currentLang === 'en' ? 'Add at least one jetski.' : 'Agrega al menos un jetski.');
+    if (vehicles.length === 0) {
+        alert(currentLang === 'en' ? 'Add at least one vehicle.' : 'Agrega al menos un vehículo.');
         return;
     }
 
@@ -123,25 +165,21 @@ function submitBooking(e) {
         const [y, m, d] = fecha.split('-');
         fechaFmt = `${d}/${m}/${y}`;
     }
-    const durLabel = currentDuration === 'hora' ? t('modal.dur.0') : t('modal.dur.1');
 
     let subtotal = 0;
-    const lines = [];
-    for (const m in cart) {
-        if (cart[m] > 0) {
-            const line = cart[m] * unitPrice(m);
-            subtotal += line;
-            lines.push(`- ${t(FLEET[m].key)} x${cart[m]} — ${money(line)}`);
-        }
-    }
+    const lines = vehicles.map((v, i) => {
+        const p = unitPrice(v.model, v.dur);
+        subtotal += p;
+        const hora = v.hora ? v.hora : t('veh.tbd');
+        return `${i + 1}) ${t(FLEET[v.model].key)} · ${durLabel(v.dur)} · ${t('wa.hora')} ${hora} — ${money(p)}`;
+    });
     const discount = Math.round(subtotal * DISCOUNT);
     const total = subtotal - discount;
 
     const msg =
         `${t('wa.greeting')}\n\n` +
         `${t('wa.nombre')}: ${nombre}\n` +
-        `${t('wa.fecha')}: ${fechaFmt}\n` +
-        `${t('wa.duracion')}: ${durLabel}\n\n` +
+        `${t('wa.fecha')}: ${fechaFmt}\n\n` +
         `${t('wa.jetskis')}:\n${lines.join('\n')}\n\n` +
         `${t('wa.subtotal')}: ${money(subtotal)}\n` +
         `${t('wa.discount')}: −${money(discount)}\n` +
@@ -153,9 +191,9 @@ function submitBooking(e) {
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
     closeModal();
 
-    // reset cart for the next reservation
-    for (const m in cart) cart[m] = 0;
-    recalcCart();
+    // reset for the next reservation
+    vehicles = [];
+    renderCart();
 }
 
 // ── WHATSAPP SHORTCUTS (banana, sombras, fundas, general)
@@ -252,5 +290,5 @@ document.addEventListener('DOMContentLoaded', () => {
     carInit();
 
     // cart initial state
-    recalcCart();
+    renderCart();
 });

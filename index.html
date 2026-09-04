@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=4" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
 </head>
 <body>
 
@@ -450,7 +450,7 @@
 
         <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals · 10% en línea</div>
         <h2 class="modal-title" data-i18n="modal.title">Reserva tus<br><em>jetskis</em></h2>
-        <p class="modal-sub" data-i18n="modal.sub">Elige cuántos y de qué modelo. Confirmamos disponibilidad por WhatsApp; al recibir dejas ID y firmas contrato.</p>
+        <p class="modal-sub" data-i18n="modal.sub">Agrega cada vehículo con su modelo, duración y hora. Confirmamos disponibilidad por WhatsApp; al recibir dejas ID y firmas contrato.</p>
 
         <form onsubmit="submitBooking(event)">
             <div class="form-group">
@@ -460,50 +460,12 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" data-i18n="modal.duracion">Duración (para todos)</label>
-                <div class="exp-toggle">
-                    <button type="button" class="exp-btn" onclick="selectDur(this)" data-dur="hora" data-i18n="modal.dur.0">1 hora</button>
-                    <button type="button" class="exp-btn selected" onclick="selectDur(this)" data-dur="media" data-i18n="modal.dur.1">Media hora</button>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" data-i18n="cart.choose">Elige tus jetskis</label>
-                <div class="cart-rows">
-                    <div class="cart-row" data-model="chico">
-                        <div class="cart-row-info">
-                            <span class="cart-row-name" data-i18n="pkg.0.name">Chico</span>
-                            <span class="cart-row-meta"><span id="up-chico" class="cart-up">$1,000</span> · <span data-i18n="cart.max1">máx 1</span></span>
-                        </div>
-                        <div class="qty-stepper">
-                            <button type="button" onclick="removeUnit('chico')" aria-label="Quitar">−</button>
-                            <span id="qty-chico">0</span>
-                            <button type="button" onclick="addUnit('chico')" aria-label="Agregar">+</button>
-                        </div>
-                    </div>
-                    <div class="cart-row" data-model="mediano">
-                        <div class="cart-row-info">
-                            <span class="cart-row-name" data-i18n="pkg.1.name">Mediano</span>
-                            <span class="cart-row-meta"><span id="up-mediano" class="cart-up">$1,300</span> · <span data-i18n="cart.max3">máx 3</span></span>
-                        </div>
-                        <div class="qty-stepper">
-                            <button type="button" onclick="removeUnit('mediano')" aria-label="Quitar">−</button>
-                            <span id="qty-mediano">0</span>
-                            <button type="button" onclick="addUnit('mediano')" aria-label="Agregar">+</button>
-                        </div>
-                    </div>
-                    <div class="cart-row" data-model="grande">
-                        <div class="cart-row-info">
-                            <span class="cart-row-name" data-i18n="pkg.2.name">Grande</span>
-                            <span class="cart-row-meta"><span id="up-grande" class="cart-up">$1,500</span> · <span data-i18n="cart.max1">máx 1</span></span>
-                        </div>
-                        <div class="qty-stepper">
-                            <button type="button" onclick="removeUnit('grande')" aria-label="Quitar">−</button>
-                            <span id="qty-grande">0</span>
-                            <button type="button" onclick="addUnit('grande')" aria-label="Agregar">+</button>
-                        </div>
-                    </div>
-                </div>
+                <label class="form-label" data-i18n="cart.choose">Tus vehículos</label>
+                <div class="veh-list" id="vehList"></div>
+                <button type="button" class="veh-add" onclick="addVehicle()">
+                    <span class="veh-add-plus">+</span>
+                    <span data-i18n="veh.add">Agregar vehículo</span>
+                </button>
             </div>
 
             <div class="cart-summary">
@@ -535,7 +497,7 @@
     </div>
 </div>
 
-<script src="js/i18n.js?v=4"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/i18n.js?v=5"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
