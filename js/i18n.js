@@ -169,7 +169,7 @@ const TRANSLATIONS = {
         "bar.map": "Cómo llegar",
 
         // PROMO / DESCUENTO
-        "promo.banner": "Reserva en línea y llévate <strong>10% de descuento</strong> en todos los servicios",
+        "promo.banner": "Reserva en línea y llévate 10% de descuento",
         "promo.tag": "−10% en línea",
 
         // MODAL
@@ -383,7 +383,7 @@ const TRANSLATIONS = {
         "bar.map": "Find us",
 
         // PROMO / DISCOUNT
-        "promo.banner": "Book online and get <strong>10% off</strong> on all services",
+        "promo.banner": "Book online and get 10% off",
         "promo.tag": "−10% online",
 
         // MODAL

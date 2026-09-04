@@ -1775,40 +1775,58 @@ footer {
 .sab-wa { background: var(--coral); color: #fff; }
 .sab-map { background: rgba(255, 255, 255, 0.06); color: var(--white); border: 1px solid var(--border-strong); }
 
-/* ─── DISCOUNT BANNER + TAGS ──────────────────────────────────────────────── */
+/* ─── DISCOUNT BANNER (marquee) + TAGS ────────────────────────────────────── */
 .discount-banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    padding: 14px 20px;
-    background: linear-gradient(90deg, rgba(224,90,43,0.16), rgba(201,148,58,0.14));
-    border-top: 1px solid rgba(224,90,43,0.35);
-    border-bottom: 1px solid rgba(224,90,43,0.35);
+    display: block;
+    overflow: hidden;
+    padding: 12px 0;
+    background: linear-gradient(90deg, var(--coral), #f0623a, var(--gold));
+    border-top: 1px solid rgba(0,0,0,0.18);
+    border-bottom: 1px solid rgba(0,0,0,0.18);
     text-decoration: none;
-    text-align: center;
-    transition: background 0.25s;
+    box-shadow: 0 4px 20px rgba(224,90,43,0.35);
 }
-.discount-banner:hover { background: linear-gradient(90deg, rgba(224,90,43,0.24), rgba(201,148,58,0.2)); }
+.marquee { width: 100%; overflow: hidden; }
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+    will-change: transform;
+}
+.discount-banner:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+.promo-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 22px;
+    white-space: nowrap;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+}
 .db-badge {
     flex-shrink: 0;
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: 1.05rem;
-    color: #fff;
-    background: var(--coral);
+    font-size: 0.9rem;
+    color: var(--coral);
+    background: #fff;
     border-radius: 100px;
-    padding: 4px 14px;
+    padding: 3px 12px;
     letter-spacing: 0.02em;
 }
-.db-text {
-    font-family: var(--font-sub);
-    font-size: 0.92rem;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    line-height: 1.4;
+.promo-sep { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
 }
-.db-text strong { color: var(--gold); }
 
 .service-card { position: relative; }
 .discount-tag {

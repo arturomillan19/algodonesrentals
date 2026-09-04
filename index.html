@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=3" />
+    <link rel="stylesheet" href="css/styles.css?v=4" />
 </head>
 <body>
 
@@ -63,10 +63,20 @@
     </div>
 </section>
 
-<!-- DISCOUNT BANNER -->
-<a href="#jetskis" class="discount-banner" onclick="openModal(); return false;">
-    <span class="db-badge">−10%</span>
-    <span class="db-text" data-i18n="promo.banner">Reserva en línea y llévate <strong>10% de descuento</strong> en todos los servicios</span>
+<!-- DISCOUNT BANNER (marquee) -->
+<a href="#jetskis" class="discount-banner" onclick="openModal(); return false;" aria-label="Reserva en línea y llévate 10% de descuento">
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+        </div>
+    </div>
 </a>
 
 <!-- SERVICE MENU -->
@@ -525,7 +535,7 @@
     </div>
 </div>
 
-<script src="js/i18n.js?v=3"></script>
-<script src="js/main.js?v=3"></script>
+<script src="js/i18n.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
