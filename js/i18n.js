@@ -16,12 +16,16 @@ const TRANSLATIONS = {
         "menu.title": "El menú<br><em>de la playa</em>",
         "menu.jetski.name": "Jetskis",
         "menu.jetski.price": "desde $1,000 · ½ hora",
+        "menu.jetski.desc": "3 modelos · chico, mediano y grande",
         "menu.banana.name": "Paseo en banana",
         "menu.banana.price": "$100 · por persona",
+        "menu.banana.desc": "Recorrido por la bahía en grupo",
         "menu.sombra.name": "Renta de sombras",
         "menu.sombra.price": "$400 · el día",
+        "menu.sombra.desc": "Sombra + 4 sillas y una mesa",
         "menu.funda.name": "Fundas contra el agua",
         "menu.funda.price": "$100 · cada una",
+        "menu.funda.desc": "Protege tu celular en el agua",
 
         // JETSKIS
         "pkg.eyebrow": "Renta de jetski",
@@ -256,12 +260,16 @@ const TRANSLATIONS = {
         "menu.title": "The beach<br><em>menu</em>",
         "menu.jetski.name": "Jetskis",
         "menu.jetski.price": "from $1,000 · ½ hour",
+        "menu.jetski.desc": "3 models · small, medium, large",
         "menu.banana.name": "Banana boat ride",
         "menu.banana.price": "$100 · per person",
+        "menu.banana.desc": "Group ride around the bay",
         "menu.sombra.name": "Shade rental",
         "menu.sombra.price": "$400 · per day",
+        "menu.sombra.desc": "Shade + 4 chairs and a table",
         "menu.funda.name": "Waterproof phone pouches",
         "menu.funda.price": "$100 · each",
+        "menu.funda.desc": "Keep your phone dry in the water",
 
         // JETSKIS
         "pkg.eyebrow": "Jetski rental",
