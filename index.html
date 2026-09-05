@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algodones Rentals — Pesca en Sea-Doo · San Carlos, Sonora</title>
-    <meta name="description" content="Tours de pesca en Sea-Doo en Playa Algodones, San Carlos, Sonora. Amanecer o atardecer en el Mar de Cortés. Comida incluida." />
+    <title>Algodones Rentals — Jetskis, banana y sombras · Playa Algodones</title>
+    <meta name="description" content="Renta de jetski, paseo en banana, renta de sombras y fundas contra el agua en Playa Algodones, San Carlos, Sonora. Reserva por WhatsApp o ven al remolque al centro de la playa." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=18" />
 </head>
 <body>
 
@@ -16,14 +16,14 @@
 <nav class="nav">
     <div class="nav-logo">
         <span class="nav-logo-main">Algodones</span>
-        <span class="nav-logo-sub">Sea-Doo Fishing · San Carlos</span>
+        <span class="nav-logo-sub">Playa Algodones · San Carlos</span>
     </div>
     <div class="nav-right">
         <div class="lang-toggle">
             <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
             <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         </div>
-        <a href="#reservar" class="nav-cta" onclick="openModal(); return false;" data-i18n="nav.cta">Reservar</a>
+        <a href="#menu" class="nav-cta" data-i18n="nav.cta">Ver servicios</a>
     </div>
 </nav>
 
@@ -40,140 +40,249 @@
             </div>
         </div>
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/Openingvideo1.MOV" type="video/mp4" />
+            <source src="assets/hero.mp4" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-content">
         <div class="hero-eyebrow" data-i18n="hero.eyebrow">Playa Algodones · San Carlos, Sonora</div>
-        <h1 class="hero-title" data-i18n="hero.title">Pesca<br><em>en Sea-Doo.</em></h1>
-        <p class="hero-sub" data-i18n="hero.sub">Salida al amanecer o al atardecer en el Mar de Cortés. Equipo incluido, comida incluida — solo trae las ganas.</p>
+        <h1 class="hero-title" data-i18n="hero.title">Vive la experiencia<br><em>de Playa Algodones</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Jetskis, paseo en banana, sombras y fundas en el Mar de Cortés. Ven al remolque —estamos al centro de la playa— o resérvalo por WhatsApp.</p>
         <div class="hero-actions">
-            <a href="#reservar" class="btn-primary" onclick="openModal(); return false;">
+            <a href="#menu" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span data-i18n="hero.cta">Ver servicios y precios</span>
+            </a>
+            <a href="#" class="btn-whats" onclick="bookGeneral(); return false;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <span data-i18n="hero.cta">Reservar ahora</span>
-            </a>
-            <a href="#paquetes" class="btn-secondary">
-                <span data-i18n="hero.secondary">Ver paquetes</span>
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span data-i18n="hero.secondary">Escríbenos por WhatsApp</span>
             </a>
         </div>
-    </div>
-
-    <div class="hero-price-pill">
-        <div class="pill-label" data-i18n="hero.pill.label">Desde</div>
-        <div class="pill-price" data-i18n="hero.pill.price">$80</div>
-        <div class="pill-detail" data-i18n="hero.pill.detail">USD · por persona</div>
+        <div class="hero-locator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="hero.locator">Estamos al centro de la Playa Algodones</span></div>
     </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div><div class="stat-val">3–5 hrs</div><div class="stat-lbl" data-i18n="stats.0.lbl">por tour</div></div>
+<!-- DISCOUNT BANNER (marquee) -->
+<a href="#jetskis" class="discount-banner" onclick="openModal(); return false;" aria-label="Reserva en línea y llévate 10% de descuento">
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+            <span class="promo-item"><span class="db-badge">−10%</span><span data-i18n="promo.banner">Reserva en línea y llévate 10% de descuento</span><span class="promo-sep">✦</span></span>
+        </div>
     </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><div class="stat-val">2–4</div><div class="stat-lbl" data-i18n="stats.1.lbl">personas por salida</div></div>
-    </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="stat-val">Todo</div><div class="stat-lbl" data-i18n="stats.2.lbl">equipo incluido</div></div>
-    </div>
-    <div class="stat">
-        <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><div class="stat-val">Mar de Cortés</div><div class="stat-lbl" data-i18n="stats.3.lbl">San Carlos, Sonora</div></div>
-    </div>
-</div>
+</a>
 
-<!-- VIDEO GALLERY -->
-<!-- VIDEO GALLERY -->
-<section class="video-gallery">
-    <div class="gallery-header section-inner reveal">
-        <div class="eyebrow" data-i18n="gallery.eyebrow">En el agua</div>
-        <h2 class="h2" data-i18n="gallery.title">Así se vive<br><em>cada salida</em></h2>
-    </div>
-    <div class="video-container reveal">
-        <div class="video-item">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Picada.MOV" type="video/mp4"></video>
-            <div class="caption" data-i18n="gallery.cap.0">Salida al amanecer</div>
-        </div>
-        <div class="video-item">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Salida.MOV" type="video/mp4"></video>
-            <div class="caption" data-i18n="gallery.cap.0">Salida al amanecer</div>
-        </div>
-        <div class="video-item">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Velocidad1.MOV" type="video/mp4"></video>
-            <div class="caption" data-i18n="gallery.cap.1">Zona de pesca</div>
-        </div>
-        <div class="video-item">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/salidamaikpaks.MOV" type="video/mp4"></video>
-            <div class="caption" data-i18n="gallery.cap.2">Aventura en el mar</div>
-        </div>
-        <div class="video-item">
-            <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;"><source src="js/assets/Aventura.MOV" type="video/mp4"></video>
-            <div class="caption" data-i18n="gallery.cap.3">Regreso al atardecer</div>
-        </div>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="experience-section">
-    <div class="section-inner reveal">
-        <div class="eyebrow" data-i18n="exp.eyebrow">La experiencia</div>
-        <h2 class="h2" data-i18n="exp.title">Mar de Cortés,<br><em>en Sea-Doo</em></h2>
-        <p class="body-text" data-i18n="exp.body">Salimos antes del amanecer o al atardecer — cuando el mar está en calma y los peces están activos. No necesitas experiencia previa.</p>
-    </div>
-    <div class="exp-grid reveal">
-        <div class="exp-photo"><video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:1;"><source src="assets/Openingvideo1.MOV" type="video/mp4"></video><div class="exp-photo-label">Aguas del Mar de Cortés</div></div>
-        <div class="exp-photo"><img src="js/assets/Pargo1.jpg" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">Pesca activa</div></div>
-
-        <div class="exp-photo"><video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:1;"><source src="assets/Mardecortes.MOV" type="video/mp4"></video><div class="exp-photo-label">Atardecer Sonorense</div></div>
-        <div class="exp-photo"><img src="js/assets/Cabrilla.JPG" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">La captura del día</div></div>
-        <div class="exp-photo"><img src="js/assets/Food1.JPG" style="width:100%; height:100%; object-fit:cover;"><div class="exp-photo-label">Comida incluida</div></div>
-    </div>
-</section>
-
-<!-- INCLUDED -->
-<section class="section included-section">
+<!-- SERVICE MENU -->
+<section class="section menu-section" id="menu">
     <div class="section-inner">
         <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="inc.eyebrow">Todo incluido</div>
-            <h2 class="h2" data-i18n="inc.title">Lo que viene<br><em>con tu tour</em></h2>
+            <div class="eyebrow" data-i18n="menu.eyebrow">Nuestros servicios</div>
+            <h2 class="h2" data-i18n="menu.title">El menú<br><em>de la playa</em></h2>
         </div>
-        <div class="included-grid reveal">
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                <div class="inc-name" data-i18n="inc.0.name">Sea-Doo GTI</div>
-                <div class="inc-desc" data-i18n="inc.0.desc">Moto acuática de última generación, mantenida al día y lista para salir.</div>
+        <div class="service-menu reveal">
+            <a href="#jetskis" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
+                <div class="service-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/><path d="M2 12c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/><path d="M2 18c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/></svg></div>
+                <div class="service-name" data-i18n="menu.jetski.name">Jetskis</div>
+                <div class="service-desc" data-i18n="menu.jetski.desc">3 modelos · chico, mediano y grande</div>
+                <div class="service-foot">
+                    <span class="service-price" data-i18n="menu.jetski.price">desde $1,000 · ½ hora</span>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </a>
+            <a href="#banana" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
+                <div class="service-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <div class="service-name" data-i18n="menu.banana.name">Paseo en banana</div>
+                <div class="service-desc" data-i18n="menu.banana.desc">Recorrido por la bahía en grupo</div>
+                <div class="service-foot">
+                    <span class="service-price" data-i18n="menu.banana.price">$100 · por persona</span>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </a>
+            <a href="#sombras" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
+                <div class="service-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 019 8H3a9 9 0 019-8z"/><line x1="12" y1="11" x2="12" y2="20"/><path d="M8.5 20a3.5 3.5 0 007 0"/></svg></div>
+                <div class="service-name" data-i18n="menu.sombra.name">Renta de sombras</div>
+                <div class="service-desc" data-i18n="menu.sombra.desc">Sombra + 4 sillas y una mesa</div>
+                <div class="service-foot">
+                    <span class="service-price" data-i18n="menu.sombra.price">$400 · el día</span>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </a>
+            <a href="#fundas" class="service-card">
+                <span class="discount-tag" data-i18n="promo.tag">−10% en línea</span>
+                <div class="service-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="10" y1="18" x2="14" y2="18"/></svg></div>
+                <div class="service-name" data-i18n="menu.funda.name">Fundas contra el agua</div>
+                <div class="service-desc" data-i18n="menu.funda.desc">Protege tu celular en el agua</div>
+                <div class="service-foot">
+                    <span class="service-price" data-i18n="menu.funda.price">$100 · cada una</span>
+                    <svg class="service-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JETSKIS -->
+<section class="section packages-section" id="jetskis">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="pkg.eyebrow">Renta de jetski</div>
+            <h2 class="h2" data-i18n="pkg.title">Elige tu<br><em>jetski</em></h2>
+            <p class="body-text" data-i18n="pkg.body">Tres modelos según cuántos van y qué complexión. Precios en pesos, por hora o media hora. El tiempo corre desde que se entrega la unidad.</p>
+        </div>
+        <div class="packages-grid reveal">
+
+            <!-- Chico -->
+            <div class="pkg-card">
+                <div class="pkg-photo"><img src="assets/modelo-chico.jpg" alt="Jetski Chico"></div>
+                <div class="pkg-name" data-i18n="pkg.0.name">Chico</div>
+                <div class="pkg-for" data-i18n="pkg.0.for">Ideal para una persona, o dos de complexión muy ligera.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row0.lbl">1 hora</span><span><strong>$1,700</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.0.row1.lbl">Media hora</span><span><strong>$1,000</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.0.inc.0">1 plaza · ideal para 1 persona</li>
+                    <li data-i18n="pkg.0.inc.1">Ágil y fácil de manejar</li>
+                    <li data-i18n="pkg.0.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.0.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.0.extra">La opción más <strong>económica</strong> para estrenarte en el agua</div>
+                <a href="#" class="pkg-cta" onclick="openModal('chico'); return false;" data-i18n="pkg.0.cta">Reservar este modelo</a>
             </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-                <div class="inc-name" data-i18n="inc.1.name">Equipo de pesca</div>
-                <div class="inc-desc" data-i18n="inc.1.desc">Cañas, carretes, anzuelos y carnada. Tú no traes nada — nosotros llevamos todo.</div>
+
+            <!-- Mediano -->
+            <div class="pkg-card">
+                <div class="pkg-photo"><img src="assets/modelo-mediano.jpg" alt="Jetski Mediano"></div>
+                <div class="pkg-name" data-i18n="pkg.1.name">Mediano</div>
+                <div class="pkg-for" data-i18n="pkg.1.for">Para dos personas de complexión ligera que quieren ir juntas.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row0.lbl">1 hora</span><span><strong>$1,900</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.1.row1.lbl">Media hora</span><span><strong>$1,300</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.1.inc.0">2 plazas · complexión ligera</li>
+                    <li data-i18n="pkg.1.inc.1">Estable y con buena potencia</li>
+                    <li data-i18n="pkg.1.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.1.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.1.extra">El <strong>equilibrio</strong> entre espacio y precio</div>
+                <a href="#" class="pkg-cta" onclick="openModal('mediano'); return false;" data-i18n="pkg.1.cta">Reservar este modelo</a>
             </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <div class="inc-name" data-i18n="inc.2.name">Chaleco salvavidas</div>
-                <div class="inc-desc" data-i18n="inc.2.desc">Certificado y ajustable. La seguridad en el agua es parte de la experiencia.</div>
+
+            <!-- Grande -->
+            <div class="pkg-card featured">
+                <div class="pkg-photo"><span class="pkg-badge" data-i18n="pkg.2.badge">El más pedido</span><img src="assets/modelo-grande.jpg" alt="Jetski Grande"></div>
+                <div class="pkg-name" data-i18n="pkg.2.name">Grande</div>
+                <div class="pkg-for" data-i18n="pkg.2.for">Biplaza para dos adultos de complexión grande. El más potente.</div>
+                <div class="pkg-prices">
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row0.lbl">1 hora</span><span><strong>$2,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                    <div class="pkg-price-row"><span data-i18n="pkg.2.row1.lbl">Media hora</span><span><strong>$1,500</strong> <span class="pkg-price-sub">MXN</span></span></div>
+                </div>
+                <ul class="pkg-includes">
+                    <li data-i18n="pkg.2.inc.0">2 plazas · dos adultos</li>
+                    <li data-i18n="pkg.2.inc.1">La mayor potencia de la flota</li>
+                    <li data-i18n="pkg.2.inc.2">Chaleco e inducción incluidos</li>
+                    <li data-i18n="pkg.2.inc.3">Gasolina incluida</li>
+                </ul>
+                <div class="pkg-extra" data-i18n="pkg.2.extra">El más <strong>cómodo y potente</strong> para dos adultos</div>
+                <a href="#" class="pkg-cta" onclick="openModal('grande'); return false;" data-i18n="pkg.2.cta">Reservar este modelo</a>
             </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-                <div class="inc-name" data-i18n="inc.3.name">Comida y bebidas</div>
-                <div class="inc-desc" data-i18n="inc.3.desc">Platillos sonorenses preparados a bordo. Agua, refrescos y cerveza.</div>
+
+        </div>
+
+        <!-- includes strip -->
+        <div class="jet-chips reveal">
+            <span class="jet-chip" data-i18n="jet.chip.0">✓ Chaleco salvavidas</span>
+            <span class="jet-chip" data-i18n="jet.chip.1">✓ Inducción de manejo</span>
+            <span class="jet-chip" data-i18n="jet.chip.2">✓ Gasolina incluida</span>
+            <span class="jet-chip" data-i18n="jet.chip.3">✓ Zona supervisada</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- HOW TO BOOK (steps) -->
+<section class="section steps-section" id="pasos">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="steps.eyebrow">Cómo reservar</div>
+            <h2 class="h2" data-i18n="steps.title">Reserva en <em>4 pasos</em></h2>
+        </div>
+        <ol class="step-list reveal">
+            <li data-i18n="steps.0">Escríbenos por WhatsApp con el modelo y el horario que quieres.</li>
+            <li data-i18n="steps.1">Confirmamos la disponibilidad de los jetskis con el encargado.</li>
+            <li data-i18n="steps.2">Pagas en el remolque (tarjeta o efectivo) o a distancia por transferencia (envías tu comprobante para apartar).</li>
+            <li data-i18n="steps.3">Al recibir la unidad dejas una identificación y firmas un contrato (te haces responsable por daños).</li>
+        </ol>
+    </div>
+</section>
+
+<!-- RULES -->
+<section class="section rules-section" id="reglas">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="rules.eyebrow">Seguridad</div>
+            <h2 class="h2" data-i18n="rules.title2">Reglas e<br><em>instrucciones</em></h2>
+        </div>
+        <ul class="rule-list rule-grid reveal">
+            <li data-i18n="rules.0">Identificación oficial vigente para rentar; se deja durante el tiempo de renta. Edad mínima 18 años para manejar.</li>
+            <li data-i18n="rules.1">Uso obligatorio del chaleco salvavidas durante todo el recorrido.</li>
+            <li data-i18n="rules.2">Prohibido operar bajo efectos de alcohol o cualquier sustancia.</li>
+            <li data-i18n="rules.3">Respeta la zona delimitada por boyas y guarda distancia de bañistas y embarcaciones.</li>
+            <li data-i18n="rules.4">Recibes una inducción de manejo antes de salir. Velocidad moderada al entrar y salir de la orilla.</li>
+            <li data-i18n="rules.5">Se firma un contrato en el que el cliente se hace responsable por cualquier daño al vehículo.</li>
+            <li data-i18n="rules.6">El tiempo corre desde que se entrega la unidad. Respeta el horario contratado.</li>
+            <li data-i18n="rules.7">Menores de edad solo a bordo acompañados por un adulto responsable.</li>
+            <li data-i18n="rules.8">Si la unidad se voltea 2 veces, el servicio se cancela automáticamente: entra agua al motor y el riesgo de dañarlo por completo es muy alto.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- EXPERIENCE CAROUSEL -->
+<section class="section carousel-section" id="experiencia">
+    <div class="section-inner">
+        <div class="section-header reveal">
+            <div class="eyebrow" data-i18n="gallery.eyebrow">En el agua</div>
+            <h2 class="h2" data-i18n="gallery.title">Así se siente<br><em>cada recorrido</em></h2>
+        </div>
+        <div class="carousel reveal">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carTrack">
+                    <div class="carousel-slide">
+                        <video autoplay muted loop playsinline><source src="assets/experiencia-1.mp4" type="video/mp4"></video>
+                        <div class="carousel-caption" data-i18n="gallery.cap.0">Salida a mar abierto</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <video muted loop playsinline><source src="assets/experiencia-2.mp4" type="video/mp4"></video>
+                        <div class="carousel-caption" data-i18n="gallery.cap.1">Pura velocidad</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <video muted loop playsinline><source src="assets/experiencia-3.mp4?v=11" type="video/mp4"></video>
+                        <div class="carousel-caption" data-i18n="gallery.cap.2">Adrenalina al atardecer</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <video muted loop playsinline><source src="assets/experiencia-4.mp4?v=11" type="video/mp4"></video>
+                        <div class="carousel-caption" data-i18n="gallery.cap.3">Atardecer en el Mar de Cortés</div>
+                    </div>
+                </div>
             </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-                <div class="inc-name" data-i18n="inc.4.name">Guía experto</div>
-                <div class="inc-desc" data-i18n="inc.4.desc">Local del Mar de Cortés. Conoce las zonas, corrientes y los mejores bancos.</div>
-            </div>
-            <div class="inc-card">
-                <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                <div class="inc-name" data-i18n="inc.5.name">Transporte local</div>
-                <div class="inc-desc" data-i18n="inc.5.desc">Te recogemos en tu hotel en San Carlos. Sin vuelta de taxi al muelle.</div>
-            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="carDots"></div>
         </div>
     </div>
 </section>
@@ -188,134 +297,191 @@
     <span class="seadoo-section-text" data-i18n="seadoo.post">equipos de última generación</span>
 </div>
 
-<!-- PACKAGES -->
-<section class="section packages-section" id="paquetes">
-    <div class="section-inner">
-        <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="pkg.eyebrow">Paquetes</div>
-            <h2 class="h2" data-i18n="pkg.title">Elige tu<br><em>aventura</em></h2>
-            <p class="body-text" data-i18n="pkg.body">Tres opciones diseñadas para grupos distintos. Todos incluyen equipo, comida, guía y traslado.</p>
+<!-- BANANA RIDE -->
+<section class="banana-section" id="banana">
+    <div class="section-inner banana-grid reveal">
+        <div class="banana-media carousel">
+            <div class="carousel-viewport">
+                <div class="carousel-track">
+                    <div class="carousel-slide"><video autoplay muted loop playsinline><source src="assets/banana.mp4?v=9" type="video/mp4"></video></div>
+                    <div class="carousel-slide"><img src="assets/banana-1.jpg?v=9" alt="Paseo en banana en la bahía" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-2.jpg?v=9" alt="Paseo en banana al atardecer" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-3.jpg?v=9" alt="Paseo en banana en familia" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/banana-4.jpg?v=9" alt="Paseo en banana en el Mar de Cortés" loading="lazy"></div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots"></div>
         </div>
-        <div class="packages-grid reveal">
+        <div class="banana-info">
+            <div class="eyebrow" data-i18n="banana.eyebrow">Paseo en banana</div>
+            <h2 class="h2" data-i18n="banana.title">Paseo en<br><em>banana</em></h2>
+            <p class="body-text" data-i18n="banana.body">Un recorrido divertido por la bahía, ideal para ir en grupo. Diversión asegurada con chaleco y personal atento.</p>
+            <ul class="banana-facts">
+                <li data-i18n="banana.f0"><strong>$100 MXN</strong> por persona</li>
+                <li data-i18n="banana.f1">Recorrido por la bahía · 10–15 min</li>
+                <li data-i18n="banana.f2">Grupos de 5 a 7 personas</li>
+            </ul>
 
-            <!-- Pareja -->
-            <div class="pkg-card">
-                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-                <div class="pkg-name" data-i18n="pkg.0.name">Pareja</div>
-                <div class="pkg-for" data-i18n="pkg.0.for">Pesca VIP. Solo ustedes dos en el mar.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.0.row0.lbl">2 personas</span><span><strong>$160</strong> <span class="pkg-price-sub">USD</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.0.row1.lbl">por persona</span><span><strong>$80</strong> <span class="pkg-price-sub">USD</span></span></div>
+            <div class="banana-cart">
+                <div class="bc-row">
+                    <span class="bc-label" data-i18n="bcart.people">¿Cuántas personas van?</span>
+                    <div class="bc-stepper">
+                        <button type="button" onclick="bananaQty(-1)" aria-label="Menos">−</button>
+                        <span id="bc-qty">5</span>
+                        <button type="button" onclick="bananaQty(1)" aria-label="Más">+</button>
+                    </div>
                 </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.0.inc.0">Sea-Doo exclusivo para los dos</li>
-                    <li data-i18n="pkg.0.inc.1">Equipo de pesca completo</li>
-                    <li data-i18n="pkg.0.inc.2">Comida y bebidas en el mar</li>
-                    <li data-i18n="pkg.0.inc.3">Guía personal · 3–4 hrs</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.0.extra">Opción de <strong>amanecer o atardecer</strong></div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('pareja'); return false;" data-i18n="pkg.0.cta">Reservar este paquete</a>
-            </div>
-
-            <!-- Familia -->
-            <div class="pkg-card featured">
-                <div class="pkg-badge" data-i18n="pkg.1.badge">Mas popular</div>
-                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-                <div class="pkg-name" data-i18n="pkg.1.name">Familia</div>
-                <div class="pkg-for" data-i18n="pkg.1.for">Para que los niños sientan el mar de verdad.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.1.row0.lbl">2 adultos + 2 niños</span><span><strong>$280</strong> <span class="pkg-price-sub">USD</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.1.row1.lbl">precio familia</span><span><strong>$70</strong> <span class="pkg-price-sub" data-i18n="pkg.1.row1.sub">USD / persona</span></span></div>
+                <div class="bc-total">
+                    <span data-i18n="bcart.total">Costo del viaje</span>
+                    <strong id="bc-total">$500</strong>
                 </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.1.inc.0">2 Sea-Doos para toda la familia</li>
-                    <li data-i18n="pkg.1.inc.1">Equipo adaptado para niños</li>
-                    <li data-i18n="pkg.1.inc.2">Comida familiar completa</li>
-                    <li data-i18n="pkg.1.inc.3">Guía + asistente · 4–5 hrs</li>
-                    <li data-i18n="pkg.1.inc.4">Fotos incluidas</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.1.extra"><strong>Recomendado</strong> para niños mayores de 6 años</div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('familia'); return false;" data-i18n="pkg.1.cta">Reservar este paquete</a>
+                <p class="bc-note" id="bc-note"></p>
+                <a href="#" class="btn-primary" onclick="bookBanana(); return false;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span data-i18n="banana.cta">Reservar por WhatsApp</span>
+                </a>
             </div>
-
-            <!-- Amigos -->
-            <div class="pkg-card">
-                <div class="pkg-icon-svg"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                <div class="pkg-name" data-i18n="pkg.2.name">Amigos</div>
-                <div class="pkg-for" data-i18n="pkg.2.for">Reto de pesca. El que más pesca no paga su cerveza.</div>
-                <div class="pkg-prices">
-                    <div class="pkg-price-row"><span data-i18n="pkg.2.row0.lbl">3–4 personas</span><span><strong>$300</strong> <span class="pkg-price-sub">USD</span></span></div>
-                    <div class="pkg-price-row"><span data-i18n="pkg.2.row1.lbl">por persona</span><span><strong>$75</strong> <span class="pkg-price-sub">USD</span></span></div>
-                </div>
-                <ul class="pkg-includes">
-                    <li data-i18n="pkg.2.inc.0">2 Sea-Doos · 2 por moto</li>
-                    <li data-i18n="pkg.2.inc.1">Equipo de pesca completo</li>
-                    <li data-i18n="pkg.2.inc.2">Carnada premium + equipo extra</li>
-                    <li data-i18n="pkg.2.inc.3">Comida, bebidas y cervezas</li>
-                    <li data-i18n="pkg.2.inc.4">5 hrs de salida</li>
-                </ul>
-                <div class="pkg-extra" data-i18n="pkg.2.extra">Precio por <strong>4 personas</strong> — grupos más grandes consultar</div>
-                <a href="#reservar" class="pkg-cta" onclick="openModal('amigos'); return false;" data-i18n="pkg.2.cta">Reservar este paquete</a>
-            </div>
-
         </div>
     </div>
 </section>
 
-<!-- FOOD -->
-<section class="section food-section">
+<!-- SOMBRAS -->
+<section class="section offer-section" id="sombras">
+    <div class="section-inner offer reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 019 8H3a9 9 0 019-8z"/><line x1="12" y1="11" x2="12" y2="20"/><path d="M8.5 20a3.5 3.5 0 007 0"/></svg></div>
+        <div class="offer-body">
+            <div class="eyebrow" data-i18n="sombra.eyebrow">Renta de sombras</div>
+            <h2 class="h2" data-i18n="sombra.title">Renta de<br><em>sombras</em></h2>
+            <p class="body-text" data-i18n="sombra.body">Renta una sombra y disfruta la playa cómodo todo el día. Pregunta en el remolque o resérvala por WhatsApp.</p>
+            <div class="offer-price"><strong data-i18n="sombra.price">$400</strong> <span data-i18n="sombra.per">MXN · todo el día o tu estadía</span></div>
+            <a href="#" class="btn-primary" onclick="bookSombra(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="sombra.cta">Rentar sombra</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FUNDAS -->
+<section class="section offer-section offer-alt" id="fundas">
+    <div class="section-inner offer reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="10" y1="18" x2="14" y2="18"/></svg></div>
+        <div class="offer-body">
+            <div class="eyebrow" data-i18n="funda.eyebrow">Fundas contra el agua</div>
+            <h2 class="h2" data-i18n="funda.title">Fundas<br><em>contra el agua</em></h2>
+            <p class="body-text" data-i18n="funda.body">Protege tu celular en el agua. Pásate al remolque o pídela por WhatsApp y te la llevamos a tu lugar.</p>
+            <div class="offer-price"><strong data-i18n="funda.price">$100</strong> <span data-i18n="funda.per">MXN · cada una</span></div>
+            <a href="#" class="btn-primary" onclick="bookFunda(); return false;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span data-i18n="funda.cta">Pedir funda</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PAYMENT (transfer) -->
+<section class="section pay-section" id="pago">
     <div class="section-inner">
         <div class="section-header reveal">
-            <div class="eyebrow" data-i18n="food.eyebrow">La cocina</div>
-            <h2 class="h2" data-i18n="food.title">Comida de<br><em>verdad, en el mar</em></h2>
-            <p class="body-text" data-i18n="food.body">No traemos loncheras. Preparamos platillos sonorenses completos a bordo — pescado fresco del día, caldo, arroz, tortillas.</p>
+            <div class="eyebrow" data-i18n="pay.eyebrow">Pago a distancia</div>
+            <h2 class="h2" data-i18n="pay.title">Pago por<br><em>transferencia</em></h2>
+            <p class="body-text" data-i18n="pay.body">¿Reservas a distancia? Primero confirmamos disponibilidad por WhatsApp y luego apartas con transferencia. En el remolque también aceptamos tarjeta y efectivo.</p>
         </div>
-        <div class="food-intro reveal">
-            <div class="food-hero-img">
-                <div class="food-hero-ph">🍽️</div>
-                <img src="js/assets/Food1.JPG" alt="Platillo a bordo" onerror="this.style.display='none'">
-            </div>
-            <div>
-                <p class="body-text" style="max-width:420px; margin-bottom:28px;" data-i18n="food.story">El menú cambia según lo que piquen. Si atrapa pargo, comes pargo. Si pica cabrilla, se sirve cabrilla. El chef es el mar.</p>
-                <div class="eyebrow" style="margin-bottom:0;" data-i18n="food.included">Incluido en todos los paquetes</div>
-            </div>
-        </div>
-        <div class="food-plates-grid reveal">
-            <div class="food-plate">
-                <div class="fp-visual fp-bg-1"><img src="js/assets/Food2.JPG" alt="Ceviche" onerror="this.style.display='none'"></div>
-                <div class="fp-info">
-                    <div class="fp-name" data-i18n="food.plate.0.name">Ceviche</div>
-                    <div class="fp-desc" data-i18n="food.plate.0.desc">Limón, cilantro, chile serrano</div>
-                    <div class="fp-tag" data-i18n="food.plate.0.tag">Pescado fresco</div>
+        <div class="pay-single reveal">
+            <div class="pay-card">
+                <div class="pay-card-head">
+                    <div class="inc-icon-svg"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                    <div class="pay-card-title" data-i18n="pay.card.title">Datos de transferencia</div>
                 </div>
-            </div>
-            <div class="food-plate">
-                <div class="fp-visual fp-bg-2"><img src="js/assets/Food3.JPG" alt="Tacos" onerror="this.style.display='none'"></div>
-                <div class="fp-info">
-                    <div class="fp-name" data-i18n="food.plate.1.name">Tacos de Pescado</div>
-                    <div class="fp-desc" data-i18n="food.plate.1.desc">Tortilla de maíz, pico de gallo</div>
-                    <div class="fp-tag" data-i18n="food.plate.1.tag">Sonorense</div>
+                <div class="pay-rows">
+                    <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.banco">Banco</span><span class="pay-val">Scotiabank</span></div>
+                    <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.titular">Titular</span><span class="pay-val">Francisco Gonzalez</span></div>
+                    <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.cuenta">Tarjeta</span><span class="pay-val pay-num">5579 2091 4818 2972</span></div>
+                    <div class="pay-row"><span class="pay-lbl" data-i18n="pay.lbl.concepto">Concepto</span><span class="pay-val" data-i18n="pay.val.concepto">Tu nombre + fecha</span></div>
                 </div>
-            </div>
-            <div class="food-plate">
-                <div class="fp-visual fp-bg-3"><img src="js/assets/Food4.JPG" alt="Caldo" onerror="this.style.display='none'"></div>
-                <div class="fp-info">
-                    <div class="fp-name" data-i18n="food.plate.2.name">Caldo de Pescado</div>
-                    <div class="fp-desc" data-i18n="food.plate.2.desc">Con verduras de temporada</div>
-                    <div class="fp-tag" data-i18n="food.plate.2.tag">Tradicional</div>
-                </div>
-            </div>
-            <div class="food-plate">
-                <div class="fp-visual fp-bg-4"><img src="js/assets/Food5.JPG" alt="Mariscos" onerror="this.style.display='none'"></div>
-                <div class="fp-info">
-                    <div class="fp-name" data-i18n="food.plate.3.name">Mariscos</div>
-                    <div class="fp-desc" data-i18n="food.plate.3.desc">Camarón, almeja, jaiba</div>
-                    <div class="fp-tag" data-i18n="food.plate.3.tag">Del día</div>
-                </div>
+                <p class="pay-note" data-i18n="pay.note">Confirma disponibilidad antes de transferir. Envía tu comprobante por WhatsApp para apartar tu horario.</p>
             </div>
         </div>
     </div>
 </section>
+
+<!-- REMOLQUE / HOW TO FIND US -->
+<section class="section remolque-section" id="remolque">
+    <div class="section-inner">
+        <div class="section-header reveal remolque-head">
+            <div class="eyebrow" data-i18n="rem.eyebrow">Cómo llegar</div>
+            <h2 class="h2" data-i18n="rem.title">Estamos al<br><em>centro de la playa</em></h2>
+            <p class="body-text" data-i18n="rem.body">Búscanos al centro de la Playa Algodones. Importante: entra por la entrada correcta, la del lado oeste.</p>
+        </div>
+
+        <div class="rem-grid reveal">
+            <!-- media slider: sign photo + location video -->
+            <div class="rem-media carousel">
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/entrada.jpg?v=8" alt="Entrada correcta a Playa Algodones (lado oeste)" loading="lazy">
+                            <div class="carousel-caption" data-i18n="rem.entrance.caption">Busca este letrero: es la entrada correcta.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <video autoplay muted loop playsinline><source src="assets/remolque.mp4?v=9" type="video/mp4"></video>
+                            <div class="carousel-caption" data-i18n="rem.video.caption">Nuestro lugar en la playa: aquí rentas y pagas en efectivo.</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="carousel-btn next" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="carousel-dots"></div>
+            </div>
+
+            <!-- info -->
+            <div class="rem-info">
+                <div class="rem-alert">
+                    <div class="rem-alert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div class="rem-alert-body">
+                        <div class="rem-alert-title" data-i18n="rem.entrance.title">Entra por la entrada del lado OESTE</div>
+                        <p class="rem-alert-text" data-i18n="rem.entrance.body">Hay <strong>dos entradas</strong>. La nuestra es la del <strong>lado oeste</strong> (letrero «Original Algodones»). En la otra pueden intentar desviarte.</p>
+                    </div>
+                </div>
+
+                <ul class="rem-benefits">
+                    <li data-i18n="rem.ben.0">Más espacio de estacionamiento</li>
+                    <li data-i18n="rem.ben.1">Menos caminata hasta la playa</li>
+                    <li data-i18n="rem.ben.2">Rampas de madera con acceso para silla de ruedas</li>
+                </ul>
+
+                <div class="rem-bath"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span data-i18n="rem.bath">Los baños están en el área de estacionamiento.</span></div>
+                <div class="rem-address" data-i18n="rem.address">Carretera Manlio Fabio Beltrones Rivera · 85503 Guaymas, Son., México</div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Playa+Algodones+San+Carlos+Sonora" target="_blank" rel="noopener" class="btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span data-i18n="rem.cta">Ver Playa Algodones en el mapa</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BEACH CARE -->
+<div class="beach-care">
+    <div class="beach-care-inner reveal">
+        <div class="care-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/><path d="M2 13c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/><path d="M2 19c1.6 0 2.1-1 3.7-1s2.1 1 3.7 1 2.1-1 3.7-1 2.1 1 3.7 1 2.1-1 3.5-1"/></svg></div>
+        <div>
+            <div class="care-title" data-i18n="care.title">Cuida la playa</div>
+            <div class="care-body" data-i18n="care.body">Ayúdanos a mantener Playa Algodones limpia: llévate tu basura al salir. Gracias por cuidar el Mar de Cortés.</div>
+        </div>
+    </div>
+</div>
 
 <!-- TESTIMONIALS -->
 <section class="section testi-section">
@@ -327,19 +493,19 @@
         <div class="testi-grid reveal">
             <div class="testi-card">
                 <div class="testi-stars">★★★★★</div>
-                <p class="testi-quote" data-i18n="testi.0.quote">"Nunca había pescado en mi vida y terminé agarrando tres pargos. El guía tiene una paciencia increíble y la comida fue lo mejor del viaje."</p>
+                <p class="testi-quote" data-i18n="testi.0.quote">"Nunca me había subido a un jetski y en cinco minutos ya andaba solo. La inducción fue clarísima y el agua estaba increíble."</p>
                 <div class="testi-author">Marco A.</div>
                 <div class="testi-loc" data-i18n="testi.0.loc">Hermosillo, Sonora</div>
             </div>
             <div class="testi-card">
                 <div class="testi-stars">★★★★★</div>
-                <p class="testi-quote" data-i18n="testi.1.quote">"Lo hicimos en familia con nuestros hijos de 8 y 11 años. Los niños no querían regresar. El atardecer en el mar fue algo que nunca vamos a olvidar."</p>
+                <p class="testi-quote" data-i18n="testi.1.quote">"Rentamos el grande entre mi pareja y yo. Súper cómodo para los dos y con una potencia brutal. Repetimos al día siguiente."</p>
                 <div class="testi-author">Claudia R.</div>
                 <div class="testi-loc" data-i18n="testi.1.loc">Phoenix, Arizona</div>
             </div>
             <div class="testi-card">
                 <div class="testi-stars">★★★★★</div>
-                <p class="testi-quote" data-i18n="testi.2.quote">"Éramos cuatro amigos y lo repetimos al día siguiente. El Mar de Cortés en Sea-Doo es algo que no tiene precio. Reserven con anticipación."</p>
+                <p class="testi-quote" data-i18n="testi.2.quote">"El proceso fue rápido: transferencia, mando mi comprobante y listo. Personal muy atento y todo en regla. 100% recomendado."</p>
                 <div class="testi-author">Rodrigo M.</div>
                 <div class="testi-loc" data-i18n="testi.2.loc">Tucson, Arizona</div>
             </div>
@@ -347,102 +513,86 @@
     </div>
 </section>
 
-<!-- BOOKING CTA -->
-<section class="booking-section" id="reservar">
-    <div class="booking-card reveal">
-        <div class="eyebrow" style="justify-content:center; margin-bottom:12px;" data-i18n="booking.eyebrow">Reserva tu lugar</div>
-        <div class="booking-price" data-i18n="booking.price">$2,500</div>
-        <div class="booking-per" data-i18n="booking.per">MXN por persona · todo incluido</div>
-        <div class="booking-actions">
-            <a href="#" class="btn-wa" onclick="openModal(); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <span data-i18n="booking.cta">Reservar por WhatsApp</span>
-            </a>
-            <div class="booking-divider"></div>
-            <a href="https://www.instagram.com/algodonestours" target="_blank" rel="noopener" class="btn-ig">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-                @algodonestours
-            </a>
-        </div>
-        <p class="booking-note" data-i18n="booking.note">Respuesta en menos de <strong>2 horas</strong> · Horarios disponibles 7 días a la semana · <strong>Sin pago por adelantado</strong></p>
-    </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
     <div>
-        <div class="foot-brand">Algodones Rentals</div>
+        <img class="foot-logo" src="assets/logo.jpg?v=9" alt="Algodones Rentals" />
         <div class="foot-loc">Playa Algodones · San Carlos, Sonora · México</div>
+        <div class="foot-future" data-i18n="footer.future">¿Tienes un negocio en la playa? Pronto podrás anunciarte aquí.</div>
     </div>
     <div class="foot-right">
-        <span data-i18n="footer.tagline">Tours de pesca en Sea-Doo en el Mar de Cortés</span><br>
-        +52 622 176 3312 · @algodonestours
+        <span data-i18n="footer.tagline">Jetskis, banana, sombras y fundas en Playa Algodones</span><br>
+        +52 622 176 3312 · @algodonesrentals
     </div>
 </footer>
+
+<!-- STICKY ACTION BAR (mobile) -->
+<div class="sticky-actionbar">
+    <a href="#" class="sab-btn sab-wa" onclick="bookGeneral(); return false;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span data-i18n="bar.wa">WhatsApp</span>
+    </a>
+    <a href="#remolque" class="sab-btn sab-map">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-i18n="bar.map">Cómo llegar</span>
+    </a>
+</div>
 
 <!-- MODAL -->
 <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
     <div class="modal">
         <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&#x2715;</button>
 
-        <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals</div>
-        <h2 class="modal-title" data-i18n="modal.title">Reserva tu<br><em>tour</em></h2>
-        <p class="modal-sub" data-i18n="modal.sub">Te enviamos confirmación por WhatsApp en menos de 2 horas.</p>
+        <div class="modal-eyebrow" data-i18n="modal.eyebrow">Algodones Rentals · 10% en línea</div>
+        <h2 class="modal-title" data-i18n="modal.title">Reserva tus<br><em>jetskis</em></h2>
+        <p class="modal-sub" data-i18n="modal.sub">Agrega cada vehículo con su modelo, duración y hora. Confirmamos disponibilidad por WhatsApp; al recibir dejas ID y firmas contrato.</p>
 
         <form onsubmit="submitBooking(event)">
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label" for="f-nombre" data-i18n="modal.nombre">Nombre</label>
-                    <input class="form-input" type="text" id="f-nombre" name="nombre" required
-                           data-i18n-placeholder="modal.nombre" placeholder="Nombre" autocomplete="given-name" />
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="f-personas" data-i18n="modal.personas">Personas</label>
-                    <select class="form-select" id="f-personas" name="personas" required>
-                        <option value="">—</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5+">5+</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label class="form-label" for="f-nombre" data-i18n="modal.nombre">Nombre</label>
+                <input class="form-input" type="text" id="f-nombre" name="nombre" required
+                       data-i18n-placeholder="modal.nombre" placeholder="Nombre" autocomplete="given-name" />
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="f-paquete" data-i18n="modal.paquete">Paquete</label>
-                <select class="form-select" id="f-paquete" name="paquete" required>
-                    <option value="" data-i18n-val="modal.paquete.placeholder">Elige un paquete</option>
-                    <option value="Pesca VIP en Pareja" data-i18n-val="modal.paquete.0">Pareja — Pesca VIP ($160 USD)</option>
-                    <option value="Aventura en Familia" data-i18n-val="modal.paquete.1">Familia — Aventura en el Mar ($280 USD)</option>
-                    <option value="Reto de Pesca con Amigos" data-i18n-val="modal.paquete.2">Amigos — Reto de Pesca ($300 USD)</option>
-                </select>
+                <label class="form-label" data-i18n="cart.choose">Tus vehículos</label>
+
+                <div class="veh-bulk">
+                    <span class="veh-bulk-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="bulk.label">Mismo horario para todos</span></span>
+                    <div class="veh-bulk-fields">
+                        <select id="bulk-dur" class="form-select">
+                            <option value="media" data-i18n-val="modal.dur.1">Media hora</option>
+                            <option value="hora" data-i18n-val="modal.dur.0">1 hora</option>
+                        </select>
+                        <input type="time" id="bulk-hora" class="form-input" />
+                        <button type="button" class="veh-bulk-apply" onclick="applyToAll()" data-i18n="bulk.apply">Aplicar a todos</button>
+                    </div>
+                    <span class="veh-bulk-hint" data-i18n="bulk.hint">O ajusta cada vehículo por separado abajo.</span>
+                </div>
+
+                <div class="veh-list" id="vehList"></div>
+                <button type="button" class="veh-add" onclick="addVehicle()">
+                    <span class="veh-add-plus">+</span>
+                    <span data-i18n="veh.add">Agregar vehículo</span>
+                </button>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label" for="f-fecha" data-i18n="modal.fecha">Fecha</label>
-                    <input class="form-input" type="date" id="f-fecha" name="fecha" required />
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="f-hora" data-i18n="modal.hora">Horario</label>
-                    <select class="form-select" id="f-hora" name="hora" required>
-                        <option value="">—</option>
-                        <option value="Amanecer" data-i18n-val="modal.hora.0">Amanecer</option>
-                        <option value="Atardecer" data-i18n-val="modal.hora.1">Atardecer</option>
-                    </select>
-                </div>
+            <div class="cart-summary">
+                <div class="cart-line"><span data-i18n="cart.subtotal">Subtotal</span><span id="sum-subtotal">$0</span></div>
+                <div class="cart-line cart-line-disc"><span data-i18n="cart.discount">Descuento en línea (10%)</span><span id="sum-discount">−$0</span></div>
+                <div class="cart-line cart-line-total"><span data-i18n="cart.total">Total estimado</span><span id="sum-total">$0</span></div>
+                <p class="cart-note" data-i18n="cart.note">Precio estimado. Confirmamos disponibilidad y total exacto por WhatsApp.</p>
             </div>
 
             <div class="form-group">
-                <label class="form-label" data-i18n="modal.exp">Experiencia en pesca</label>
-                <div class="exp-toggle">
-                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Ninguna" data-i18n="modal.exp.0">Ninguna</button>
-                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Poca" data-i18n="modal.exp.1">Poca</button>
-                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Intermedia" data-i18n="modal.exp.2">Intermedia</button>
-                    <button type="button" class="exp-btn" onclick="selectExp(this)" data-val="Avanzada" data-i18n="modal.exp.3">Avanzada</button>
-                </div>
-                <input type="hidden" id="f-experiencia" name="experiencia" value="" />
+                <label class="form-label" for="f-fecha" data-i18n="modal.fecha">Fecha</label>
+                <input class="form-input" type="date" id="f-fecha" name="fecha" required />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="f-notas" data-i18n="modal.notas">Notas (opcional)</label>
+                <input class="form-input" type="text" id="f-notas" name="notas"
+                       data-i18n-placeholder="modal.notas.ph" placeholder="Ej. tiempos distintos por unidad, dudas…" />
             </div>
 
             <div class="modal-divider"></div>
@@ -451,12 +601,12 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.4 1.18 2 2 0 012.38 0h2.08A2 2 0 016.44 1.67a12.88 12.88 0 00.7 2.81 2 2 0 01-.45 2.11L5.91 7.37a16 16 0 006.72 6.72l.78-.78a2 2 0 012.11-.45 12.88 12.88 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                 <span data-i18n="modal.submit">Enviar por WhatsApp</span>
             </button>
-            <p class="modal-legal" data-i18n="modal.legal">Sin pago por adelantado · Confirmación en 2 hrs</p>
+            <p class="modal-legal" data-i18n="modal.legal">10% de descuento en línea · Confirmamos disponibilidad · Pago en remolque o transferencia · ID + contrato al recibir</p>
         </form>
     </div>
 </div>
 
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js?v=18"></script>
+<script src="js/main.js?v=18"></script>
 </body>
 </html>
