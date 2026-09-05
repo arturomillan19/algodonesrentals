@@ -5,8 +5,8 @@ const TRANSLATIONS = {
 
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
-        "hero.title": "Tu día en<br><em>la playa.</em>",
-        "hero.sub": "Escaneaste desde tu mesa. Aquí están nuestros servicios y precios. Ven al remolque —estamos al centro de la playa— o escríbenos por WhatsApp.",
+        "hero.title": "Vive la experiencia<br><em>de Playa Algodones</em>",
+        "hero.sub": "Jetskis, paseo en banana, sombras y fundas en el Mar de Cortés. Ven al remolque —estamos al centro de la playa— o resérvalo por WhatsApp.",
         "hero.cta": "Ver servicios y precios",
         "hero.secondary": "Escríbenos por WhatsApp",
         "hero.locator": "Estamos al centro de la Playa Algodones",
@@ -245,8 +245,8 @@ const TRANSLATIONS = {
 
         // HERO
         "hero.eyebrow": "Playa Algodones · San Carlos, Sonora",
-        "hero.title": "Your day at<br><em>the beach.</em>",
-        "hero.sub": "You scanned from your table. Here are our services and prices. Come to the trailer —we're at the center of the beach— or message us on WhatsApp.",
+        "hero.title": "Live the experience<br><em>of Playa Algodones</em>",
+        "hero.sub": "Jetskis, banana boat rides, shade and pouches on the Sea of Cortez. Come to the trailer —we're at the center of the beach— or book via WhatsApp.",
         "hero.cta": "See services & prices",
         "hero.secondary": "Message us on WhatsApp",
         "hero.locator": "We're at the center of Playa Algodones",
